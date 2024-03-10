@@ -10,19 +10,27 @@
 		22463AFA3BB815F057A966D2 /* Pods_AnimeWave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E76E8AFA427E7CF616D61F7 /* Pods_AnimeWave.framework */; };
 		278836892B9E4FBA000A585C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278836882B9E4FBA000A585C /* AppDelegate.swift */; };
 		2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788368A2B9E4FBA000A585C /* SceneDelegate.swift */; };
-		2788368D2B9E4FBA000A585C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788368C2B9E4FBA000A585C /* ViewController.swift */; };
 		278836922B9E4FBC000A585C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278836912B9E4FBC000A585C /* Assets.xcassets */; };
 		278836952B9E4FBC000A585C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278836932B9E4FBC000A585C /* LaunchScreen.storyboard */; };
+		278836A02B9E6070000A585C /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788369F2B9E6070000A585C /* MainTabBarViewController.swift */; };
+		278836A62B9E60DC000A585C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278836A52B9E60DC000A585C /* ViewController.swift */; };
+		278836A82B9E60F7000A585C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278836A72B9E60F7000A585C /* CalendarViewController.swift */; };
+		278836AA2B9E6114000A585C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278836A92B9E6114000A585C /* SearchViewController.swift */; };
+		278836AC2B9E612E000A585C /* AnimeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278836AB2B9E612E000A585C /* AnimeListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		278836852B9E4FBA000A585C /* AnimeWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		278836882B9E4FBA000A585C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2788368A2B9E4FBA000A585C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2788368C2B9E4FBA000A585C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		278836912B9E4FBC000A585C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		278836942B9E4FBC000A585C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		278836962B9E4FBC000A585C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2788369F2B9E6070000A585C /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		278836A52B9E60DC000A585C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		278836A72B9E60F7000A585C /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		278836A92B9E6114000A585C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		278836AB2B9E612E000A585C /* AnimeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeListViewController.swift; sourceTree = "<group>"; };
 		9E76E8AFA427E7CF616D61F7 /* Pods_AnimeWave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimeWave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B5DAB4C98AB49359C3A096 /* Pods-AnimeWave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeWave.release.xcconfig"; path = "Target Support Files/Pods-AnimeWave/Pods-AnimeWave.release.xcconfig"; sourceTree = "<group>"; };
 		E0EA87A39B1D2923BCDA35FD /* Pods-AnimeWave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeWave.debug.xcconfig"; path = "Target Support Files/Pods-AnimeWave/Pods-AnimeWave.debug.xcconfig"; sourceTree = "<group>"; };
@@ -62,7 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				2788369C2B9E4FDB000A585C /* Application */,
-				2788368C2B9E4FBA000A585C /* ViewController.swift */,
+				2788369F2B9E6070000A585C /* MainTabBarViewController.swift */,
+				278836A42B9E60B2000A585C /* ProfileScreen */,
+				278836A32B9E60A2000A585C /* CalendarScreen */,
+				278836A22B9E6091000A585C /* SearchScreen */,
+				278836A12B9E6083000A585C /* AnimeListScreen */,
 				2788369D2B9E4FF3000A585C /* Supporting Files */,
 			);
 			path = AnimeWave;
@@ -85,6 +97,38 @@
 				278836962B9E4FBC000A585C /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		278836A12B9E6083000A585C /* AnimeListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				278836AB2B9E612E000A585C /* AnimeListViewController.swift */,
+			);
+			path = AnimeListScreen;
+			sourceTree = "<group>";
+		};
+		278836A22B9E6091000A585C /* SearchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				278836A92B9E6114000A585C /* SearchViewController.swift */,
+			);
+			path = SearchScreen;
+			sourceTree = "<group>";
+		};
+		278836A32B9E60A2000A585C /* CalendarScreen */ = {
+			isa = PBXGroup;
+			children = (
+				278836A72B9E60F7000A585C /* CalendarViewController.swift */,
+			);
+			path = CalendarScreen;
+			sourceTree = "<group>";
+		};
+		278836A42B9E60B2000A585C /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				278836A52B9E60DC000A585C /* ViewController.swift */,
+			);
+			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
 		635FF78557979EC8AD62DE2D /* Frameworks */ = {
@@ -239,8 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2788368D2B9E4FBA000A585C /* ViewController.swift in Sources */,
+				278836AA2B9E6114000A585C /* SearchViewController.swift in Sources */,
+				278836A82B9E60F7000A585C /* CalendarViewController.swift in Sources */,
+				278836A02B9E6070000A585C /* MainTabBarViewController.swift in Sources */,
+				278836AC2B9E612E000A585C /* AnimeListViewController.swift in Sources */,
 				278836892B9E4FBA000A585C /* AppDelegate.swift in Sources */,
+				278836A62B9E60DC000A585C /* ViewController.swift in Sources */,
 				2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
