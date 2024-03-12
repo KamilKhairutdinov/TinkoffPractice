@@ -23,24 +23,20 @@ extension MainTabBarViewController {
     private func setupTabs() {
 
         setViewControllers([
-            createController(imageName: "house", title: "Anime", controller: AnimeListViewController()),
-            createController(imageName: "magnifyingglass", title: "Search", controller: SearchViewController()),
-            createController(imageName: "calendar", title: "Calendar", controller: CalendarViewController()),
-            createController(imageName: "person", title: "Profile", controller: ProfileViewController())
+            setupController(imageName: "house", controller: AnimeListViewController()),
+            setupController(imageName: "magnifyingglass", controller: SearchViewController()),
+            setupController(imageName: "calendar", controller: CalendarViewController()),
+            setupController(imageName: "person", controller: ProfileViewController())
         ], animated: true)
     }
 
-    private func createController(
-        imageName: String,
-        title: String,
-        controller: UIViewController
-    ) -> UINavigationController {
+    private func setupController(imageName: String, controller: UIViewController) -> UIViewController {
 
-        let navigationCntroller = UINavigationController(rootViewController: controller)
-        navigationCntroller.tabBarItem.image = UIImage(systemName: imageName)
-        navigationCntroller.viewControllers.first?.title = title
+        controller.tabBarItem.image = UIImage(systemName: imageName)
+        controller.title = imageName
+        controller.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: imageName), style: .plain, target: nil, action: nil)
 
-        return navigationCntroller
+        return controller
     }
 
     private func setupTabBar() {
