@@ -11,7 +11,6 @@ class AppCoordinator: Coordinator {
 
     // MARK: - Variables
     var navigationController: UINavigationController
-    var flowComplitionHandler: CoordinatorHandler?
     private var mainTabBarController: UITabBarController
 
     // MARK: - Init
