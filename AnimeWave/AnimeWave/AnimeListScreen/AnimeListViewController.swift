@@ -13,5 +13,4 @@ class AnimeListViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .customWhite
     }
-
 }

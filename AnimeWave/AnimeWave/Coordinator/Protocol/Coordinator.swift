@@ -11,7 +11,7 @@ typealias CoordinatorHandler = () -> Void
 
 protocol Coordinator: AnyObject {
 
-    var naviagationController: UINavigationController { get set }
+    var navigationController: UINavigationController { get set }
     var flowComplitionHandler: CoordinatorHandler? { get set }
 
     func start()

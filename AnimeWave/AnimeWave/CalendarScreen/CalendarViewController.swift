@@ -13,5 +13,4 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .customWhite
     }
-
 }

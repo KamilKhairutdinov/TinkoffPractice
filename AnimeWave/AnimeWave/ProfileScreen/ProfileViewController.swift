@@ -14,5 +14,4 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .customWhite
     }
-
 }

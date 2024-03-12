@@ -9,14 +9,15 @@ import UIKit
 
 class AppCoordinator: Coordinator {
 
-    // MARK: - Variales
-    var naviagationController: UINavigationController
+    // MARK: - Variables
+    var navigationController: UINavigationController
     var flowComplitionHandler: CoordinatorHandler?
-    private var mainTabBarController = UITabBarController()
+    private var mainTabBarController: UITabBarController
 
     // MARK: - Init
     init(naviagationController: UINavigationController) {
-        self.naviagationController = naviagationController
+        self.navigationController = naviagationController
+        mainTabBarController = UITabBarController()
     }
 
     // MARK: - Functions
@@ -24,8 +25,8 @@ class AppCoordinator: Coordinator {
         setupTabs()
         setupTabBar()
 
-        naviagationController.pushViewController(mainTabBarController, animated: true)
-        naviagationController.setNavigationBarHidden(true, animated: false)
+        navigationController.pushViewController(mainTabBarController, animated: true)
+        navigationController.setNavigationBarHidden(true, animated: false)
     }
 
     private func setupTabs() {
