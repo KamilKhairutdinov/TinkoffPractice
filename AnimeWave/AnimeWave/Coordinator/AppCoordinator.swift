@@ -14,7 +14,6 @@ class AppCoordinator: Coordinator {
     var flowComplitionHandler: CoordinatorHandler?
     var mainTabBarController = UITabBarController()
 
-
     // MARK: - Init
     init(naviagationController: UINavigationController) {
         self.naviagationController = naviagationController
@@ -31,9 +30,9 @@ class AppCoordinator: Coordinator {
 
     private func setupTabs() {
         mainTabBarController.setViewControllers([
-            setupControllerForTabBar(imageName: "house", title: "Anime",controller: AnimeListViewController()),
+            setupControllerForTabBar(imageName: "house", title: "Anime", controller: AnimeListViewController()),
             setupControllerForTabBar(imageName: "magnifyingglass", title: "Search", controller: SearchViewController()),
-            setupControllerForTabBar(imageName: "calendar", title: "Calendar",controller: CalendarViewController()),
+            setupControllerForTabBar(imageName: "calendar", title: "Calendar", controller: CalendarViewController()),
             setupControllerForTabBar(imageName: "person", title: "Profile", controller: ProfileViewController())
         ], animated: true)
     }
