@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		22463AFA3BB815F057A966D2 /* Pods_AnimeWave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E76E8AFA427E7CF616D61F7 /* Pods_AnimeWave.framework */; };
+		276791922BA18B3100628CCE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791912BA18B3100628CCE /* Coordinator.swift */; };
+		276791942BA18BEC00628CCE /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791932BA18BEC00628CCE /* FlowController.swift */; };
+		276791962BA18D9E00628CCE /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791952BA18D9E00628CCE /* BaseCoordinator.swift */; };
 		278836892B9E4FBA000A585C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278836882B9E4FBA000A585C /* AppDelegate.swift */; };
 		2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788368A2B9E4FBA000A585C /* SceneDelegate.swift */; };
 		2788368D2B9E4FBA000A585C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788368C2B9E4FBA000A585C /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		276791912BA18B3100628CCE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		276791932BA18BEC00628CCE /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
+		276791952BA18D9E00628CCE /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		278836852B9E4FBA000A585C /* AnimeWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		278836882B9E4FBA000A585C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2788368A2B9E4FBA000A585C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +46,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2767918F2BA189DB00628CCE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				276791902BA189E100628CCE /* Protocols */,
+				276791952BA18D9E00628CCE /* BaseCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		276791902BA189E100628CCE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				276791912BA18B3100628CCE /* Coordinator.swift */,
+				276791932BA18BEC00628CCE /* FlowController.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		2788367C2B9E4FBA000A585C = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +85,7 @@
 		278836872B9E4FBA000A585C /* AnimeWave */ = {
 			isa = PBXGroup;
 			children = (
+				2767918F2BA189DB00628CCE /* Coordinator */,
 				2788369C2B9E4FDB000A585C /* Application */,
 				2788368C2B9E4FBA000A585C /* ViewController.swift */,
 				2788369D2B9E4FF3000A585C /* Supporting Files */,
@@ -239,8 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276791922BA18B3100628CCE /* Coordinator.swift in Sources */,
+				276791962BA18D9E00628CCE /* BaseCoordinator.swift in Sources */,
 				2788368D2B9E4FBA000A585C /* ViewController.swift in Sources */,
 				278836892B9E4FBA000A585C /* AppDelegate.swift in Sources */,
+				276791942BA18BEC00628CCE /* FlowController.swift in Sources */,
 				2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
