@@ -17,13 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         willConnectTo session: UISceneSession,
         options connectionOptions: UIScene.ConnectionOptions
     ) {
+        let router = Router(rootController: UINavigationController())
+        appCoordinator = CoordinatorFactory().createAppCoordinator(router: router)
+
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        // let appCoordiantor = CoordinatorFactory().createAppCoordinator(navigationController: UINavigationController())
-
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = appCoordiantor.navigationController
-        appCoordiantor.start()
+        window?.rootViewController = router.presenter()
+
+        appCoordinator?.start()
         window?.makeKeyAndVisible()
     }
 

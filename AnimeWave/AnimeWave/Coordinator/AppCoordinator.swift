@@ -9,13 +9,22 @@ import UIKit
 
 class AppCoordinator: BaseCoordinator {
 
-    override init(navigationController: UINavigationController) {
-        super.init(navigationController: navigationController)
+    private var router: Router
+
+    init(router: Router) {
+        self.router = router
     }
 
     override func start() {
-        let vc = ViewController()
-        navigationController.pushViewController(vc, animated: true)
+
+    }
+
+    private func runStartFlow() {
+
+    }
+
+    private func runMainFlow() {
+
     }
 
 }

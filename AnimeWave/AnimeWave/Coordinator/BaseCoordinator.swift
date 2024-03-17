@@ -15,7 +15,7 @@ class BaseCoordinator: Coordinator {
     init() {
         childCoordinators = []
     }
-    
+
     func start() {
         fatalError("Function start must be overriden")
     }
