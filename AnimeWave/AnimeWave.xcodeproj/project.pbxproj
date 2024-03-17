@@ -12,12 +12,6 @@
 		276791942BA18BEC00628CCE /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791932BA18BEC00628CCE /* FlowController.swift */; };
 		276791962BA18D9E00628CCE /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791952BA18D9E00628CCE /* BaseCoordinator.swift */; };
 		276791982BA1908E00628CCE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791972BA1908E00628CCE /* AppCoordinator.swift */; };
-		2767919B2BA1912100628CCE /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767919A2BA1912100628CCE /* CoordinatorFactory.swift */; };
-		2767919E2BA1913800628CCE /* CoordinatorFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767919D2BA1913800628CCE /* CoordinatorFactoryProtocol.swift */; };
-		276791A02BA1940000628CCE /* ButtonFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767919F2BA1940000628CCE /* ButtonFactoryProtocol.swift */; };
-		276791A22BA1942800628CCE /* TextFieldFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791A12BA1942800628CCE /* TextFieldFactoryProtocol.swift */; };
-		276791A42BA1955E00628CCE /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791A32BA1955E00628CCE /* ButtonFactory.swift */; };
-		276791A62BA1957100628CCE /* TextFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791A52BA1957100628CCE /* TextFieldFactory.swift */; };
 		278836892B9E4FBA000A585C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278836882B9E4FBA000A585C /* AppDelegate.swift */; };
 		2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788368A2B9E4FBA000A585C /* SceneDelegate.swift */; };
 		2788368D2B9E4FBA000A585C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788368C2B9E4FBA000A585C /* ViewController.swift */; };
@@ -30,12 +24,6 @@
 		276791932BA18BEC00628CCE /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		276791952BA18D9E00628CCE /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		276791972BA1908E00628CCE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		2767919A2BA1912100628CCE /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
-		2767919D2BA1913800628CCE /* CoordinatorFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryProtocol.swift; sourceTree = "<group>"; };
-		2767919F2BA1940000628CCE /* ButtonFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactoryProtocol.swift; sourceTree = "<group>"; };
-		276791A12BA1942800628CCE /* TextFieldFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFactoryProtocol.swift; sourceTree = "<group>"; };
-		276791A32BA1955E00628CCE /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
-		276791A52BA1957100628CCE /* TextFieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFactory.swift; sourceTree = "<group>"; };
 		278836852B9E4FBA000A585C /* AnimeWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		278836882B9E4FBA000A585C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2788368A2B9E4FBA000A585C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,22 +70,8 @@
 		276791992BA190D100628CCE /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				2767919C2BA1912600628CCE /* Protocols */,
-				2767919A2BA1912100628CCE /* CoordinatorFactory.swift */,
-				276791A32BA1955E00628CCE /* ButtonFactory.swift */,
-				276791A52BA1957100628CCE /* TextFieldFactory.swift */,
 			);
 			path = Factories;
-			sourceTree = "<group>";
-		};
-		2767919C2BA1912600628CCE /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				2767919D2BA1913800628CCE /* CoordinatorFactoryProtocol.swift */,
-				2767919F2BA1940000628CCE /* ButtonFactoryProtocol.swift */,
-				276791A12BA1942800628CCE /* TextFieldFactoryProtocol.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		2788367C2B9E4FBA000A585C = {
@@ -301,19 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2767919E2BA1913800628CCE /* CoordinatorFactoryProtocol.swift in Sources */,
 				276791922BA18B3100628CCE /* Coordinator.swift in Sources */,
-				276791A02BA1940000628CCE /* ButtonFactoryProtocol.swift in Sources */,
 				276791962BA18D9E00628CCE /* BaseCoordinator.swift in Sources */,
 				2788368D2B9E4FBA000A585C /* ViewController.swift in Sources */,
-				276791A22BA1942800628CCE /* TextFieldFactoryProtocol.swift in Sources */,
-				276791A42BA1955E00628CCE /* ButtonFactory.swift in Sources */,
 				278836892B9E4FBA000A585C /* AppDelegate.swift in Sources */,
 				276791942BA18BEC00628CCE /* FlowController.swift in Sources */,
 				2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */,
 				276791982BA1908E00628CCE /* AppCoordinator.swift in Sources */,
-				2767919B2BA1912100628CCE /* CoordinatorFactory.swift in Sources */,
-				276791A62BA1957100628CCE /* TextFieldFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

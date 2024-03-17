@@ -7,11 +7,9 @@
 
 import UIKit
 
-typealias FlowComplitionHandler = () -> Void
-
 protocol Coordinator: AnyObject {
 
-    var flowComplitionHandler: FlowComplitionHandler? { get set }
+    var flowComplitionHandler: (() -> Void)? { get set }
 
     func start()
 }

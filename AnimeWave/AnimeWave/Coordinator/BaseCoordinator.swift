@@ -9,24 +9,35 @@ import UIKit
 
 class BaseCoordinator: Coordinator {
 
-    var navigationController: UINavigationController
     var childCoordinators: [Coordinator]
-    var flowComplitionHandler: FlowComplitionHandler?
+    var flowComplitionHandler: (() -> Void)?
 
+    init() {
+        childCoordinators = []
+    }
+    
     func start() {
         fatalError("Function start must be overriden")
     }
 
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-        childCoordinators = []
-    }
-
-    func addDependancy(coordinator: Coordinator) {
+    func addDependency(_ coordinator: Coordinator) {
+        guard !childCoordinators.contains(where: { $0 === coordinator }) else { return }
         childCoordinators.append(coordinator)
     }
 
-    func removeDependancy(coordinator: Coordinator) {
-        childCoordinators = childCoordinators.filter { $0 !== coordinator}
+    func removeDependency(_ coordinator: Coordinator) {
+
+        guard !childCoordinators.isEmpty else { return }
+
+        // Clear child coordinators recursively
+        if let coordinator = coordinator as? BaseCoordinator, !coordinator.childCoordinators.isEmpty {
+            coordinator.childCoordinators
+                .filter({ $0 !== coordinator })
+                .forEach({ coordinator.removeDependency($0) })
+        }
+        for (index, element) in childCoordinators.enumerated() where element === coordinator {
+            childCoordinators.remove(at: index)
+            break
+        }
     }
 }
