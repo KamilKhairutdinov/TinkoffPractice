@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27261F8A2BA7964600225F5D /* RegistrationFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F892BA7964600225F5D /* RegistrationFlowCoordinator.swift */; };
+		27261F8C2BA7967F00225F5D /* LoginFLowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F8B2BA7967F00225F5D /* LoginFLowCoordinator.swift */; };
+		27261F8F2BA79A9000225F5D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F8E2BA79A9000225F5D /* RegistrationViewController.swift */; };
 		276791922BA18B3100628CCE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791912BA18B3100628CCE /* Coordinator.swift */; };
 		276791942BA18BEC00628CCE /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791932BA18BEC00628CCE /* FlowController.swift */; };
 		276791962BA18D9E00628CCE /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791952BA18D9E00628CCE /* BaseCoordinator.swift */; };
@@ -22,10 +25,18 @@
 		278836952B9E4FBC000A585C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278836932B9E4FBC000A585C /* LaunchScreen.storyboard */; };
 		27DAA1D42BA76C3700EAC8A4 /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAA1D32BA76C3700EAC8A4 /* ButtonFactory.swift */; };
 		27DAA1D62BA76C4200EAC8A4 /* TextFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAA1D52BA76C4200EAC8A4 /* TextFieldFactory.swift */; };
+		27DAA1D82BA7724300EAC8A4 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAA1D72BA7724300EAC8A4 /* StartViewController.swift */; };
+		27DAA1DA2BA776B100EAC8A4 /* StartFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAA1D92BA776B100EAC8A4 /* StartFlowCoordinator.swift */; };
+		27DAA1DC2BA7789400EAC8A4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAA1DB2BA7789400EAC8A4 /* AuthService.swift */; };
+		27DAA1E12BA77AD900EAC8A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27DAA1E32BA77AD900EAC8A4 /* Localizable.strings */; };
+		27DAA1E72BA77BD600EAC8A4 /* String + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAA1E62BA77BD600EAC8A4 /* String + extension.swift */; };
 		FD9FE6C0DB5BCF5837DAF31A /* Pods_AnimeWave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FBF8D7DF60560D2638FB25 /* Pods_AnimeWave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27261F892BA7964600225F5D /* RegistrationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFlowCoordinator.swift; sourceTree = "<group>"; };
+		27261F8B2BA7967F00225F5D /* LoginFLowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFLowCoordinator.swift; sourceTree = "<group>"; };
+		27261F8E2BA79A9000225F5D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		276791912BA18B3100628CCE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		276791932BA18BEC00628CCE /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		276791952BA18D9E00628CCE /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -43,6 +54,13 @@
 		278836962B9E4FBC000A585C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27DAA1D32BA76C3700EAC8A4 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		27DAA1D52BA76C4200EAC8A4 /* TextFieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFactory.swift; sourceTree = "<group>"; };
+		27DAA1D72BA7724300EAC8A4 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		27DAA1D92BA776B100EAC8A4 /* StartFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartFlowCoordinator.swift; sourceTree = "<group>"; };
+		27DAA1DB2BA7789400EAC8A4 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		27DAA1DD2BA77A7500EAC8A4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		27DAA1E22BA77AD900EAC8A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		27DAA1E42BA77ADA00EAC8A4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		27DAA1E62BA77BD600EAC8A4 /* String + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extension.swift"; sourceTree = "<group>"; };
 		6ED05530A6FBA8763B17CDE8 /* Pods-AnimeWave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeWave.release.xcconfig"; path = "Target Support Files/Pods-AnimeWave/Pods-AnimeWave.release.xcconfig"; sourceTree = "<group>"; };
 		D4FBF8D7DF60560D2638FB25 /* Pods_AnimeWave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimeWave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF056F94524860C389BC088D /* Pods-AnimeWave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeWave.debug.xcconfig"; path = "Target Support Files/Pods-AnimeWave/Pods-AnimeWave.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,12 +78,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27261F872BA7961200225F5D /* LoginFlow */ = {
+			isa = PBXGroup;
+			children = (
+				27261F8B2BA7967F00225F5D /* LoginFLowCoordinator.swift */,
+			);
+			path = LoginFlow;
+			sourceTree = "<group>";
+		};
+		27261F882BA7961A00225F5D /* RegistrationFlow */ = {
+			isa = PBXGroup;
+			children = (
+				27261F892BA7964600225F5D /* RegistrationFlowCoordinator.swift */,
+				27261F8D2BA79A7B00225F5D /* Screens */,
+			);
+			path = RegistrationFlow;
+			sourceTree = "<group>";
+		};
+		27261F8D2BA79A7B00225F5D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				27261F902BA79D5A00225F5D /* RegistrationSscreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		27261F902BA79D5A00225F5D /* RegistrationSscreen */ = {
+			isa = PBXGroup;
+			children = (
+				27261F8E2BA79A9000225F5D /* RegistrationViewController.swift */,
+			);
+			path = RegistrationSscreen;
+			sourceTree = "<group>";
+		};
 		2767918F2BA189DB00628CCE /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				276791902BA189E100628CCE /* Protocols */,
-				276791952BA18D9E00628CCE /* BaseCoordinator.swift */,
 				276791972BA1908E00628CCE /* AppCoordinator.swift */,
+				276791952BA18D9E00628CCE /* BaseCoordinator.swift */,
+				276791902BA189E100628CCE /* Protocols */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -110,6 +161,7 @@
 		276BEC5B2BA7243500313135 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				27DAA1DB2BA7789400EAC8A4 /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -141,7 +193,9 @@
 				27DAA1D12BA76B5500EAC8A4 /* Flows */,
 				276BEC5B2BA7243500313135 /* Services */,
 				276791992BA190D100628CCE /* Factories */,
+				27DAA1E52BA77BAB00EAC8A4 /* Extensions */,
 				2788369D2B9E4FF3000A585C /* Supporting Files */,
+				27DAA1DE2BA77AA400EAC8A4 /* Localizable */,
 				276BEC5C2BA7261F00313135 /* GoogleService-Info.plist */,
 			);
 			path = AnimeWave;
@@ -170,6 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				27DAA1D22BA76B6000EAC8A4 /* StartFlow */,
+				27261F882BA7961A00225F5D /* RegistrationFlow */,
+				27261F872BA7961200225F5D /* LoginFlow */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -177,8 +233,26 @@
 		27DAA1D22BA76B6000EAC8A4 /* StartFlow */ = {
 			isa = PBXGroup;
 			children = (
+				27DAA1D92BA776B100EAC8A4 /* StartFlowCoordinator.swift */,
+				27DAA1D72BA7724300EAC8A4 /* StartViewController.swift */,
 			);
 			path = StartFlow;
+			sourceTree = "<group>";
+		};
+		27DAA1DE2BA77AA400EAC8A4 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				27DAA1E32BA77AD900EAC8A4 /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		27DAA1E52BA77BAB00EAC8A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				27DAA1E62BA77BD600EAC8A4 /* String + extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CF0E870815ED72C44BBD8BFF /* Frameworks */ = {
@@ -243,6 +317,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 2788367C2B9E4FBA000A585C;
 			productRefGroup = 278836862B9E4FBA000A585C /* Products */;
@@ -260,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				278836952B9E4FBC000A585C /* LaunchScreen.storyboard in Resources */,
+				27DAA1E12BA77AD900EAC8A4 /* Localizable.strings in Resources */,
 				278836922B9E4FBC000A585C /* Assets.xcassets in Resources */,
 				276BEC5D2BA7261F00313135 /* GoogleService-Info.plist in Resources */,
 			);
@@ -334,16 +410,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27261F8A2BA7964600225F5D /* RegistrationFlowCoordinator.swift in Sources */,
 				276791922BA18B3100628CCE /* Coordinator.swift in Sources */,
+				27261F8F2BA79A9000225F5D /* RegistrationViewController.swift in Sources */,
 				27DAA1D42BA76C3700EAC8A4 /* ButtonFactory.swift in Sources */,
+				27DAA1E72BA77BD600EAC8A4 /* String + extension.swift in Sources */,
 				276791962BA18D9E00628CCE /* BaseCoordinator.swift in Sources */,
 				276BEC522BA7204000313135 /* RouterProtocol.swift in Sources */,
+				27261F8C2BA7967F00225F5D /* LoginFLowCoordinator.swift in Sources */,
 				276BEC542BA7206D00313135 /* Router.swift in Sources */,
 				278836892B9E4FBA000A585C /* AppDelegate.swift in Sources */,
 				276791942BA18BEC00628CCE /* FlowController.swift in Sources */,
 				2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */,
+				27DAA1D82BA7724300EAC8A4 /* StartViewController.swift in Sources */,
 				276BEC582BA7224C00313135 /* CoordinatorFactoryProtocol.swift in Sources */,
 				276BEC5A2BA7228300313135 /* CoordinatorFactory.swift in Sources */,
+				27DAA1DA2BA776B100EAC8A4 /* StartFlowCoordinator.swift in Sources */,
+				27DAA1DC2BA7789400EAC8A4 /* AuthService.swift in Sources */,
 				27DAA1D62BA76C4200EAC8A4 /* TextFieldFactory.swift in Sources */,
 				276791982BA1908E00628CCE /* AppCoordinator.swift in Sources */,
 			);
@@ -356,8 +439,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				278836942B9E4FBC000A585C /* Base */,
+				27DAA1DD2BA77A7500EAC8A4 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		27DAA1E32BA77AD900EAC8A4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27DAA1E22BA77AD900EAC8A4 /* en */,
+				27DAA1E42BA77ADA00EAC8A4 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -368,6 +461,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -431,6 +525,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -497,7 +592,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -526,7 +621,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -11,9 +11,11 @@ class BaseCoordinator: Coordinator {
 
     var childCoordinators: [Coordinator]
     var flowComplitionHandler: (() -> Void)?
+    let coordinatorFactory: CoordinatorFactoryProtocol
 
     init() {
         childCoordinators = []
+        coordinatorFactory = CoordinatorFactory()
     }
 
     func start() {

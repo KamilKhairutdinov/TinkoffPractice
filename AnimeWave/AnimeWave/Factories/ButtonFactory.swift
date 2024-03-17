@@ -8,8 +8,16 @@
 import UIKit
 
 class ButtonFactory {
-//    func createButtun(label: String) -> UIButton {
-//        let button = UIButton(configuration: .bordered())
-//        button.setTitle(label, for: .normal)
-//    }
+    func createButton(title: String, action: UIAction) -> UIButton {
+        let button = UIButton(configuration: .bordered())
+
+        button.addAction(action, for: .touchUpInside)
+        button.setTitle(title, for: .normal)
+        button.layer.cornerRadius = 12
+        button.backgroundColor = UIColor.buttonAndTextField
+        button.setTitleColor(UIColor.mainText, for: .normal)
+        button.setTitleColor(UIColor.buttonTappedTitle, for: .highlighted)
+
+        return button
+    }
 }

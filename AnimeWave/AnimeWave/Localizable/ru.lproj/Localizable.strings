@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  AnimeWave
+
+  Created by Камил Хайрутдинов on 17.03.2024.
+  
+*/
+
+// Buttons
+"login_button" = "Войти";
+"register_button" = "Зарегестрироваться";
+
+//TextFields

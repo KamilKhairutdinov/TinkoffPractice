@@ -9,4 +9,7 @@ import Foundation
 
 protocol CoordinatorFactoryProtocol {
     func createAppCoordinator(router: Router) -> AppCoordinator
+    func createStartCoordinator(router: Router) -> StartFlowCoordinator
+    func createRegistrationCoordinator(router: Router) -> RegistrationFlowCoordinator
+    func createLoginCoordinator(router: Router) -> LoginFLowCoordinator
 }

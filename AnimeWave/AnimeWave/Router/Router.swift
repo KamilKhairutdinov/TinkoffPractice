@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Router: RouterProtocol {
+final class Router: RouterProtocol {
 
     private var rootController: UINavigationController?
 

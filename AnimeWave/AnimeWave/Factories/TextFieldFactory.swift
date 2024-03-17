@@ -6,3 +6,17 @@
 //
 
 import UIKit
+
+class TextFieldFactory {
+    func createTextField(placeholder: String) -> UITextField {
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.backgroundColor = UIColor.buttonAndTextField
+        textField.textColor = UIColor.textFieldText
+        textField.attributedPlaceholder = NSAttributedString(
+            string: placeholder,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.placeholder])
+
+        return textField
+    }
+}
