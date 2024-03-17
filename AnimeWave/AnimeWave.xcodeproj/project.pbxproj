@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22463AFA3BB815F057A966D2 /* Pods_AnimeWave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E76E8AFA427E7CF616D61F7 /* Pods_AnimeWave.framework */; };
 		276791922BA18B3100628CCE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791912BA18B3100628CCE /* Coordinator.swift */; };
 		276791942BA18BEC00628CCE /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791932BA18BEC00628CCE /* FlowController.swift */; };
 		276791962BA18D9E00628CCE /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791952BA18D9E00628CCE /* BaseCoordinator.swift */; };
@@ -19,9 +18,11 @@
 		276BEC5D2BA7261F00313135 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 276BEC5C2BA7261F00313135 /* GoogleService-Info.plist */; };
 		278836892B9E4FBA000A585C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278836882B9E4FBA000A585C /* AppDelegate.swift */; };
 		2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788368A2B9E4FBA000A585C /* SceneDelegate.swift */; };
-		2788368D2B9E4FBA000A585C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788368C2B9E4FBA000A585C /* ViewController.swift */; };
 		278836922B9E4FBC000A585C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278836912B9E4FBC000A585C /* Assets.xcassets */; };
 		278836952B9E4FBC000A585C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278836932B9E4FBC000A585C /* LaunchScreen.storyboard */; };
+		27DAA1D42BA76C3700EAC8A4 /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAA1D32BA76C3700EAC8A4 /* ButtonFactory.swift */; };
+		27DAA1D62BA76C4200EAC8A4 /* TextFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAA1D52BA76C4200EAC8A4 /* TextFieldFactory.swift */; };
+		FD9FE6C0DB5BCF5837DAF31A /* Pods_AnimeWave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FBF8D7DF60560D2638FB25 /* Pods_AnimeWave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,13 +38,14 @@
 		278836852B9E4FBA000A585C /* AnimeWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		278836882B9E4FBA000A585C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2788368A2B9E4FBA000A585C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2788368C2B9E4FBA000A585C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		278836912B9E4FBC000A585C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		278836942B9E4FBC000A585C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		278836962B9E4FBC000A585C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9E76E8AFA427E7CF616D61F7 /* Pods_AnimeWave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimeWave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6B5DAB4C98AB49359C3A096 /* Pods-AnimeWave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeWave.release.xcconfig"; path = "Target Support Files/Pods-AnimeWave/Pods-AnimeWave.release.xcconfig"; sourceTree = "<group>"; };
-		E0EA87A39B1D2923BCDA35FD /* Pods-AnimeWave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeWave.debug.xcconfig"; path = "Target Support Files/Pods-AnimeWave/Pods-AnimeWave.debug.xcconfig"; sourceTree = "<group>"; };
+		27DAA1D32BA76C3700EAC8A4 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
+		27DAA1D52BA76C4200EAC8A4 /* TextFieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFactory.swift; sourceTree = "<group>"; };
+		6ED05530A6FBA8763B17CDE8 /* Pods-AnimeWave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeWave.release.xcconfig"; path = "Target Support Files/Pods-AnimeWave/Pods-AnimeWave.release.xcconfig"; sourceTree = "<group>"; };
+		D4FBF8D7DF60560D2638FB25 /* Pods_AnimeWave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimeWave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF056F94524860C389BC088D /* Pods-AnimeWave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeWave.debug.xcconfig"; path = "Target Support Files/Pods-AnimeWave/Pods-AnimeWave.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22463AFA3BB815F057A966D2 /* Pods_AnimeWave.framework in Frameworks */,
+				FD9FE6C0DB5BCF5837DAF31A /* Pods_AnimeWave.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +84,8 @@
 			children = (
 				276BEC552BA721CB00313135 /* Protocols */,
 				276BEC592BA7228300313135 /* CoordinatorFactory.swift */,
+				27DAA1D32BA76C3700EAC8A4 /* ButtonFactory.swift */,
+				27DAA1D52BA76C4200EAC8A4 /* TextFieldFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -103,11 +107,11 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		276BEC5B2BA7243500313135 /* Managers */ = {
+		276BEC5B2BA7243500313135 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Managers;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		2788367C2B9E4FBA000A585C = {
@@ -116,7 +120,7 @@
 				278836872B9E4FBA000A585C /* AnimeWave */,
 				278836862B9E4FBA000A585C /* Products */,
 				E81FDE08E4CBB3660D006712 /* Pods */,
-				635FF78557979EC8AD62DE2D /* Frameworks */,
+				CF0E870815ED72C44BBD8BFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,11 +135,11 @@
 		278836872B9E4FBA000A585C /* AnimeWave */ = {
 			isa = PBXGroup;
 			children = (
-				276BEC5B2BA7243500313135 /* Managers */,
 				2788369C2B9E4FDB000A585C /* Application */,
-				276BEC502BA7202400313135 /* Router */,
 				2767918F2BA189DB00628CCE /* Coordinator */,
-				2788368C2B9E4FBA000A585C /* ViewController.swift */,
+				276BEC502BA7202400313135 /* Router */,
+				27DAA1D12BA76B5500EAC8A4 /* Flows */,
+				276BEC5B2BA7243500313135 /* Services */,
 				276791992BA190D100628CCE /* Factories */,
 				2788369D2B9E4FF3000A585C /* Supporting Files */,
 				276BEC5C2BA7261F00313135 /* GoogleService-Info.plist */,
@@ -162,10 +166,25 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		635FF78557979EC8AD62DE2D /* Frameworks */ = {
+		27DAA1D12BA76B5500EAC8A4 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				9E76E8AFA427E7CF616D61F7 /* Pods_AnimeWave.framework */,
+				27DAA1D22BA76B6000EAC8A4 /* StartFlow */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		27DAA1D22BA76B6000EAC8A4 /* StartFlow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StartFlow;
+			sourceTree = "<group>";
+		};
+		CF0E870815ED72C44BBD8BFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4FBF8D7DF60560D2638FB25 /* Pods_AnimeWave.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,8 +192,8 @@
 		E81FDE08E4CBB3660D006712 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E0EA87A39B1D2923BCDA35FD /* Pods-AnimeWave.debug.xcconfig */,
-				C6B5DAB4C98AB49359C3A096 /* Pods-AnimeWave.release.xcconfig */,
+				EF056F94524860C389BC088D /* Pods-AnimeWave.debug.xcconfig */,
+				6ED05530A6FBA8763B17CDE8 /* Pods-AnimeWave.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -186,12 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 278836992B9E4FBC000A585C /* Build configuration list for PBXNativeTarget "AnimeWave" */;
 			buildPhases = (
-				72FCF3D499F3B8F11DD2B182 /* [CP] Check Pods Manifest.lock */,
+				D6C7528AC2D95F15622C4C63 /* [CP] Check Pods Manifest.lock */,
 				278836812B9E4FBA000A585C /* Sources */,
 				278836822B9E4FBA000A585C /* Frameworks */,
 				278836832B9E4FBA000A585C /* Resources */,
-				5541E01A98D0456CDFB4BD31 /* [CP] Embed Pods Frameworks */,
 				2788369E2B9E5320000A585C /* Swiftlint */,
+				DC252635E1E5A13AB04AEC04 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,24 +288,7 @@
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5541E01A98D0456CDFB4BD31 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AnimeWave/Pods-AnimeWave-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AnimeWave/Pods-AnimeWave-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnimeWave/Pods-AnimeWave-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		72FCF3D499F3B8F11DD2B182 /* [CP] Check Pods Manifest.lock */ = {
+		D6C7528AC2D95F15622C4C63 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -308,6 +310,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DC252635E1E5A13AB04AEC04 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnimeWave/Pods-AnimeWave-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnimeWave/Pods-AnimeWave-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnimeWave/Pods-AnimeWave-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -316,15 +335,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				276791922BA18B3100628CCE /* Coordinator.swift in Sources */,
+				27DAA1D42BA76C3700EAC8A4 /* ButtonFactory.swift in Sources */,
 				276791962BA18D9E00628CCE /* BaseCoordinator.swift in Sources */,
 				276BEC522BA7204000313135 /* RouterProtocol.swift in Sources */,
-				2788368D2B9E4FBA000A585C /* ViewController.swift in Sources */,
 				276BEC542BA7206D00313135 /* Router.swift in Sources */,
 				278836892B9E4FBA000A585C /* AppDelegate.swift in Sources */,
 				276791942BA18BEC00628CCE /* FlowController.swift in Sources */,
 				2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */,
 				276BEC582BA7224C00313135 /* CoordinatorFactoryProtocol.swift in Sources */,
 				276BEC5A2BA7228300313135 /* CoordinatorFactory.swift in Sources */,
+				27DAA1D62BA76C4200EAC8A4 /* TextFieldFactory.swift in Sources */,
 				276791982BA1908E00628CCE /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,7 +484,7 @@
 		};
 		2788369A2B9E4FBC000A585C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E0EA87A39B1D2923BCDA35FD /* Pods-AnimeWave.debug.xcconfig */;
+			baseConfigurationReference = EF056F94524860C389BC088D /* Pods-AnimeWave.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -477,6 +497,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,7 +513,7 @@
 		};
 		2788369B2B9E4FBC000A585C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6B5DAB4C98AB49359C3A096 /* Pods-AnimeWave.release.xcconfig */;
+			baseConfigurationReference = 6ED05530A6FBA8763B17CDE8 /* Pods-AnimeWave.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -505,6 +526,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
