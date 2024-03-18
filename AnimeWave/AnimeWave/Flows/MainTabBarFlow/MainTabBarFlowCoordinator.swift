@@ -7,10 +7,12 @@
 
 import Foundation
 
-class MainTabbarFlowCoordinator: BaseCoordinator {
+class MainTabBarFlowCoordinator: BaseCoordinator {
 
-    override init() {
+    var tabBatFlow: TabBarFlowDelegate
 
+    init(controller: TabBarFlowDelegate) {
+        self.tabBatFlow = controller
     }
 
     override func start() {
