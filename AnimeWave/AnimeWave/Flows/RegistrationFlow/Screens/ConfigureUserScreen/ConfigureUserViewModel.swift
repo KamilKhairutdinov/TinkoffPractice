@@ -8,5 +8,10 @@
 import Foundation
 
 class ConfigureUserViewModel {
+    let currentUser: AnimeWaveUser?
 
+    init(currentUser: AnimeWaveUser?) {
+        self.currentUser = currentUser
+        print(currentUser)
+    }
 }

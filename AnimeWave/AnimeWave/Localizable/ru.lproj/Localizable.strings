@@ -15,7 +15,8 @@
 //TextFields
 "email_placeholder" = " Почта";
 "password_placeholder" = " Пароль";
-"login_placeholder" = " логин";
+"login_placeholder" = " Логин";
+"password_confirmation_placeholder" = " Подтверждение пароля";
 
 // Labels
 "incorrect_email" = "Неправильный формат почты";
@@ -23,9 +24,11 @@
 "empty_email_field" = "Заполните поле почты";
 "empty_password_field" = "Заполните поле пароля";
 "fillProfileLabel_text" = "Заполните свой профиль";
+"passwords_dont_match" = "Пароли не совпадают";
 
 // Titles
 "registration_title" = "Рeгистрация";
 "profile_title" = "Профиль";
+
 //Errors
 "The email address is already in use by another account." = "Адрес электронной почты уже используется другой учетной записью.";

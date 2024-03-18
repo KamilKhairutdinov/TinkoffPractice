@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class RegistrationViewController: UIViewController, FlowController {
+class RegistrationViewController: UIViewController, FlowControllerWithValue {
 
     // MARK: - UI elements
     private lazy var emailTextField: UITextField = {
@@ -22,6 +22,16 @@ class RegistrationViewController: UIViewController, FlowController {
 
     private lazy var passwordTextField: UITextField = {
         let textField               = textFieldFactory.createTextField(placeholder: "password_placeholder".localized)
+        textField.isSecureTextEntry = true
+        textField.returnKeyType     = .next
+        textField.delegate          = self
+        textField.passwordRules     = .none
+
+        return textField
+    }()
+
+    private lazy var passwordConfirmationTextField: UITextField = {
+        let textField               = textFieldFactory.createTextField(placeholder: "password_confirmation_placeholder".localized)
         textField.isSecureTextEntry = true
         textField.returnKeyType     = .done
         textField.delegate          = self
@@ -41,7 +51,11 @@ class RegistrationViewController: UIViewController, FlowController {
 
     private lazy var nextButton: UIButton = {
         let action = UIAction { [weak self] _ in
-            self?.viewModel.validateUser(self?.emailTextField.text, self?.passwordTextField.text)
+            self?.viewModel.validateUser(
+                self?.emailTextField.text,
+                self?.passwordTextField.text,
+                self?.passwordConfirmationTextField.text
+            )
         }
         let button = buttonFactory.createButton(title: "next_button".localized, action: action)
 
@@ -52,7 +66,7 @@ class RegistrationViewController: UIViewController, FlowController {
     private let textFieldFactory = TextFieldFactory()
     private let buttonFactory = ButtonFactory()
     private let viewModel: RegistrationViewModel
-    var complitionHandler: (() -> Void)?
+    var complitionHandler: ((AnimeWaveUser?) -> Void)?
 
     // MARK: - Init
     init(viewModel: RegistrationViewModel) {
@@ -81,7 +95,11 @@ extension RegistrationViewController {
     }
 
     private func configureUI() {
-        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField])
+        let stackView = UIStackView(arrangedSubviews: [
+            emailTextField,
+            passwordTextField,
+            passwordConfirmationTextField
+        ])
 
         stackView.axis = .vertical
         stackView.spacing = 20
@@ -89,7 +107,7 @@ extension RegistrationViewController {
 
         stackView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
-            make.width.equalTo(view.frame.width / 3 * 2)
+            make.left.right.equalToSuperview().inset(50)
         }
 
         validationErrorsLabel.snp.makeConstraints { make in
@@ -100,15 +118,16 @@ extension RegistrationViewController {
 
         nextButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(stackView.snp_bottomMargin).offset(50)
-            make.height.equalTo(passwordTextField)
+            make.height.equalTo(emailTextField)
+            make.bottom.equalToSuperview().inset(50)
         }
     }
 
     private func setupBindings() {
         viewModel.isSuccessfulRegistered.bind({ [weak self] (isSuccessfulRegistered) in
+            print(isSuccessfulRegistered)
             if isSuccessfulRegistered {
-                self?.complitionHandler?()
+                self?.complitionHandler?(self?.viewModel.user)
             }
         })
 
@@ -124,6 +143,8 @@ extension RegistrationViewController: UITextFieldDelegate {
         case emailTextField:
             passwordTextField.becomeFirstResponder()
         case passwordTextField:
+            passwordConfirmationTextField.becomeFirstResponder()
+        case passwordConfirmationTextField:
             view.endEditing(true)
         default:
             break

@@ -15,13 +15,15 @@
 // TextFields
 "email_placeholder" = " Email";
 "password_placeholder" = " Password";
-"login_placeholder" = " login";
+"login_placeholder" = " Login";
+"password_confirmation_placeholder" = " Password confirmation";
 
 // Labels
 "incorrect_email" = "Invalid mail format";
 "incorrect_password_lenght" = "Password length must be longer than 6 characters";
 "empty_email_field" = "Fill email field";
 "empty_password_field" = "Fill password field";
+"passwords_dont_match" = "Passwords don't match";
 "fillProfileLabel_text" = "Complete your profile";
 
 // Titles
