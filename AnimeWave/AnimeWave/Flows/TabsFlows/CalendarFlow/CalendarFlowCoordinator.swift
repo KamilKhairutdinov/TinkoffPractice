@@ -16,6 +16,11 @@ class CalendarFlowCoordinator: BaseCoordinator {
     }
 
     override func start() {
+        showCalendarViewController()
+    }
 
+    private func showCalendarViewController() {
+        let calendarViewController = CalendarViewController()
+        router.setRootController(calendarViewController)
     }
 }

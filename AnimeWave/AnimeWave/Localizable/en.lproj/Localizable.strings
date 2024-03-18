@@ -30,6 +30,9 @@
 // Titles
 "registration_title" = "Registration";
 "profile_title" = "Profile";
+"anime_title" = "Anime";
+"search_title" = "Search";
+"calendar_title" = "Calendar";
 "login_title" = "Login";
 
 // Errors

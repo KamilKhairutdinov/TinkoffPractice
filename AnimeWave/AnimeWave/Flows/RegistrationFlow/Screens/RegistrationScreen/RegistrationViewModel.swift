@@ -44,7 +44,7 @@ class RegistrationViewModel {
             authService.registerUser(email: email, password: password) { [weak self] result in
                 guard let self else { return }
                 switch result {
-                case .success(_):
+                case .success:
                     self.isSuccessfulRegistered.value = true
                 case .failure(let error):
                     print(error)

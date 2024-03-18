@@ -45,11 +45,12 @@ class StartFlowCoordinator: BaseCoordinator {
 
     private func runLoginFlow() {
         let loginFlowCoordinator = coordinatorFactory.createLoginCoordinator(router: router)
-        loginFlowCoordinator.start()
         addDependency(loginFlowCoordinator)
         loginFlowCoordinator.flowComplitionHandler = { [weak self] in
             self?.removeDependency(loginFlowCoordinator)
+            self?.flowComplitionHandler?()
         }
+        loginFlowCoordinator.start()
     }
 
 }

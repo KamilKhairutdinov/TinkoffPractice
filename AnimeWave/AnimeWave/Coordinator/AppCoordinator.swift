@@ -29,12 +29,20 @@ class AppCoordinator: BaseCoordinator {
         startFlowCoordinator.start()
         addDependency(startFlowCoordinator)
         startFlowCoordinator.flowComplitionHandler = { [weak self] in
+            self?.runMainFlow()
             self?.removeDependency(startFlowCoordinator)
         }
     }
 
     private func runMainFlow() {
-
+        let mainTabBarViewController = MainTabBarViewController()
+        let mainTabBarFlowCoordinator = coordinatorFactory.createMainTabBarCoordinator(controller: mainTabBarViewController)
+        addDependency(mainTabBarFlowCoordinator)
+        mainTabBarFlowCoordinator.flowComplitionHandler = { [weak self] in
+            self?.removeDependency(mainTabBarFlowCoordinator)
+        }
+        router.setRootController(mainTabBarViewController, isNavigationBarHidden: true)
+        mainTabBarFlowCoordinator.start()
     }
 
 }

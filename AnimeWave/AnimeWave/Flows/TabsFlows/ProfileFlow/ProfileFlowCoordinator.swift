@@ -16,6 +16,11 @@ class ProfileFlowCoordinator: BaseCoordinator {
     }
 
     override func start() {
+        showProfileViewController()
+    }
 
+    private func showProfileViewController() {
+        let profileViewController = ProfileViewController()
+        router.setRootController(profileViewController)
     }
 }

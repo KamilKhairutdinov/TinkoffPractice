@@ -16,6 +16,11 @@ class AnimeListCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        
+        showAnimeListController()
+    }
+
+    private func showAnimeListController() {
+        let animeListController = AnimeListViewController()
+        router.setRootController(animeListController)
     }
 }

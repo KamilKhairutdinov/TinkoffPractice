@@ -16,6 +16,11 @@ class SearchFlowCoordinator: BaseCoordinator {
     }
 
     override func start() {
+        showSearchViewController()
+    }
 
+    private func showSearchViewController() {
+        let searchViewController = SearchViewController()
+        router.setRootController(searchViewController)
     }
 }

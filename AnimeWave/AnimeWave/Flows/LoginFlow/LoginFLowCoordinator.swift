@@ -21,6 +21,9 @@ class LoginFLowCoordinator: BaseCoordinator {
 
     private func showLoginViewController() {
         let loginViewController = LoginViewController(viewModel: LoginViewModel())
+        loginViewController.complitionHandler = { [weak self] in
+            self?.flowComplitionHandler?()
+        }
         router.push(loginViewController, animated: true)
     }
 }

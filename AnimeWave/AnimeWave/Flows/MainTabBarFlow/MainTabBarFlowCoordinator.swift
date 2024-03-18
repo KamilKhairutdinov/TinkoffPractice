@@ -5,17 +5,69 @@
 //  Created by Камил Хайрутдинов on 18.03.2024.
 //
 
-import Foundation
+import UIKit
 
 class MainTabBarFlowCoordinator: BaseCoordinator {
 
-    var tabBatFlow: TabBarFlowDelegate
+    private var tabBatFlowDelegate: TabBarFlowDelegate
 
     init(controller: TabBarFlowDelegate) {
-        self.tabBatFlow = controller
+        self.tabBatFlowDelegate = controller
     }
 
     override func start() {
-        
+        tabBatFlowDelegate.onViewDidLoad = runAnimeListFlow()
+        tabBatFlowDelegate.onAnimeListFlowSelect = runAnimeListFlow()
+        tabBatFlowDelegate.onSearchFlowSelect = runSearchFlow()
+        tabBatFlowDelegate.onCalendarListFlowSelect = runCalendarFlow()
+        tabBatFlowDelegate.onProfileListFlowSelect = runProfileFlow()
+    }
+
+    private func runAnimeListFlow() -> ((UINavigationController) -> Void) {
+        return { [unowned self] navigationController in
+            if navigationController.viewControllers.isEmpty {
+                let animeListCoordinator = coordinatorFactory.createAnimeListCoordinator(
+                    router: Router(rootController: navigationController)
+                )
+                self.addDependency(animeListCoordinator)
+                animeListCoordinator.start()
+            }
+        }
+    }
+
+    private func runSearchFlow() -> ((UINavigationController) -> Void) {
+        return { [unowned self] navigationController in
+            if navigationController.viewControllers.isEmpty {
+                let searchFlowCoordinator = coordinatorFactory.createSearchCoordinator(
+                    router: Router(rootController: navigationController)
+                )
+                self.addDependency(searchFlowCoordinator)
+                searchFlowCoordinator.start()
+            }
+        }
+    }
+
+    private func runCalendarFlow() -> ((UINavigationController) -> Void) {
+        return { [unowned self] navigationController in
+            if navigationController.viewControllers.isEmpty {
+                let calendarFlowCoordiantor = coordinatorFactory.createCalendarCoordinator(
+                    router: Router(rootController: navigationController)
+                )
+                self.addDependency(calendarFlowCoordiantor)
+                calendarFlowCoordiantor.start()
+            }
+        }
+    }
+
+    private func runProfileFlow() -> ((UINavigationController) -> Void) {
+        return { [unowned self] navigationController in
+            if navigationController.viewControllers.isEmpty {
+                let profileFlowCoordinator = coordinatorFactory.createProfileCoordinator(
+                    router: Router(rootController: navigationController)
+                )
+                self.addDependency(profileFlowCoordinator)
+                profileFlowCoordinator.start()
+            }
+        }
     }
 }

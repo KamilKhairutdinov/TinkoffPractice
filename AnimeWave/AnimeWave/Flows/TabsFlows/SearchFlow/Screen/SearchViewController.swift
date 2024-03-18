@@ -11,6 +11,7 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "search_title".localized
     }
 
 }

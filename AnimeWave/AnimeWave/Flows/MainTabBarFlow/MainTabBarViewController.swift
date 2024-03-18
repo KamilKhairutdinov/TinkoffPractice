@@ -10,11 +10,11 @@ import UIKit
 class MainTabBarViewController: UITabBarController, TabBarFlowDelegate {
 
     // MARK: - Variales
-    var onViewDidLoad: ((UINavigationController) -> ())?
-    var onAnimeListFlowSelect: ((UINavigationController) -> ())?
-    var onSearchFlowSelect: ((UINavigationController) -> ())?
-    var onCalendarListFlowSelect: ((UINavigationController) -> ())?
-    var onProfileListFlowSelect: ((UINavigationController) -> ())?
+    var onViewDidLoad: ((UINavigationController) -> Void)?
+    var onAnimeListFlowSelect: ((UINavigationController) -> Void)?
+    var onSearchFlowSelect: ((UINavigationController) -> Void)?
+    var onCalendarListFlowSelect: ((UINavigationController) -> Void)?
+    var onProfileListFlowSelect: ((UINavigationController) -> Void)?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -27,6 +27,8 @@ extension MainTabBarViewController {
 
     private func configureView() {
         setupTabs()
+        tabBar.unselectedItemTintColor = UIColor.tabs
+        tabBar.tintColor = UIColor.tabsSelected
         delegate = self
         view.backgroundColor = .background
     }

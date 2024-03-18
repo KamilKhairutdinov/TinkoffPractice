@@ -30,6 +30,9 @@
 // Titles
 "registration_title" = "Рeгистрация";
 "profile_title" = "Профиль";
+"anime_title" = "Аниме";
+"search_title" = "Поиск";
+"calendar_title" = "Календарь";
 "login_title" = "Вход";
 
 //Errors
