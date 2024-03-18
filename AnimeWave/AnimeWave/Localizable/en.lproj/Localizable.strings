@@ -24,3 +24,6 @@
 // Titles
 "registration_title" = "Registration";
 
+// Errors
+"The email address is already in use by another account." = "The email address is already in use by another account.";
+

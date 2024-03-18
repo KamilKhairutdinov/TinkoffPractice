@@ -18,7 +18,7 @@ class ButtonFactory {
         button.setTitleColor(UIColor.mainText, for: .normal)
         button.setTitleColor(UIColor.buttonTappedTitle, for: .highlighted)
         button.addAction(action, for: .touchUpInside)
-        
+
         return button
     }
 }

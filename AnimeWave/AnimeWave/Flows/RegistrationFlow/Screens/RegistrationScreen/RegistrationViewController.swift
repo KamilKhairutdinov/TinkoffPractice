@@ -94,6 +94,7 @@ extension RegistrationViewController {
         validationErrorsLabel.snp.makeConstraints { make in
             make.left.equalTo(stackView.snp_leftMargin)
             make.top.equalTo(stackView.snp_bottomMargin).offset(10)
+            make.width.equalTo(emailTextField)
         }
 
         nextButton.snp.makeConstraints { make in
@@ -104,7 +105,7 @@ extension RegistrationViewController {
     }
 
     private func setupBindings() {
-        viewModel.isValid.bind({ (value) in
+        viewModel.isSuccessfulRegistered.bind({ (value) in
             print(value)
         })
 

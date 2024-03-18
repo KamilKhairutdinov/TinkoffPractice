@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 enum ValidationError: String {
     case incorrectEmail = "incorrect_email"
@@ -16,27 +17,36 @@ enum ValidationError: String {
 
 class RegistrationViewModel {
 
-    var currentUser: User
-    var isValid: Observable<Bool>
-    var validationErrors: [ValidationError]
+    var isSuccessfulRegistered: Observable<Bool>
+    var user: AnimeWaveUser
     var errorStringFormatted: Observable<String>
+    private var email: String
+    private var password: String
+    private var authService: AuthService
+    private var validationErrors: [ValidationError]
 
     init() {
-        self.currentUser = User()
-        self.isValid = Observable(false)
+        isSuccessfulRegistered = Observable(false)
         errorStringFormatted = Observable("")
         validationErrors = []
+        authService = AuthService.shared
+        password = ""
+        email = ""
+        user = AnimeWaveUser(login: "", email: "", password: "", avatar: "")
     }
 
     func validateUser(_ email: String?, _ password: String?) {
-        guard let email, let password else { return }
         errorStringFormatted.value = ""
+        guard let email, let password else { return }
 
-        if email.count == 0 {
+        self.email = email
+        self.password = password
+
+        if self.email.count == 0 {
             validationErrors.append(.emptyEmailField)
         }
 
-        if password.count == 0 {
+        if self.password.count == 0 {
             validationErrors.append(.emptyPasswordField)
         }
 
@@ -44,11 +54,11 @@ class RegistrationViewModel {
             formatErrors(validationErrors)
             return
         } else {
-            if !isValidEmail(email) {
+            if !isValidEmail(self.email) {
                 validationErrors.append(.incorrectEmail)
             }
 
-            if !isValidPassword(password) {
+            if !isValidPassword(self.password) {
                 validationErrors.append(.incorrectPasswordLenght)
             }
             formatErrors(validationErrors)
@@ -56,13 +66,23 @@ class RegistrationViewModel {
     }
 
     private func formatErrors(_ error: [ValidationError]) {
-        isValid.value = validationErrors.isEmpty
-        print(validationErrors)
-        error.forEach { error in
-            errorStringFormatted.value += "\(error.rawValue.localized)\n"
+        if validationErrors.isEmpty {
+            authService.registerUser(email: self.email, password: self.password) { [weak self] result in
+                switch result {
+                case .success(let user):
+                    self?.isSuccessfulRegistered.value = true
+                    print(user)
+                case .failure(let error):
+                    self?.errorStringFormatted.value = error.localizedDescription.localized
+                    self?.isSuccessfulRegistered.value = false
+                }
+            }
+        } else {
+            error.forEach { error in
+                errorStringFormatted.value += "\(error.rawValue.localized)\n"
+            }
+            validationErrors = []
         }
-
-        validationErrors = []
     }
 
     private func isValidEmail(_ email: String) -> Bool {

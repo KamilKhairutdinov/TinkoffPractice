@@ -23,3 +23,6 @@
 
 // Titles
 "registration_title" = "Рeгистрация";
+
+//Errors
+"The email address is already in use by another account." = "Адрес электронной почты уже используется другой учетной записью.";

@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct User {
-    var email: String = ""
-    var password: String = ""
+struct AnimeWaveUser {
+    var login: String
+    var email: String
+    var password: String
+    var avatar: String
 }
