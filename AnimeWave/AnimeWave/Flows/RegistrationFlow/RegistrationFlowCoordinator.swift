@@ -10,7 +10,6 @@ import UIKit
 class RegistrationFlowCoordinator: BaseCoordinator {
 
     var router: Router
-    var user: AnimeWaveUser?
 
     init(router: Router) {
         self.router = router
@@ -22,19 +21,17 @@ class RegistrationFlowCoordinator: BaseCoordinator {
 
     private func showRegistrationController() {
         let registrationViewController = RegistrationViewController(viewModel: RegistrationViewModel())
-        registrationViewController.complitionHandler = { [weak self] user in
-            self?.user = user
+        registrationViewController.complitionHandler = { [weak self] in
             self?.showConfigureProfileController()
         }
         router.push(registrationViewController, animated: true)
     }
 
     private func showConfigureProfileController() {
-        let configureUserViewModel = ConfigureUserViewModel(currentUser: user)
+        let configureUserViewModel = ConfigureUserViewModel()
         let configureUserViewController = ConfigureUserViewController(viewModel: configureUserViewModel)
         configureUserViewController.navigationItem.hidesBackButton = true
-        configureUserViewController.complitionHandler = { [weak self] user in
-            self?.user = user
+        configureUserViewController.complitionHandler = { [weak self] in
             self?.flowComplitionHandler?()
         }
 

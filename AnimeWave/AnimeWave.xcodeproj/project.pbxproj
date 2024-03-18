@@ -12,7 +12,6 @@
 		27261F8F2BA79A9000225F5D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F8E2BA79A9000225F5D /* RegistrationViewController.swift */; };
 		27261F992BA7AF6A00225F5D /* UIViewController + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F982BA7AF6A00225F5D /* UIViewController + extension.swift */; };
 		27261F9B2BA7B9DF00225F5D /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F9A2BA7B9DF00225F5D /* RegistrationViewModel.swift */; };
-		27261F9D2BA7BCA800225F5D /* AnimeWaveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F9C2BA7BCA800225F5D /* AnimeWaveUser.swift */; };
 		27261FA02BA81EEB00225F5D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F9F2BA81EEB00225F5D /* Observable.swift */; };
 		27261FA82BA8A4C800225F5D /* ConfigureUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FA72BA8A4C800225F5D /* ConfigureUserViewController.swift */; };
 		27261FAA2BA8A4E500225F5D /* ConfigureUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FA92BA8A4E500225F5D /* ConfigureUserViewModel.swift */; };
@@ -51,7 +50,6 @@
 		27261F8E2BA79A9000225F5D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		27261F982BA7AF6A00225F5D /* UIViewController + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + extension.swift"; sourceTree = "<group>"; };
 		27261F9A2BA7B9DF00225F5D /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
-		27261F9C2BA7BCA800225F5D /* AnimeWaveUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeWaveUser.swift; sourceTree = "<group>"; };
 		27261F9F2BA81EEB00225F5D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		27261FA72BA8A4C800225F5D /* ConfigureUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureUserViewController.swift; sourceTree = "<group>"; };
 		27261FA92BA8A4E500225F5D /* ConfigureUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureUserViewModel.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 			children = (
 				27261F8E2BA79A9000225F5D /* RegistrationViewController.swift */,
 				27261F9A2BA7B9DF00225F5D /* RegistrationViewModel.swift */,
-				27261F9C2BA7BCA800225F5D /* AnimeWaveUser.swift */,
 			);
 			path = RegistrationScreen;
 			sourceTree = "<group>";
@@ -498,7 +495,6 @@
 				27261F8C2BA7967F00225F5D /* LoginFLowCoordinator.swift in Sources */,
 				276BEC542BA7206D00313135 /* Router.swift in Sources */,
 				278836892B9E4FBA000A585C /* AppDelegate.swift in Sources */,
-				27261F9D2BA7BCA800225F5D /* AnimeWaveUser.swift in Sources */,
 				27261FAF2BA8CE6100225F5D /* ValidatorService.swift in Sources */,
 				27261F9B2BA7B9DF00225F5D /* RegistrationViewModel.swift in Sources */,
 				276791942BA18BEC00628CCE /* FlowControllerWithValue.swift in Sources */,

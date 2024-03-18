@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class RegistrationViewController: UIViewController, FlowControllerWithValue {
+class RegistrationViewController: UIViewController, FlowController {
 
     // MARK: - UI elements
     private lazy var emailTextField: UITextField = {
@@ -66,7 +66,7 @@ class RegistrationViewController: UIViewController, FlowControllerWithValue {
     private let textFieldFactory = TextFieldFactory()
     private let buttonFactory = ButtonFactory()
     private let viewModel: RegistrationViewModel
-    var complitionHandler: ((AnimeWaveUser?) -> Void)?
+    var complitionHandler: (() -> Void)?
 
     // MARK: - Init
     init(viewModel: RegistrationViewModel) {
@@ -126,7 +126,7 @@ extension RegistrationViewController {
         viewModel.isSuccessfulRegistered.bind({ [weak self] (isSuccessfulRegistered) in
             print(isSuccessfulRegistered)
             if isSuccessfulRegistered {
-                self?.complitionHandler?(self?.viewModel.user)
+                self?.complitionHandler?()
             }
         })
 

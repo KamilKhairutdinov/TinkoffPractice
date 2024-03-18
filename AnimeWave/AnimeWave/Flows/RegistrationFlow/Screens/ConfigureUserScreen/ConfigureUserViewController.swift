@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ConfigureUserViewController: UIViewController, FlowControllerWithValue {
+class ConfigureUserViewController: UIViewController {
 
     // MARK: - UI elements
     private lazy var fillProfileLabel: UILabel = {
@@ -49,7 +49,7 @@ class ConfigureUserViewController: UIViewController, FlowControllerWithValue {
 
     private lazy var registerButton: UIButton = {
         let action = UIAction { [weak self] _ in
-            self?.complitionHandler?(self?.viewModel.currentUser)
+            self?.complitionHandler?()
         }
         let button = buttonFactory.createButton(title: "register_button".localized, action: action)
 
@@ -60,7 +60,7 @@ class ConfigureUserViewController: UIViewController, FlowControllerWithValue {
     private var viewModel: ConfigureUserViewModel
     private var buttonFactory = ButtonFactory()
     private var textFieldFactory = TextFieldFactory()
-    var complitionHandler: ((AnimeWaveUser?) -> Void)?
+    var complitionHandler: (() -> Void)?
     private lazy var avatarImagePickerController: UIImagePickerController = {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self

@@ -6,15 +6,15 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 class ConfigureUserViewModel {
 
     // MARK: - Variables
-    var currentUser: AnimeWaveUser?
+    var authService: AuthService
 
     // MARK: - Init
-    init(currentUser: AnimeWaveUser?) {
-        self.currentUser = currentUser
-        // print(currentUser)
+    init() {
+        authService = AuthService.shared
     }
 }

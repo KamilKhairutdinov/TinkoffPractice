@@ -12,7 +12,6 @@ class RegistrationViewModel {
 
     // MARK: - Variables
     var isSuccessfulRegistered: Observable<Bool>
-    var user: AnimeWaveUser
     var errorStringFormatted: Observable<String>
     private var email: String
     private var password: String
@@ -27,7 +26,6 @@ class RegistrationViewModel {
         authService = AuthService.shared
         password = ""
         email = ""
-        user = AnimeWaveUser(uid: "", login: "", email: "", avatar: "")
     }
 
     // MARK: - Functions
@@ -46,11 +44,8 @@ class RegistrationViewModel {
             authService.registerUser(email: email, password: password) { [weak self] result in
                 guard let self else { return }
                 switch result {
-                case .success(let user):
+                case .success(_):
                     self.isSuccessfulRegistered.value = true
-                    self.user.uid = user.uid
-                    self.user.email = user.email ?? ""
-
                 case .failure(let error):
                     print(error)
                     self.errorStringFormatted.value = error.localizedDescription.localized

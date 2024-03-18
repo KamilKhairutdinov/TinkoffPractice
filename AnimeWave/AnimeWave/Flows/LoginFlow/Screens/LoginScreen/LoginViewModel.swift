@@ -30,8 +30,7 @@ class LoginViewModel {
         } else {
             authService.login(email: email, password: password) { [weak self] result in
                 switch result {
-                case .success(let user):
-                    print(self?.authService.currentUser)
+                case .success(_):
                     self?.isSuccessfullyLoggedIn.value = true
                 case .failure(let error):
                     print(error)
