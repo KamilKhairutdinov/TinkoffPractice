@@ -10,6 +10,7 @@ target 'AnimeWave' do
 	pod 'SnapKit'
 	pod 'Moya'
 
+  pod 'FirebaseAuth'
   pod 'FirebaseStorage'
   pod 'FirebaseFirestore'
 end

@@ -52,10 +52,6 @@ class StartViewController: UIViewController, FlowController {
 }
 
 extension StartViewController {
-    private func addSubviews(_ subviews: UIView...) {
-        subviews.forEach { view.addSubview($0) }
-    }
-
     private func setuoView() {
         view.backgroundColor = UIColor.background
         addSubviews(logoImageView, loginButton, registerButton)
@@ -65,18 +61,20 @@ extension StartViewController {
     private func configureUI() {
         logoImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(view.frame.height / 3 )
+            make.top.equalToSuperview().offset(view.frame.height / 3)
         }
 
         loginButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(registerButton)
             make.bottom.equalTo(logoImageView).offset(70)
+            make.height.equalTo(35)
         }
 
         registerButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(loginButton.snp_bottomMargin).offset(25)
+            make.height.equalTo(35)
         }
     }
 }

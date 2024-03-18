@@ -8,7 +8,7 @@
 import Foundation
 
 class CoordinatorFactory: CoordinatorFactoryProtocol {
-    
+
     func createAppCoordinator(router: Router) -> AppCoordinator {
         return AppCoordinator(router: router)
     }

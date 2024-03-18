@@ -20,7 +20,7 @@ class RegistrationFlowCoordinator: BaseCoordinator {
     }
 
     private func showRegistrationController() {
-        let registrationViewController = RegistrationViewController()
+        let registrationViewController = RegistrationViewController(viewModel: RegistrationViewModel())
         router.push(registrationViewController, animated: true)
     }
 }

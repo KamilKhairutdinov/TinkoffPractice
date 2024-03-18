@@ -9,5 +9,18 @@
 // Buttons
 "login_button" = "Log in";
 "register_button" = "Register";
+"next_button" = "Go next";
 
-//TextFields
+// TextFields
+"email_placeholder" = " Email";
+"password_placeholder" = " Password";
+
+// Labels
+"incorrect_email" = "Invalid mail format";
+"incorrect_password_lenght" = "Password length must be longer than 6 characters";
+"empty_email_field" = "Fill email field";
+"empty_password_field" = "Fill password field";
+
+// Titles
+"registration_title" = "Registration";
+

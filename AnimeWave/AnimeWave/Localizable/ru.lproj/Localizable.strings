@@ -9,5 +9,17 @@
 // Buttons
 "login_button" = "Войти";
 "register_button" = "Зарегестрироваться";
+"next_button" = "Продолжить";
 
 //TextFields
+"email_placeholder" = " Почта";
+"password_placeholder" = " Пароль";
+
+// Labels
+"incorrect_email" = "Неправильный формат почты";
+"incorrect_password_lenght" = "Длина пароля должна быть больше 6 символов";
+"empty_email_field" = "Заполните поле почты";
+"empty_password_field" = "Заполните поле пароля";
+
+// Titles
+"registration_title" = "Рeгистрация";
