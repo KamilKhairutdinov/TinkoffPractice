@@ -124,7 +124,6 @@ extension RegistrationViewController {
 
     private func setupBindings() {
         viewModel.isSuccessfulRegistered.bind({ [weak self] (isSuccessfulRegistered) in
-            print(isSuccessfulRegistered)
             if isSuccessfulRegistered {
                 self?.complitionHandler?()
             }

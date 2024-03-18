@@ -37,8 +37,7 @@ class StartFlowCoordinator: BaseCoordinator {
         registrationFlowCoordinator.start()
         addDependency(registrationFlowCoordinator)
         registrationFlowCoordinator.flowComplitionHandler = { [weak self] in
-            self?.start()
-            self?.runLoginFlow()
+            self?.flowComplitionHandler?()
             self?.removeDependency(registrationFlowCoordinator)
         }
     }

@@ -16,7 +16,7 @@ class MainTabBarFlowCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        tabBatFlowDelegate.onViewDidLoad = runAnimeListFlow()
+        tabBatFlowDelegate.onViewDidAppear = runAnimeListFlow()
         tabBatFlowDelegate.onAnimeListFlowSelect = runAnimeListFlow()
         tabBatFlowDelegate.onSearchFlowSelect = runSearchFlow()
         tabBatFlowDelegate.onCalendarListFlowSelect = runCalendarFlow()

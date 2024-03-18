@@ -10,7 +10,7 @@ import UIKit
 class MainTabBarViewController: UITabBarController, TabBarFlowDelegate {
 
     // MARK: - Variales
-    var onViewDidLoad: ((UINavigationController) -> Void)?
+    var onViewDidAppear: ((UINavigationController) -> Void)?
     var onAnimeListFlowSelect: ((UINavigationController) -> Void)?
     var onSearchFlowSelect: ((UINavigationController) -> Void)?
     var onCalendarListFlowSelect: ((UINavigationController) -> Void)?
@@ -20,6 +20,12 @@ class MainTabBarViewController: UITabBarController, TabBarFlowDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        if let controller = customizableViewControllers?.first as? UINavigationController {
+            onViewDidAppear?(controller)
+        }
     }
 }
 

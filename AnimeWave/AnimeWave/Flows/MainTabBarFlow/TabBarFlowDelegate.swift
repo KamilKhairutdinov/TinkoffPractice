@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TabBarFlowDelegate: AnyObject {
-    var onViewDidLoad: ((UINavigationController) -> Void)? { get set }
+    var onViewDidAppear: ((UINavigationController) -> Void)? { get set }
     var onAnimeListFlowSelect: ((UINavigationController) -> Void)? { get set }
     var onSearchFlowSelect: ((UINavigationController) -> Void)? { get set }
     var onCalendarListFlowSelect: ((UINavigationController) -> Void)? { get set }

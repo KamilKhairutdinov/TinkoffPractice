@@ -10,17 +10,18 @@ import UIKit
 class AppCoordinator: BaseCoordinator {
 
     private var router: Router
-    var isLogined: Bool = false
+    private let authService: AuthService
 
     init(router: Router) {
         self.router = router
+        authService = AuthService.shared
     }
 
     override func start() {
-        if isLogined {
-            runMainFlow()
-        } else {
+        if authService.currentUser == nil {
             runStartFlow()
+        } else {
+            runMainFlow()
         }
     }
 

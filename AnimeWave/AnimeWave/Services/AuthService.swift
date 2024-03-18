@@ -7,11 +7,11 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
 
 class AuthService {
     // MARK: - Variables
     private let auth: Auth
-    private let userDefaults: UserDefaults
 
     var currentUser: User? {
         return auth.currentUser
@@ -21,7 +21,6 @@ class AuthService {
     static let shared = AuthService()
     private init() {
         auth = Auth.auth()
-        userDefaults = UserDefaults.standard
     }
 
     // MARK: - Functions
@@ -52,4 +51,5 @@ class AuthService {
             }
         }
     }
+
 }
