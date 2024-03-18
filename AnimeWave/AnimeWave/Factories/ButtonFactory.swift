@@ -21,4 +21,16 @@ class ButtonFactory {
 
         return button
     }
+
+    func createPlainButton(title: String, action: UIAction) -> UIButton {
+        let button = UIButton(configuration: .plain())
+
+        button.setTitle(title, for: .normal)
+        button.tintColor = .clear
+        button.setTitleColor(UIColor.mainText, for: .normal)
+        button.setTitleColor(UIColor.buttonTappedTitle, for: .highlighted)
+        button.addAction(action, for: .touchUpInside)
+
+        return button
+    }
 }

@@ -8,8 +8,8 @@
 import Foundation
 
 struct AnimeWaveUser {
-    var login: String
+    var login: String // Mock
     var email: String
     var password: String
-    var avatar: String
+    var avatar: String // Mock
 }

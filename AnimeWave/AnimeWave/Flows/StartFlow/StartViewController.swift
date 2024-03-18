@@ -12,11 +12,11 @@ enum StartViewControllerStates {
     case auth, register
 }
 
-class StartViewController: UIViewController, FlowController {
+class StartViewController: UIViewController, FlowControllerWithValue {
 
     // MARK: - UI elements
     private lazy var logoImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "AnimeWaveLogo"))
+        let imageView         = UIImageView(image: UIImage(named: "AnimeWaveLogo"))
         imageView.contentMode = .scaleAspectFill
 
         return imageView
@@ -26,8 +26,8 @@ class StartViewController: UIViewController, FlowController {
         let action = UIAction { [weak self] _ in
             self?.complitionHandler?(.auth)
         }
-
         let button = buttonFactory.createButton(title: "login_button".localized, action: action)
+
         return button
     }()
 
@@ -35,8 +35,8 @@ class StartViewController: UIViewController, FlowController {
         let action = UIAction { [weak self] _ in
             self?.complitionHandler?(.register)
         }
-
         let button = buttonFactory.createButton(title: "register_button".localized, action: action)
+
         return button
     }()
 

@@ -16,11 +16,19 @@ class RegistrationFlowCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        showRegistrationController()
+        showConfigureProfileController()
     }
 
     private func showRegistrationController() {
         let registrationViewController = RegistrationViewController(viewModel: RegistrationViewModel())
+        registrationViewController.complitionHandler = { [weak self] in
+            self?.showConfigureProfileController()
+        }
         router.push(registrationViewController, animated: true)
+    }
+
+    private func showConfigureProfileController() {
+        let configureUserViewController = ConfigureUserViewController(viewModel: ConfigureUserViewModel())
+        router.push(configureUserViewController, animated: true)
     }
 }
