@@ -13,7 +13,7 @@ class AuthService {
     private let auth: Auth
     private let userDefaults: UserDefaults
 
-    private var currentUser: User? {
+    var currentUser: User? {
         return auth.currentUser
     }
 
@@ -52,5 +52,4 @@ class AuthService {
             }
         }
     }
-
 }

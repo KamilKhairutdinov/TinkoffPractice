@@ -40,8 +40,8 @@ class LoginViewController: UIViewController {
 
     private lazy var loginButton: UIButton = {
         let action = UIAction { [weak self] _ in
-            self?.viewModel.validateData(
-                login: self?.emailTextField.text,
+            self?.viewModel.loginUser(
+                email: self?.emailTextField.text,
                 password: self?.passwordTextField.text
             )
         }

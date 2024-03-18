@@ -11,23 +11,33 @@ class LoginViewModel {
 
     // MARK: - Variables
     var validationError: Observable<String>
-    var isLogedIn: Observable<Bool>
+    var isSuccessfullyLoggedIn: Observable<Bool>
+    private let authService: AuthService
 
     // MARK: - Init
     init() {
         validationError = Observable("")
-        isLogedIn = Observable(false)
+        isSuccessfullyLoggedIn = Observable(false)
+        authService = AuthService.shared
     }
 
     // MARK: - Functions
-    func validateData(login: String?, password: String?) {
-        guard let login, let password else { return }
+    func loginUser(email: String?, password: String?) {
+        guard let email, let password else { return }
         validationError.value = ""
-        if login.count == 0 || password.count == 0 {
+        if email.count == 0 || password.count == 0 {
             validationError.value = "login_validation_error".localized
-            isLogedIn.value = false
         } else {
-
+            authService.login(email: email, password: password) { [weak self] result in
+                switch result {
+                case .success(let user):
+                    print(self?.authService.currentUser)
+                    self?.isSuccessfullyLoggedIn.value = true
+                case .failure(let error):
+                    print(error)
+                    self?.isSuccessfullyLoggedIn.value = false
+                }
+            }
         }
     }
 
