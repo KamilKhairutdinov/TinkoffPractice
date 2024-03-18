@@ -9,21 +9,124 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    // MARK: - UI elements
+    private lazy var emailTextField: UITextField = {
+        let textField           = textFieldFactory.createTextField(placeholder: "email_placeholder".localized)
+        textField.keyboardType  = .emailAddress
+        textField.returnKeyType = .next
+        textField.delegate      = self
+
+        return textField
+    }()
+
+    private lazy var passwordTextField: UITextField = {
+        let textField               = textFieldFactory.createTextField(placeholder: "password_placeholder".localized)
+        textField.isSecureTextEntry = true
+        textField.returnKeyType     = .done
+        textField.delegate          = self
+        textField.passwordRules     = .none
+
+        return textField
+    }()
+
+    private lazy var validationErrorsLabel: UILabel = {
+        let label           = UILabel()
+        label.textColor     = .red
+        label.font          = UIFont.systemFont(ofSize: 10)
+        label.numberOfLines = 0
+
+        return label
+    }()
+
+    private lazy var loginButton: UIButton = {
+        let action = UIAction { [weak self] _ in
+            self?.viewModel.validateData(
+                login: self?.emailTextField.text,
+                password: self?.passwordTextField.text
+            )
+        }
+        let button = buttonFactory.createButton(title: "login_button".localized, action: action)
+
+        return button
+    }()
+
+    // MARK: - Variables
+    private var viewModel: LoginViewModel
+    private let textFieldFactory = TextFieldFactory()
+    private let buttonFactory = ButtonFactory()
+
+    // MARK: - Init
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
+        setupBindings()
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
+extension LoginViewController {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupView() {
+        view.backgroundColor = UIColor.background
+        navigationItem.title = "login_title".localized
+        configureUI()
     }
-    */
 
+    private func configureUI() {
+        let stackView = UIStackView(arrangedSubviews: [
+            emailTextField,
+            passwordTextField
+        ])
+
+        stackView.axis = .vertical
+        stackView.spacing = 20
+        addSubviews(stackView, validationErrorsLabel, loginButton)
+
+        stackView.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
+            make.left.right.equalToSuperview().inset(50)
+        }
+
+        validationErrorsLabel.snp.makeConstraints { make in
+            make.left.equalTo(stackView.snp_leftMargin)
+            make.top.equalTo(stackView.snp_bottomMargin).offset(10)
+            make.width.equalTo(emailTextField)
+        }
+
+        loginButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.height.equalTo(emailTextField)
+            make.bottom.equalToSuperview().inset(50)
+        }
+    }
+
+    private func setupBindings() {
+        viewModel.validationError.bind { [weak self] (validationError) in
+            self?.validationErrorsLabel.text = validationError
+        }
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            view.endEditing(true)
+        default:
+            break
+        }
+        return true
+    }
 }

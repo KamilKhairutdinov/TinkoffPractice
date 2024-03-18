@@ -91,7 +91,6 @@ extension RegistrationViewController {
         view.backgroundColor = UIColor.background
         navigationItem.title = "registration_title".localized
         configureUI()
-        setupBindings()
     }
 
     private func configureUI() {

@@ -25,10 +25,12 @@
 "empty_password_field" = "Fill password field";
 "passwords_dont_match" = "Passwords don't match";
 "fillProfileLabel_text" = "Complete your profile";
+"login_validation_error" = "Fill all fields";
 
 // Titles
 "registration_title" = "Registration";
 "profile_title" = "Profile";
+"login_title" = "Login";
 
 // Errors
 "The email address is already in use by another account." = "The email address is already in use by another account.";

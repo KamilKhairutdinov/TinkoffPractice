@@ -20,6 +20,7 @@ class LoginFLowCoordinator: BaseCoordinator {
     }
 
     private func showLoginViewController() {
-        
+        let loginViewController = LoginViewController(viewModel: LoginViewModel())
+        router.push(loginViewController, animated: true)
     }
 }

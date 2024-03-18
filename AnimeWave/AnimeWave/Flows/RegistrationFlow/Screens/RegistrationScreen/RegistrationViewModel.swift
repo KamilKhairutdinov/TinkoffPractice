@@ -10,6 +10,7 @@ import FirebaseAuth
 
 class RegistrationViewModel {
 
+    // MARK: - Variables
     var isSuccessfulRegistered: Observable<Bool>
     var user: AnimeWaveUser
     var errorStringFormatted: Observable<String>
@@ -18,6 +19,7 @@ class RegistrationViewModel {
     private var authService: AuthService
     private var validatorService: ValidatorService
 
+    // MARK: - Init
     init() {
         isSuccessfulRegistered = Observable(false)
         errorStringFormatted = Observable("")
@@ -28,6 +30,7 @@ class RegistrationViewModel {
         user = AnimeWaveUser(uid: "", login: "", email: "", avatar: "")
     }
 
+    // MARK: - Functions
     func validateUser(_ email: String?, _ password: String?, _ passwordConfirmation: String?) {
         guard let email, let password, let passwordConfirmation else { return }
         self.email = email

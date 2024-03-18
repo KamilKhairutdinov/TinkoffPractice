@@ -25,10 +25,12 @@
 "empty_password_field" = "Заполните поле пароля";
 "fillProfileLabel_text" = "Заполните свой профиль";
 "passwords_dont_match" = "Пароли не совпадают";
+"login_validation_error" = "Заполните все поля";
 
 // Titles
 "registration_title" = "Рeгистрация";
 "profile_title" = "Профиль";
+"login_title" = "Вход";
 
 //Errors
 "The email address is already in use by another account." = "Адрес электронной почты уже используется другой учетной записью.";
