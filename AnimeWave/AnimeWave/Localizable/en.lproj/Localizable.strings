@@ -35,3 +35,12 @@
 // Errors
 "The email address is already in use by another account." = "The email address is already in use by another account.";
 
+// Alert titles
+"error_alert_title" = "Error";
+
+// Alert messages
+"login_error_alert" = "Incorrect login or password";
+
+// Alert action titles
+"alert_action_try_again" = "Try again";
+

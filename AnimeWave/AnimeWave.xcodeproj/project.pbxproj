@@ -21,6 +21,7 @@
 		27261FB22BA8D70600225F5D /* MainTabbarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FB12BA8D70600225F5D /* MainTabbarFlowCoordinator.swift */; };
 		27261FB62BA8E16000225F5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FB52BA8E16000225F5D /* LoginViewController.swift */; };
 		27261FB82BA8E16D00225F5D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FB72BA8E16D00225F5D /* LoginViewModel.swift */; };
+		27261FBB2BA8ED4300225F5D /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FBA2BA8ED4300225F5D /* AlertFactory.swift */; };
 		276791922BA18B3100628CCE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791912BA18B3100628CCE /* Coordinator.swift */; };
 		276791942BA18BEC00628CCE /* FlowControllerWithValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791932BA18BEC00628CCE /* FlowControllerWithValue.swift */; };
 		276791962BA18D9E00628CCE /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791952BA18D9E00628CCE /* BaseCoordinator.swift */; };
@@ -59,6 +60,7 @@
 		27261FB12BA8D70600225F5D /* MainTabbarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarFlowCoordinator.swift; sourceTree = "<group>"; };
 		27261FB52BA8E16000225F5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		27261FB72BA8E16D00225F5D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		27261FBA2BA8ED4300225F5D /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
 		276791912BA18B3100628CCE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		276791932BA18BEC00628CCE /* FlowControllerWithValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowControllerWithValue.swift; sourceTree = "<group>"; };
 		276791952BA18D9E00628CCE /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				276BEC592BA7228300313135 /* CoordinatorFactory.swift */,
 				27DAA1D32BA76C3700EAC8A4 /* ButtonFactory.swift */,
 				27DAA1D52BA76C4200EAC8A4 /* TextFieldFactory.swift */,
+				27261FBA2BA8ED4300225F5D /* AlertFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				27261F9B2BA7B9DF00225F5D /* RegistrationViewModel.swift in Sources */,
 				276791942BA18BEC00628CCE /* FlowControllerWithValue.swift in Sources */,
 				2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */,
+				27261FBB2BA8ED4300225F5D /* AlertFactory.swift in Sources */,
 				27DAA1D82BA7724300EAC8A4 /* StartViewController.swift in Sources */,
 				276BEC582BA7224C00313135 /* CoordinatorFactoryProtocol.swift in Sources */,
 				27261F992BA7AF6A00225F5D /* UIViewController + extension.swift in Sources */,

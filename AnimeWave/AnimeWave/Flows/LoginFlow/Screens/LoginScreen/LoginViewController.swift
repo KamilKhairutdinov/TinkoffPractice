@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, FlowController {
 
     // MARK: - UI elements
     private lazy var emailTextField: UITextField = {
@@ -54,6 +54,8 @@ class LoginViewController: UIViewController {
     private var viewModel: LoginViewModel
     private let textFieldFactory = TextFieldFactory()
     private let buttonFactory = ButtonFactory()
+    private let alertFactory = AlertFactory()
+    var complitionHandler: (() -> Void)?
 
     // MARK: - Init
     init(viewModel: LoginViewModel) {
@@ -114,6 +116,21 @@ extension LoginViewController {
         viewModel.validationError.bind { [weak self] (validationError) in
             self?.validationErrorsLabel.text = validationError
         }
+
+        viewModel.isSuccessfullyLoggedIn.bind { [weak self] (isSuccessfullyLoggedIn) in
+            if isSuccessfullyLoggedIn {
+                self?.complitionHandler?()
+            } else {
+                self?.showLoginErrorAlert()
+            }
+        }
+    }
+}
+
+extension LoginViewController {
+    private func showLoginErrorAlert() {
+        let alert = alertFactory.createErrorAlert(message: "login_error_alert".localized)
+        present(alert, animated: true)
     }
 }
 

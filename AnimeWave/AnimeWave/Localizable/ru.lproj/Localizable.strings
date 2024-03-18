@@ -34,3 +34,12 @@
 
 //Errors
 "The email address is already in use by another account." = "Адрес электронной почты уже используется другой учетной записью.";
+
+// Alert titles
+"error_alert_title" = "Ошибка";
+
+// Alert messages
+"login_error_alert" = "Неправильный логин или пароль";
+
+// Alert action titles
+"alert_action_try_again" = "Попробовать ещё раз";
