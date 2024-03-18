@@ -23,6 +23,14 @@
 		27261FBB2BA8ED4300225F5D /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FBA2BA8ED4300225F5D /* AlertFactory.swift */; };
 		27261FC32BA8F46C00225F5D /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FC22BA8F46C00225F5D /* MainTabBarViewController.swift */; };
 		27261FC52BA8F49000225F5D /* TabBarFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FC42BA8F49000225F5D /* TabBarFlowDelegate.swift */; };
+		27261FC72BA8F78300225F5D /* AnimeListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FC62BA8F78300225F5D /* AnimeListCoordinator.swift */; };
+		27261FC92BA8F79000225F5D /* SearchFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FC82BA8F79000225F5D /* SearchFlowCoordinator.swift */; };
+		27261FCB2BA8F79E00225F5D /* CalendarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FCA2BA8F79E00225F5D /* CalendarFlowCoordinator.swift */; };
+		27261FCD2BA8F7AD00225F5D /* ProfileFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FCC2BA8F7AD00225F5D /* ProfileFlowCoordinator.swift */; };
+		27261FD32BA8F82900225F5D /* AnimeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FD22BA8F82900225F5D /* AnimeListViewController.swift */; };
+		27261FD62BA8F85300225F5D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FD52BA8F85300225F5D /* SearchViewController.swift */; };
+		27261FD82BA8F87D00225F5D /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FD72BA8F87D00225F5D /* CalendarViewController.swift */; };
+		27261FDA2BA8F89100225F5D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FD92BA8F89100225F5D /* ProfileViewController.swift */; };
 		276791922BA18B3100628CCE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791912BA18B3100628CCE /* Coordinator.swift */; };
 		276791942BA18BEC00628CCE /* FlowControllerWithValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791932BA18BEC00628CCE /* FlowControllerWithValue.swift */; };
 		276791962BA18D9E00628CCE /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276791952BA18D9E00628CCE /* BaseCoordinator.swift */; };
@@ -63,6 +71,14 @@
 		27261FBA2BA8ED4300225F5D /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
 		27261FC22BA8F46C00225F5D /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		27261FC42BA8F49000225F5D /* TabBarFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlowDelegate.swift; sourceTree = "<group>"; };
+		27261FC62BA8F78300225F5D /* AnimeListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeListCoordinator.swift; sourceTree = "<group>"; };
+		27261FC82BA8F79000225F5D /* SearchFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlowCoordinator.swift; sourceTree = "<group>"; };
+		27261FCA2BA8F79E00225F5D /* CalendarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarFlowCoordinator.swift; sourceTree = "<group>"; };
+		27261FCC2BA8F7AD00225F5D /* ProfileFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFlowCoordinator.swift; sourceTree = "<group>"; };
+		27261FD22BA8F82900225F5D /* AnimeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeListViewController.swift; sourceTree = "<group>"; };
+		27261FD52BA8F85300225F5D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		27261FD72BA8F87D00225F5D /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		27261FD92BA8F89100225F5D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		276791912BA18B3100628CCE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		276791932BA18BEC00628CCE /* FlowControllerWithValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowControllerWithValue.swift; sourceTree = "<group>"; };
 		276791952BA18D9E00628CCE /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -198,6 +214,8 @@
 		27261FBE2BA8F41B00225F5D /* ProfileFlow */ = {
 			isa = PBXGroup;
 			children = (
+				27261FCC2BA8F7AD00225F5D /* ProfileFlowCoordinator.swift */,
+				27261FD12BA8F81300225F5D /* Screen */,
 			);
 			path = ProfileFlow;
 			sourceTree = "<group>";
@@ -205,6 +223,8 @@
 		27261FBF2BA8F42100225F5D /* CalendarFlow */ = {
 			isa = PBXGroup;
 			children = (
+				27261FCA2BA8F79E00225F5D /* CalendarFlowCoordinator.swift */,
+				27261FD02BA8F80B00225F5D /* Screen */,
 			);
 			path = CalendarFlow;
 			sourceTree = "<group>";
@@ -212,6 +232,8 @@
 		27261FC02BA8F42700225F5D /* SearchFlow */ = {
 			isa = PBXGroup;
 			children = (
+				27261FC82BA8F79000225F5D /* SearchFlowCoordinator.swift */,
+				27261FCF2BA8F80300225F5D /* Screen */,
 			);
 			path = SearchFlow;
 			sourceTree = "<group>";
@@ -219,8 +241,42 @@
 		27261FC12BA8F43300225F5D /* AnimeListFlow */ = {
 			isa = PBXGroup;
 			children = (
+				27261FC62BA8F78300225F5D /* AnimeListCoordinator.swift */,
+				27261FCE2BA8F7FB00225F5D /* Screen */,
 			);
 			path = AnimeListFlow;
+			sourceTree = "<group>";
+		};
+		27261FCE2BA8F7FB00225F5D /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				27261FD22BA8F82900225F5D /* AnimeListViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		27261FCF2BA8F80300225F5D /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				27261FD52BA8F85300225F5D /* SearchViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		27261FD02BA8F80B00225F5D /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				27261FD72BA8F87D00225F5D /* CalendarViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		27261FD12BA8F81300225F5D /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				27261FD92BA8F89100225F5D /* ProfileViewController.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		2767918F2BA189DB00628CCE /* Coordinator */ = {
@@ -532,6 +588,11 @@
 				27261F8A2BA7964600225F5D /* RegistrationFlowCoordinator.swift in Sources */,
 				276791922BA18B3100628CCE /* Coordinator.swift in Sources */,
 				27261F8F2BA79A9000225F5D /* RegistrationViewController.swift in Sources */,
+				27261FC72BA8F78300225F5D /* AnimeListCoordinator.swift in Sources */,
+				27261FD62BA8F85300225F5D /* SearchViewController.swift in Sources */,
+				27261FCD2BA8F7AD00225F5D /* ProfileFlowCoordinator.swift in Sources */,
+				27261FC92BA8F79000225F5D /* SearchFlowCoordinator.swift in Sources */,
+				27261FCB2BA8F79E00225F5D /* CalendarFlowCoordinator.swift in Sources */,
 				27261FB22BA8D70600225F5D /* MainTabBarFlowCoordinator.swift in Sources */,
 				27DAA1D42BA76C3700EAC8A4 /* ButtonFactory.swift in Sources */,
 				27261FB62BA8E16000225F5D /* LoginViewController.swift in Sources */,
@@ -545,6 +606,8 @@
 				27261F9B2BA7B9DF00225F5D /* RegistrationViewModel.swift in Sources */,
 				276791942BA18BEC00628CCE /* FlowControllerWithValue.swift in Sources */,
 				27261FC52BA8F49000225F5D /* TabBarFlowDelegate.swift in Sources */,
+				27261FD82BA8F87D00225F5D /* CalendarViewController.swift in Sources */,
+				27261FDA2BA8F89100225F5D /* ProfileViewController.swift in Sources */,
 				2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */,
 				27261FBB2BA8ED4300225F5D /* AlertFactory.swift in Sources */,
 				27DAA1D82BA7724300EAC8A4 /* StartViewController.swift in Sources */,
@@ -561,6 +624,7 @@
 				27261FB82BA8E16D00225F5D /* LoginViewModel.swift in Sources */,
 				27261FAA2BA8A4E500225F5D /* ConfigureUserViewModel.swift in Sources */,
 				27261FC32BA8F46C00225F5D /* MainTabBarViewController.swift in Sources */,
+				27261FD32BA8F82900225F5D /* AnimeListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
