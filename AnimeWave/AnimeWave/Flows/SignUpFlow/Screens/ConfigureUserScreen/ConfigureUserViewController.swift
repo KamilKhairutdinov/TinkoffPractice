@@ -21,7 +21,7 @@ class ConfigureUserViewController: UIViewController {
     }()
 
     private lazy var userAvatarImageView: UIImageView = {
-        let imageView                = UIImageView(image: UIImage(named: "defaultAvatar"))
+        let imageView                = UIImageView(image: UIImage.defaultAvatar)
         imageView.contentMode        = .scaleAspectFill
         imageView.layer.cornerRadius = view.frame.width / 4
 

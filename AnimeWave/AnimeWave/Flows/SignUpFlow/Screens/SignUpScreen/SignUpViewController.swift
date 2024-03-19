@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class RegistrationViewController: UIViewController, FlowController {
+class SignUpViewController: UIViewController, FlowController {
 
     // MARK: - UI elements
     private lazy var emailTextField: UITextField = {
@@ -65,11 +65,11 @@ class RegistrationViewController: UIViewController, FlowController {
     // MARK: - Variables
     private let textFieldFactory = TextFieldFactory()
     private let buttonFactory = ButtonFactory()
-    private let viewModel: RegistrationViewModel
+    private let viewModel: SignUpViewModel
     var complitionHandler: (() -> Void)?
 
     // MARK: - Init
-    init(viewModel: RegistrationViewModel) {
+    init(viewModel: SignUpViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -86,7 +86,7 @@ class RegistrationViewController: UIViewController, FlowController {
     }
 }
 
-extension RegistrationViewController {
+extension SignUpViewController {
     private func setupView() {
         view.backgroundColor = UIColor.background
         navigationItem.title = "registration_title".localized
@@ -135,7 +135,7 @@ extension RegistrationViewController {
     }
 }
 
-extension RegistrationViewController: UITextFieldDelegate {
+extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case emailTextField:

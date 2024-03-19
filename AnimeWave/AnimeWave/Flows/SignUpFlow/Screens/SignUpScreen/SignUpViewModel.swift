@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-class RegistrationViewModel {
+class SignUpViewModel {
 
     // MARK: - Variables
     var isSuccessfulRegistered: Observable<Bool>
@@ -41,7 +41,7 @@ class RegistrationViewModel {
 
     func formatErrors(_ errors: [ValidationError]) {
         if errors.isEmpty {
-            authService.registerUser(email: email, password: password) { [weak self] result in
+            authService.signUpUser(email: email, password: password) { [weak self] result in
                 guard let self else { return }
                 switch result {
                 case .success:

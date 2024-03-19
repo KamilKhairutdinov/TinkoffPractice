@@ -12,7 +12,7 @@ enum StartViewControllerStates {
     case auth, register
 }
 
-class StartViewController: UIViewController, FlowControllerWithValue {
+class AuthViewController: UIViewController, FlowControllerWithValue {
 
     // MARK: - UI elements
     private lazy var logoImageView: UIImageView = {
@@ -51,7 +51,7 @@ class StartViewController: UIViewController, FlowControllerWithValue {
     }
 }
 
-extension StartViewController {
+extension AuthViewController {
     private func setuoView() {
         view.backgroundColor = UIColor.background
         addSubviews(logoImageView, loginButton, registerButton)

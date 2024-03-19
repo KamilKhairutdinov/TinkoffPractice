@@ -24,7 +24,7 @@ class AuthService {
     }
 
     // MARK: - Functions
-    func registerUser(
+    func signUpUser(
         email: String,
         password: String,
         complition: @escaping (Result<User, Error>) -> Void
@@ -38,7 +38,7 @@ class AuthService {
         }
     }
 
-    func login(
+    func signIn(
         email: String,
         password: String,
         complition: @escaping (Result<User, Error>) -> Void

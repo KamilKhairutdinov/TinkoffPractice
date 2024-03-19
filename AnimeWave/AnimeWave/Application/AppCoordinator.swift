@@ -11,6 +11,7 @@ class AppCoordinator: BaseCoordinator {
 
     private var router: Router
     private let authService: AuthService
+    private var isLoggedIn: Bool = false // Mock for test
 
     init(router: Router) {
         self.router = router
@@ -18,20 +19,21 @@ class AppCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        if authService.currentUser == nil {
-            runStartFlow()
+        if !isLoggedIn {
+            runAuthFlow()
         } else {
             runMainFlow()
         }
     }
 
-    private func runStartFlow() {
-        let startFlowCoordinator = coordinatorFactory.createStartCoordinator(router: router)
-        startFlowCoordinator.start()
-        addDependency(startFlowCoordinator)
-        startFlowCoordinator.flowComplitionHandler = { [weak self] in
+    private func runAuthFlow() {
+        let authFlowCoordinator = coordinatorFactory.createAuthCoordinator(router: router)
+        authFlowCoordinator.start()
+        addDependency(authFlowCoordinator)
+        authFlowCoordinator.flowComplitionHandler = { [weak self] in
+            self?.isLoggedIn = true
             self?.runMainFlow()
-            self?.removeDependency(startFlowCoordinator)
+            self?.removeDependency(authFlowCoordinator)
         }
     }
 

@@ -12,16 +12,16 @@ class CoordinatorFactory: CoordinatorFactoryProtocol {
         return AppCoordinator(router: router)
     }
 
-    func createStartCoordinator(router: Router) -> StartFlowCoordinator {
-        return StartFlowCoordinator(router: router)
+    func createAuthCoordinator(router: Router) -> AuthFlowCoordinator {
+        return AuthFlowCoordinator(router: router)
     }
 
-    func createRegistrationCoordinator(router: Router) -> RegistrationFlowCoordinator {
-        return RegistrationFlowCoordinator(router: router)
+    func createSignUpCoordinator(router: Router) -> SignUpFlowCoordinator {
+        return SignUpFlowCoordinator(router: router)
     }
 
-    func createLoginCoordinator(router: Router) -> LoginFLowCoordinator {
-        return LoginFLowCoordinator(router: router)
+    func createSignInCoordinator(router: Router) -> SignInFLowCoordinator {
+        return SignInFLowCoordinator(router: router)
     }
 
     func createMainTabBarCoordinator(controller: TabBarFlowDelegate) -> MainTabBarFlowCoordinator {

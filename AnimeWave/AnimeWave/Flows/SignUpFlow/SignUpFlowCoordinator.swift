@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegistrationFlowCoordinator: BaseCoordinator {
+class SignUpFlowCoordinator: BaseCoordinator {
 
     var router: Router
 
@@ -16,15 +16,15 @@ class RegistrationFlowCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        showRegistrationController()
+        showSignUpController()
     }
 
-    private func showRegistrationController() {
-        let registrationViewController = RegistrationViewController(viewModel: RegistrationViewModel())
-        registrationViewController.complitionHandler = { [weak self] in
+    private func showSignUpController() {
+        let signUpViewController = SignUpViewController(viewModel: SignUpViewModel())
+        signUpViewController.complitionHandler = { [weak self] in
             self?.showConfigureProfileController()
         }
-        router.push(registrationViewController, animated: true)
+        router.push(signUpViewController, animated: true)
     }
 
     private func showConfigureProfileController() {

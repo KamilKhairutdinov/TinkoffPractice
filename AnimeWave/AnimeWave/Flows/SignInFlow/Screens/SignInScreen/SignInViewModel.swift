@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LoginViewModel {
+class SignInViewModel {
 
     // MARK: - Variables
     var validationError: Observable<String>
@@ -22,13 +22,13 @@ class LoginViewModel {
     }
 
     // MARK: - Functions
-    func loginUser(email: String?, password: String?) {
+    func signInUser(email: String?, password: String?) {
         guard let email, let password else { return }
         validationError.value = ""
         if email.count == 0 || password.count == 0 {
             validationError.value = "login_validation_error".localized
         } else {
-            authService.login(email: email, password: password) { [weak self] result in
+            authService.signIn(email: email, password: password) { [weak self] result in
                 switch result {
                 case .success:
                     self?.isSuccessfullyLoggedIn.value = true

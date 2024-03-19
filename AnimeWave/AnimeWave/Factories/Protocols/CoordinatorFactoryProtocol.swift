@@ -9,9 +9,9 @@ import Foundation
 
 protocol CoordinatorFactoryProtocol {
     func createAppCoordinator(router: Router) -> AppCoordinator
-    func createStartCoordinator(router: Router) -> StartFlowCoordinator
-    func createRegistrationCoordinator(router: Router) -> RegistrationFlowCoordinator
-    func createLoginCoordinator(router: Router) -> LoginFLowCoordinator
+    func createAuthCoordinator(router: Router) -> AuthFlowCoordinator
+    func createSignUpCoordinator(router: Router) -> SignUpFlowCoordinator
+    func createSignInCoordinator(router: Router) -> SignInFLowCoordinator
     func createMainTabBarCoordinator(controller: TabBarFlowDelegate) -> MainTabBarFlowCoordinator
     func createAnimeListCoordinator(router: Router) -> AnimeListCoordinator
     func createSearchCoordinator(router: Router) -> SearchFlowCoordinator

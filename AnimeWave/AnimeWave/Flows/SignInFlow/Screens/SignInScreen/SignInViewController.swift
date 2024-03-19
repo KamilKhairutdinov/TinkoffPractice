@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, FlowController {
+class SignInViewController: UIViewController, FlowController {
 
     // MARK: - UI elements
     private lazy var emailTextField: UITextField = {
@@ -40,7 +40,7 @@ class LoginViewController: UIViewController, FlowController {
 
     private lazy var loginButton: UIButton = {
         let action = UIAction { [weak self] _ in
-            self?.viewModel.loginUser(
+            self?.viewModel.signInUser(
                 email: self?.emailTextField.text,
                 password: self?.passwordTextField.text
             )
@@ -51,14 +51,14 @@ class LoginViewController: UIViewController, FlowController {
     }()
 
     // MARK: - Variables
-    private var viewModel: LoginViewModel
+    private var viewModel: SignInViewModel
     private let textFieldFactory = TextFieldFactory()
     private let buttonFactory = ButtonFactory()
     private let alertFactory = AlertFactory()
     var complitionHandler: (() -> Void)?
 
     // MARK: - Init
-    init(viewModel: LoginViewModel) {
+    init(viewModel: SignInViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -76,7 +76,7 @@ class LoginViewController: UIViewController, FlowController {
     }
 }
 
-extension LoginViewController {
+extension SignInViewController {
 
     private func setupView() {
         view.backgroundColor = UIColor.background
@@ -127,14 +127,14 @@ extension LoginViewController {
     }
 }
 
-extension LoginViewController {
+extension SignInViewController {
     private func showLoginErrorAlert() {
         let alert = alertFactory.createErrorAlert(message: "login_error_alert".localized)
         present(alert, animated: true)
     }
 }
 
-extension LoginViewController: UITextFieldDelegate {
+extension SignInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case emailTextField:
