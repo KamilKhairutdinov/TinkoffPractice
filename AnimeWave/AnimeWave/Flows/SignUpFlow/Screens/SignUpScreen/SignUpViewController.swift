@@ -51,7 +51,7 @@ class SignUpViewController: UIViewController, FlowController {
 
     private lazy var nextButton: UIButton = {
         let action = UIAction { [weak self] _ in
-            self?.viewModel.validateUser(
+            self?.viewModel.signUpUser(
                 self?.emailTextField.text,
                 self?.passwordTextField.text,
                 self?.passwordConfirmationTextField.text

@@ -24,7 +24,7 @@ class AuthService {
     }
 
     // MARK: - Functions
-    func signUpUser(
+    func signUp(
         email: String,
         password: String,
         complition: @escaping (Result<User, Error>) -> Void

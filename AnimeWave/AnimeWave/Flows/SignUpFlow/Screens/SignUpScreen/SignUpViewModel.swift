@@ -29,19 +29,16 @@ class SignUpViewModel {
     }
 
     // MARK: - Functions
-    func validateUser(_ email: String?, _ password: String?, _ passwordConfirmation: String?) {
+    func signUpUser(_ email: String?, _ password: String?, _ passwordConfirmation: String?) {
         guard let email, let password, let passwordConfirmation else { return }
         self.email = email
         self.password = password
 
         errorStringFormatted.value = ""
-        formatErrors(validatorService.validateUser(email, password, passwordConfirmation))
+        let errors = validatorService.validateUser(email, password, passwordConfirmation)
 
-    }
-
-    func formatErrors(_ errors: [ValidationError]) {
         if errors.isEmpty {
-            authService.signUpUser(email: email, password: password) { [weak self] result in
+            authService.signUp(email: email, password: password) { [weak self] result in
                 guard let self else { return }
                 switch result {
                 case .success:
@@ -53,10 +50,13 @@ class SignUpViewModel {
                 }
             }
         } else {
-            errors.forEach { error in
-                errorStringFormatted.value += "\(error.rawValue.localized)\n"
-            }
+            formatErrors(errors)
         }
     }
 
+    private func formatErrors(_ errors: [ValidationError]) {
+        errors.forEach { error in
+            errorStringFormatted.value += "\(error.rawValue.localized)\n"
+        }
+    }
 }
