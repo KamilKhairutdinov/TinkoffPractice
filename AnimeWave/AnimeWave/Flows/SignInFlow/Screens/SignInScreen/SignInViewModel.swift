@@ -29,12 +29,13 @@ class SignInViewModel {
             validationError.value = "login_validation_error".localized
         } else {
             authService.signIn(email: email, password: password) { [weak self] result in
+                guard let self else { return }
                 switch result {
                 case .success:
-                    self?.isSuccessfullyLoggedIn.value = true
+                    self.isSuccessfullyLoggedIn.value = true
                 case .failure(let error):
                     print(error)
-                    self?.isSuccessfullyLoggedIn.value = false
+                    self.isSuccessfullyLoggedIn.value = false
                 }
             }
         }

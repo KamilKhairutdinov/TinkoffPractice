@@ -22,7 +22,8 @@ class SignInFLowCoordinator: BaseCoordinator {
     private func showSignInViewController() {
         let signInViewController = SignInViewController(viewModel: SignInViewModel())
         signInViewController.complitionHandler = { [weak self] in
-            self?.flowComplitionHandler?()
+            guard let self else { return }
+            self.flowComplitionHandler?()
         }
         router.push(signInViewController, animated: true)
     }

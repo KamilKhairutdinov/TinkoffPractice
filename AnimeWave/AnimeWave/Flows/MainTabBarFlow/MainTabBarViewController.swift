@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainTabBarViewController: UITabBarController, TabBarFlowDelegate {
+final class MainTabBarViewController: UITabBarController, TabBarFlowDelegate {
 
     // MARK: - Variales
     var onViewDidAppear: ((UINavigationController) -> Void)?
@@ -70,7 +70,7 @@ extension MainTabBarViewController: UITabBarControllerDelegate {
         case 3:
             onProfileListFlowSelect?(controller)
         default:
-            fatalError("Tab bar index out of range")
+            print("Tab bar index out of range")
         }
     }
 }

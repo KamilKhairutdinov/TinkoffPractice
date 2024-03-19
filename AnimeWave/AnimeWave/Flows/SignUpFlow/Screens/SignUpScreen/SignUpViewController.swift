@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class SignUpViewController: UIViewController, FlowController {
+final class SignUpViewController: UIViewController, FlowController {
 
     // MARK: - UI elements
     private lazy var emailTextField: UITextField = {
@@ -51,10 +51,11 @@ class SignUpViewController: UIViewController, FlowController {
 
     private lazy var nextButton: UIButton = {
         let action = UIAction { [weak self] _ in
-            self?.viewModel.signUpUser(
-                self?.emailTextField.text,
-                self?.passwordTextField.text,
-                self?.passwordConfirmationTextField.text
+            guard let self else { return }
+            self.viewModel.signUpUser(
+                self.emailTextField.text,
+                self.passwordTextField.text,
+                self.passwordConfirmationTextField.text
             )
         }
         let button = buttonFactory.createButton(title: "next_button".localized, action: action)
@@ -63,10 +64,10 @@ class SignUpViewController: UIViewController, FlowController {
     }()
 
     // MARK: - Variables
+    var complitionHandler: (() -> Void)?
     private let textFieldFactory = TextFieldFactory()
     private let buttonFactory = ButtonFactory()
     private let viewModel: SignUpViewModel
-    var complitionHandler: (() -> Void)?
 
     // MARK: - Init
     init(viewModel: SignUpViewModel) {
@@ -89,7 +90,7 @@ class SignUpViewController: UIViewController, FlowController {
 extension SignUpViewController {
     private func setupView() {
         view.backgroundColor = UIColor.background
-        navigationItem.title = "registration_title".localized
+        navigationItem.title = "sign_up_title".localized
         configureUI()
     }
 
@@ -110,8 +111,8 @@ extension SignUpViewController {
         }
 
         validationErrorsLabel.snp.makeConstraints { make in
-            make.left.equalTo(stackView.snp_leftMargin)
-            make.top.equalTo(stackView.snp_bottomMargin).offset(10)
+            make.left.equalTo(stackView.snp.left)
+            make.top.equalTo(stackView.snp.bottom).offset(10)
             make.width.equalTo(emailTextField)
         }
 
@@ -125,12 +126,14 @@ extension SignUpViewController {
     private func setupBindings() {
         viewModel.isSuccessfulRegistered.bind({ [weak self] (isSuccessfulRegistered) in
             if isSuccessfulRegistered {
-                self?.complitionHandler?()
+                guard let self else { return }
+                self.complitionHandler?()
             }
         })
 
         viewModel.errorStringFormatted.bind({ [weak self] (errorStringFormatted) in
-            self?.validationErrorsLabel.text = errorStringFormatted
+            guard let self else { return }
+            self.validationErrorsLabel.text = errorStringFormatted
         })
     }
 }

@@ -17,12 +17,15 @@ enum ValidationError: String {
 
 class ValidatorService {
 
+    // MARK: - Variables
     private var validationErrors: [ValidationError]
 
+    // MARK: - Init
     init() {
         validationErrors = []
     }
 
+    // MARK: - Functions
     func validateUser(_ email: String, _ password: String, _ passwordConfirmation: String) -> [ValidationError] {
         validationErrors = []
 

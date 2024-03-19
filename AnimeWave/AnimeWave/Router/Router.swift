@@ -9,8 +9,10 @@ import UIKit
 
 final class Router: RouterProtocol {
 
+    // MARK: - Variables
     private var rootController: UINavigationController?
 
+    // MARK: - Functions
     init(rootController: UINavigationController) {
         self.rootController = rootController
     }

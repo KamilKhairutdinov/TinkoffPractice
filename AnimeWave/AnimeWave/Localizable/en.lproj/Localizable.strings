@@ -7,8 +7,8 @@
 */
 
 // Buttons
-"login_button" = "Log in";
-"register_button" = "Register";
+"sign_in_button" = "Sign in";
+"sign_up_button" = "Sign Up";
 "next_button" = "Go next";
 "pick_image_button" = "Select photo";
 
@@ -28,12 +28,12 @@
 "login_validation_error" = "Fill all fields";
 
 // Titles
-"registration_title" = "Registration";
+"sign_up_title" = "Registration";
 "profile_title" = "Profile";
 "anime_title" = "Anime";
 "search_title" = "Search";
 "calendar_title" = "Calendar";
-"login_title" = "Login";
+"sign_in_title" = "Login";
 
 // Errors
 "The email address is already in use by another account." = "The email address is already in use by another account.";
@@ -42,7 +42,7 @@
 "error_alert_title" = "Error";
 
 // Alert messages
-"login_error_alert" = "Incorrect login or password";
+"sign_in_error_alert" = "Incorrect login or password";
 
 // Alert action titles
 "alert_action_try_again" = "Try again";

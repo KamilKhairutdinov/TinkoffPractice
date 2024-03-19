@@ -8,9 +8,9 @@
 import UIKit
 
 class TextFieldFactory {
+
     func createTextField(placeholder: String) -> UITextField {
         let textField = UITextField()
-
         textField.layer.cornerRadius = 8
         textField.borderStyle = .roundedRect
         textField.backgroundColor = UIColor.buttonAndTextField

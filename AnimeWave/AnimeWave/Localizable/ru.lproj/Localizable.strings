@@ -7,8 +7,8 @@
 */
 
 // Buttons
-"login_button" = "Войти";
-"register_button" = "Зарегестрироваться";
+"sign_in_button" = "Войти";
+"sign_up_button" = "Зарегестрироваться";
 "next_button" = "Продолжить";
 "pick_image_button" = "Выбрать фото";
 
@@ -28,12 +28,12 @@
 "login_validation_error" = "Заполните все поля";
 
 // Titles
-"registration_title" = "Рeгистрация";
+"sign_up_title" = "Рeгистрация";
 "profile_title" = "Профиль";
 "anime_title" = "Аниме";
 "search_title" = "Поиск";
 "calendar_title" = "Календарь";
-"login_title" = "Вход";
+"sign_in_title" = "Вход";
 
 //Errors
 "The email address is already in use by another account." = "Адрес электронной почты уже используется другой учетной записью.";
@@ -42,7 +42,7 @@
 "error_alert_title" = "Ошибка";
 
 // Alert messages
-"login_error_alert" = "Неправильный логин или пароль";
+"sign_in_error_alert" = "Неправильный логин или пароль";
 
 // Alert action titles
 "alert_action_try_again" = "Попробовать ещё раз";

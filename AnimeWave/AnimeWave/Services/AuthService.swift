@@ -12,10 +12,10 @@ import FirebaseFirestore
 class AuthService {
 
     // MARK: - Variables
-    private let auth: Auth
     var currentUser: User? {
         return auth.currentUser
     }
+    private let auth: Auth
 
     // MARK: - Singleton
     static let shared = AuthService()

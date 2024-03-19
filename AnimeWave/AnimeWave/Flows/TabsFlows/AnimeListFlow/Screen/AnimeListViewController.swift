@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AnimeListViewController: UIViewController {
+final class AnimeListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

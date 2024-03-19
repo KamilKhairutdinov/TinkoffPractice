@@ -19,11 +19,12 @@ class AppCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        if !isLoggedIn {
-            runAuthFlow()
-        } else {
+        if isLoggedIn {
             runMainFlow()
+        } else {
+            runAuthFlow()
         }
+        // authService.currentUser == nil ? runAuthFlow() : runMainFlow()
     }
 
     private func runAuthFlow() {
@@ -31,9 +32,10 @@ class AppCoordinator: BaseCoordinator {
         authFlowCoordinator.start()
         addDependency(authFlowCoordinator)
         authFlowCoordinator.flowComplitionHandler = { [weak self] in
-            self?.isLoggedIn = true
-            self?.runMainFlow()
-            self?.removeDependency(authFlowCoordinator)
+            guard let self else { return }
+            self.isLoggedIn = true
+            self.runMainFlow()
+            self.removeDependency(authFlowCoordinator)
         }
     }
 
@@ -42,10 +44,10 @@ class AppCoordinator: BaseCoordinator {
         let mainTabBarFlowCoordinator = coordinatorFactory.createMainTabBarCoordinator(controller: mainTabBarViewController)
         addDependency(mainTabBarFlowCoordinator)
         mainTabBarFlowCoordinator.flowComplitionHandler = { [weak self] in
-            self?.removeDependency(mainTabBarFlowCoordinator)
+            guard let self else { return }
+            self.removeDependency(mainTabBarFlowCoordinator)
         }
         router.setRootController(mainTabBarViewController, isNavigationBarHidden: true)
         mainTabBarFlowCoordinator.start()
     }
-
 }

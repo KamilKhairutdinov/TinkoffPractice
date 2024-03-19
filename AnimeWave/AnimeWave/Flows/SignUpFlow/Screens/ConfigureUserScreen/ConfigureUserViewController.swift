@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ConfigureUserViewController: UIViewController {
+final class ConfigureUserViewController: UIViewController {
 
     // MARK: - UI elements
     private lazy var fillProfileLabel: UILabel = {
@@ -47,20 +47,21 @@ class ConfigureUserViewController: UIViewController {
         return textField
     }()
 
-    private lazy var registerButton: UIButton = {
+    private lazy var signUpButton: UIButton = {
         let action = UIAction { [weak self] _ in
-            self?.complitionHandler?()
+            guard let self else { return }
+            self.complitionHandler?()
         }
-        let button = buttonFactory.createButton(title: "register_button".localized, action: action)
+        let button = buttonFactory.createButton(title: "sign_up_button".localized, action: action)
 
         return button
     }()
 
     // MARK: - Variables
+    var complitionHandler: (() -> Void)?
     private var viewModel: ConfigureUserViewModel
     private var buttonFactory = ButtonFactory()
     private var textFieldFactory = TextFieldFactory()
-    var complitionHandler: (() -> Void)?
     private lazy var avatarImagePickerController: UIImagePickerController = {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -92,7 +93,7 @@ extension ConfigureUserViewController: UITextFieldDelegate {
             userAvatarImageView,
             selectImageButton,
             loginTextField,
-            registerButton
+            signUpButton
         )
         configureUI()
     }
@@ -120,7 +121,7 @@ extension ConfigureUserViewController: UITextFieldDelegate {
             make.centerX.equalToSuperview()
         }
 
-        registerButton.snp.makeConstraints { make in
+        signUpButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(loginTextField)
             make.bottom.equalToSuperview().inset(50)

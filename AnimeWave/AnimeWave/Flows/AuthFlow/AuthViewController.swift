@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 
-enum StartViewControllerStates {
-    case auth, register
+enum AuthViewControllerStates {
+    case signIn, signUp
 }
 
-class AuthViewController: UIViewController, FlowControllerWithValue {
+final class AuthViewController: UIViewController, FlowControllerWithValue {
 
     // MARK: - UI elements
     private lazy var logoImageView: UIImageView = {
@@ -22,27 +22,29 @@ class AuthViewController: UIViewController, FlowControllerWithValue {
         return imageView
     }()
 
-    private lazy var loginButton: UIButton = {
+    private lazy var signInButton: UIButton = {
         let action = UIAction { [weak self] _ in
-            self?.complitionHandler?(.auth)
+            guard let self else { return }
+            self.complitionHandler?(.signIn)
         }
-        let button = buttonFactory.createButton(title: "login_button".localized, action: action)
+        let button = buttonFactory.createButton(title: "sign_in_button".localized, action: action)
 
         return button
     }()
 
-    private lazy var registerButton: UIButton = {
+    private lazy var signUpButton: UIButton = {
         let action = UIAction { [weak self] _ in
-            self?.complitionHandler?(.register)
+            guard let self else { return }
+            self.complitionHandler?(.signUp)
         }
-        let button = buttonFactory.createButton(title: "register_button".localized, action: action)
+        let button = buttonFactory.createButton(title: "sign_up_button".localized, action: action)
 
         return button
     }()
 
     // MARK: - Variables
-    let buttonFactory = ButtonFactory()
-    var complitionHandler: ((StartViewControllerStates) -> Void)?
+    var complitionHandler: ((AuthViewControllerStates) -> Void)?
+    private let buttonFactory = ButtonFactory()
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -54,7 +56,7 @@ class AuthViewController: UIViewController, FlowControllerWithValue {
 extension AuthViewController {
     private func setuoView() {
         view.backgroundColor = UIColor.background
-        addSubviews(logoImageView, loginButton, registerButton)
+        addSubviews(logoImageView, signInButton, signUpButton)
         configureUI()
     }
 
@@ -64,16 +66,16 @@ extension AuthViewController {
             make.top.equalToSuperview().offset(view.frame.height / 3)
         }
 
-        loginButton.snp.makeConstraints { make in
+        signInButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.width.equalTo(registerButton)
+            make.width.equalTo(signUpButton)
             make.bottom.equalTo(logoImageView).offset(70)
             make.height.equalTo(35)
         }
 
-        registerButton.snp.makeConstraints { make in
+        signUpButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(loginButton.snp_bottomMargin).offset(25)
+            make.top.equalTo(signInButton.snp.bottom).offset(25)
             make.height.equalTo(35)
         }
     }

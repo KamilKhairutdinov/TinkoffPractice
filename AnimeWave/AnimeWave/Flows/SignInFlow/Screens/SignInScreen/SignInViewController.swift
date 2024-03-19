@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController, FlowController {
+final class SignInViewController: UIViewController, FlowController {
 
     // MARK: - UI elements
     private lazy var emailTextField: UITextField = {
@@ -38,24 +38,25 @@ class SignInViewController: UIViewController, FlowController {
         return label
     }()
 
-    private lazy var loginButton: UIButton = {
+    private lazy var signInButton: UIButton = {
         let action = UIAction { [weak self] _ in
-            self?.viewModel.signInUser(
-                email: self?.emailTextField.text,
-                password: self?.passwordTextField.text
+            guard let self else { return }
+            self.viewModel.signInUser(
+                email: self.emailTextField.text,
+                password: self.passwordTextField.text
             )
         }
-        let button = buttonFactory.createButton(title: "login_button".localized, action: action)
+        let button = buttonFactory.createButton(title: "sign_in_button".localized, action: action)
 
         return button
     }()
 
     // MARK: - Variables
+    var complitionHandler: (() -> Void)?
     private var viewModel: SignInViewModel
     private let textFieldFactory = TextFieldFactory()
     private let buttonFactory = ButtonFactory()
     private let alertFactory = AlertFactory()
-    var complitionHandler: (() -> Void)?
 
     // MARK: - Init
     init(viewModel: SignInViewModel) {
@@ -79,7 +80,7 @@ extension SignInViewController {
 
     private func setupView() {
         view.backgroundColor = UIColor.background
-        navigationItem.title = "login_title".localized
+        navigationItem.title = "sign_in_title".localized
         configureUI()
     }
 
@@ -91,7 +92,7 @@ extension SignInViewController {
 
         stackView.axis = .vertical
         stackView.spacing = 20
-        addSubviews(stackView, validationErrorsLabel, loginButton)
+        addSubviews(stackView, validationErrorsLabel, signInButton)
 
         stackView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
@@ -99,12 +100,12 @@ extension SignInViewController {
         }
 
         validationErrorsLabel.snp.makeConstraints { make in
-            make.left.equalTo(stackView.snp_leftMargin)
-            make.top.equalTo(stackView.snp_bottomMargin).offset(10)
+            make.left.equalTo(stackView.snp.left)
+            make.top.equalTo(stackView.snp.bottom).offset(10)
             make.width.equalTo(emailTextField)
         }
 
-        loginButton.snp.makeConstraints { make in
+        signInButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(emailTextField)
             make.bottom.equalToSuperview().inset(50)
@@ -113,14 +114,16 @@ extension SignInViewController {
 
     private func setupBindings() {
         viewModel.validationError.bind { [weak self] (validationError) in
-            self?.validationErrorsLabel.text = validationError
+            guard let self else { return }
+            self.validationErrorsLabel.text = validationError
         }
 
         viewModel.isSuccessfullyLoggedIn.bind { [weak self] (isSuccessfullyLoggedIn) in
+            guard let self else { return }
             if isSuccessfullyLoggedIn {
-                self?.complitionHandler?()
+                self.complitionHandler?()
             } else {
-                self?.showLoginErrorAlert()
+                self.showLoginErrorAlert()
             }
         }
     }
@@ -128,7 +131,7 @@ extension SignInViewController {
 
 extension SignInViewController {
     private func showLoginErrorAlert() {
-        let alert = alertFactory.createErrorAlert(message: "login_error_alert".localized)
+        let alert = alertFactory.createErrorAlert(message: "sign_in_error_alert".localized)
         present(alert, animated: true)
     }
 }

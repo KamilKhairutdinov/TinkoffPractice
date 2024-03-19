@@ -22,11 +22,12 @@ class AuthFlowCoordinator: BaseCoordinator {
     private func showAuthController() {
         let authViewController = AuthViewController()
         authViewController.complitionHandler = { [weak self] states in
+            guard let self else { return }
             switch states {
-            case .auth:
-                self?.runSignInFlow()
-            case .register:
-                self?.runSignUpFlow()
+            case .signIn:
+                self.runSignInFlow()
+            case .signUp:
+                self.runSignUpFlow()
             }
         }
         router.setRootController(authViewController)
@@ -37,9 +38,10 @@ class AuthFlowCoordinator: BaseCoordinator {
         signUpFlowCoordinator.start()
         addDependency(signUpFlowCoordinator)
         signUpFlowCoordinator.flowComplitionHandler = { [weak self] in
-            self?.router.popToRootController(animated: false) // Test
-            self?.runSignInFlow()
-            self?.removeDependency(signUpFlowCoordinator)
+            guard let self else { return }
+            self.router.popToRootController(animated: false)
+            self.runSignInFlow()
+            self.removeDependency(signUpFlowCoordinator)
         }
     }
 
@@ -47,8 +49,9 @@ class AuthFlowCoordinator: BaseCoordinator {
         let signInFlowCoordinator = coordinatorFactory.createSignInCoordinator(router: router)
         addDependency(signInFlowCoordinator)
         signInFlowCoordinator.flowComplitionHandler = { [weak self] in
-            self?.removeDependency(signInFlowCoordinator)
-            self?.flowComplitionHandler?()
+            guard let self else { return }
+            self.removeDependency(signInFlowCoordinator)
+            self.flowComplitionHandler?()
         }
         signInFlowCoordinator.start()
     }
