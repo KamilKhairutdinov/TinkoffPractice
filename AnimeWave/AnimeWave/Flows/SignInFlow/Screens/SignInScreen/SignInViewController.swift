@@ -11,28 +11,28 @@ class SignInViewController: UIViewController, FlowController {
 
     // MARK: - UI elements
     private lazy var emailTextField: UITextField = {
-        let textField           = textFieldFactory.createTextField(placeholder: "email_placeholder".localized)
-        textField.keyboardType  = .emailAddress
+        let textField = textFieldFactory.createTextField(placeholder: "email_placeholder".localized)
+        textField.keyboardType = .emailAddress
         textField.returnKeyType = .next
-        textField.delegate      = self
+        textField.delegate = self
 
         return textField
     }()
 
     private lazy var passwordTextField: UITextField = {
-        let textField               = textFieldFactory.createTextField(placeholder: "password_placeholder".localized)
+        let textField = textFieldFactory.createTextField(placeholder: "password_placeholder".localized)
         textField.isSecureTextEntry = true
-        textField.returnKeyType     = .done
-        textField.delegate          = self
-        textField.passwordRules     = .none
+        textField.returnKeyType = .done
+        textField.delegate = self
+        textField.passwordRules = .none
 
         return textField
     }()
 
     private lazy var validationErrorsLabel: UILabel = {
-        let label           = UILabel()
-        label.textColor     = .red
-        label.font          = UIFont.systemFont(ofSize: 10)
+        let label = UILabel()
+        label.textColor = .red
+        label.font = UIFont.systemFont(ofSize: 10)
         label.numberOfLines = 0
 
         return label
@@ -68,7 +68,6 @@ class SignInViewController: UIViewController, FlowController {
     }
 
     // MARK: - Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()

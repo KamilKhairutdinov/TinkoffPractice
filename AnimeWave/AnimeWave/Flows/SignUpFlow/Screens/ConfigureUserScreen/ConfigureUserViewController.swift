@@ -12,17 +12,17 @@ class ConfigureUserViewController: UIViewController {
 
     // MARK: - UI elements
     private lazy var fillProfileLabel: UILabel = {
-        let label       = UILabel()
-        label.font      = UIFont.boldSystemFont(ofSize: 20)
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = UIColor.mainText
-        label.text      = "fillProfileLabel_text".localized
+        label.text = "fillProfileLabel_text".localized
 
         return label
     }()
 
     private lazy var userAvatarImageView: UIImageView = {
-        let imageView                = UIImageView(image: UIImage.defaultAvatar)
-        imageView.contentMode        = .scaleAspectFill
+        let imageView = UIImageView(image: UIImage.defaultAvatar)
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = view.frame.width / 4
 
         return imageView
@@ -40,9 +40,9 @@ class ConfigureUserViewController: UIViewController {
     }()
 
     private lazy var loginTextField: UITextField = {
-        let textField           = textFieldFactory.createTextField(placeholder: "login_placeholder".localized)
+        let textField = textFieldFactory.createTextField(placeholder: "login_placeholder".localized)
         textField.returnKeyType = .done
-        textField.delegate      = self
+        textField.delegate = self
 
         return textField
     }()

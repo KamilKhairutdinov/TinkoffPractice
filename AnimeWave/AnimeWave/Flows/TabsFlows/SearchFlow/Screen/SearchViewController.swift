@@ -13,5 +13,4 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "search_title".localized
     }
-
 }

@@ -10,9 +10,9 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class AuthService {
+
     // MARK: - Variables
     private let auth: Auth
-
     var currentUser: User? {
         return auth.currentUser
     }

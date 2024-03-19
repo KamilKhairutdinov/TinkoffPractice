@@ -7,9 +7,9 @@
 
 import UIKit
 
-class BaseCoordinator: Coordinator {
+class BaseCoordinator: CoordinatorProtocol {
 
-    var childCoordinators: [Coordinator]
+    var childCoordinators: [CoordinatorProtocol]
     var flowComplitionHandler: (() -> Void)?
     let coordinatorFactory: CoordinatorFactoryProtocol
 
@@ -22,12 +22,12 @@ class BaseCoordinator: Coordinator {
         fatalError("Function start must be overriden")
     }
 
-    func addDependency(_ coordinator: Coordinator) {
+    func addDependency(_ coordinator: CoordinatorProtocol) {
         guard !childCoordinators.contains(where: { $0 === coordinator }) else { return }
         childCoordinators.append(coordinator)
     }
 
-    func removeDependency(_ coordinator: Coordinator) {
+    func removeDependency(_ coordinator: CoordinatorProtocol) {
 
         guard !childCoordinators.isEmpty else { return }
 

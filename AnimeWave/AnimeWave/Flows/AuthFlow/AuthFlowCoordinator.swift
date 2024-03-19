@@ -52,5 +52,4 @@ class AuthFlowCoordinator: BaseCoordinator {
         }
         signInFlowCoordinator.start()
     }
-
 }

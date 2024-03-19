@@ -52,5 +52,4 @@ final class Router: RouterProtocol {
     func presenter() -> UINavigationController? {
         return rootController
     }
-
 }

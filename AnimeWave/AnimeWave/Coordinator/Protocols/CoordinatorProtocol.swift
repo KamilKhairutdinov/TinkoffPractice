@@ -7,9 +7,7 @@
 
 import UIKit
 
-protocol Coordinator: AnyObject {
-
+protocol CoordinatorProtocol: AnyObject {
     var flowComplitionHandler: (() -> Void)? { get set }
-
     func start()
 }

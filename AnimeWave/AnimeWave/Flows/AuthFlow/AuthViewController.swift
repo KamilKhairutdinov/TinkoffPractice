@@ -16,7 +16,7 @@ class AuthViewController: UIViewController, FlowControllerWithValue {
 
     // MARK: - UI elements
     private lazy var logoImageView: UIImageView = {
-        let imageView         = UIImageView(image: UIImage(named: "AnimeWaveLogo"))
+        let imageView = UIImageView(image: UIImage(named: "AnimeWaveLogo"))
         imageView.contentMode = .scaleAspectFill
 
         return imageView
