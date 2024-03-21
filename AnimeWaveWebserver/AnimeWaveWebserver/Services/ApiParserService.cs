@@ -107,14 +107,14 @@ public class ApiParserService: IApiParserService
         return calendarData;
     }
 
-    public async Task<AnimeData?> GetAnimeDataByIdAsync(string id)
+    public async Task<AnimeData> GetAnimeDataByIdAsync(string id)
     {
         var kodikApiResponse = await _apiService.GetAnimeDataByIdAsync(id);
         var data = kodikApiResponse.Results.FirstOrDefault();
-        if (data == null) return null;
+        
         return new AnimeData
         {
-            id = data.ShikimoriId,
+            id = data!.ShikimoriId,
             Title = data.Title,
             PosterUrl = data.MaterialData.PosterUrl,
             Genres = GetString(data.MaterialData.Genres),
