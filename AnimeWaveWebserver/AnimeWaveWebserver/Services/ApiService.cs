@@ -148,7 +148,7 @@ public class ApiService: IApiService
 
     public async Task<List<ShikimoriCalendarApiResponse>> GetCalendarDataAsync()
     {
-        var client = new RestClient(Urls.Calendar.GetStringValue());
+        var client = new RestClient(Urls.ShikimoriCalendar.GetStringValue());
         var request = new RestRequest
         {
             Method = Method.Get

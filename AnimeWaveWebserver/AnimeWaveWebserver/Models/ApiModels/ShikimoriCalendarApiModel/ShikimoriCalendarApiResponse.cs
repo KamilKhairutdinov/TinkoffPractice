@@ -11,7 +11,7 @@ public class ShikimoriCalendarApiResponse
     public DateTimeOffset NextEpisodeAt { get; set; }
 
     [JsonPropertyName("duration")]
-    public int? Duration { get; set; }
+    public long? Duration { get; set; }
 
     [JsonPropertyName("anime")]
     public Anime Anime { get; set; }

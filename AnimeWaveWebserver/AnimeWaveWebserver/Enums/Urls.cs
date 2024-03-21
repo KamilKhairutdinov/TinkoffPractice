@@ -9,7 +9,7 @@ public enum Urls
     [StringValue("https://kodikapi.com/list")]
     KodikList,
     [StringValue("https://shikimori.one/api/calendar")]
-    Calendar,
+    ShikimoriCalendar,
     [StringValue("https://shikimori.one")]
     Shikimori
 }
