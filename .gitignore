@@ -90,3 +90,6 @@ fastlane/test_output
 iOSInjectionProject/
 AnimeWave/.DS_Store
 .DS_Store
+AnimeWaveWebserver/AnimeWaveWebserver/obj
+AnimeWaveWebserver/.idea
+AnimeWaveWebserver/AnimeWaveWebserver/bin
