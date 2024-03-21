@@ -1,43 +1,165 @@
+using System.Text.Json;
+using AnimeWaveWebserver.Enums;
+using AnimeWaveWebserver.Extentions;
 using AnimeWaveWebserver.Interfaces;
 using AnimeWaveWebserver.Models.ApiModels.KodikApiModels;
 using AnimeWaveWebserver.Models.ApiModels.ShikimoriCalendarApiModel;
+using RestSharp;
 
 namespace AnimeWaveWebserver.Services;
 
 public class ApiService: IApiService
 {
-    public Task<KodikApiResponse?> GetKodikDataAsync()
+    private string _nextUrlRequest = "";
+    private string _nextUrlRequestPopular = "";
+    
+    public async Task<KodikApiResponse> GetKodikDataAsync()
     {
-        throw new NotImplementedException();
+        var client = new RestClient(ApiRequestUrl.KodikList.GetStringValue());
+        var request = new RestRequest
+        {
+            Method = Method.Get,
+        };
+        
+        request.AddHeader("Accept", "application/json");
+        request.AddHeader("Content-Type", "application/json");
+
+        request.AddParameter(RequestParameterName.Token.GetStringValue(), RequestParameterValue.Token.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterName.Type.GetStringValue(), RequestParameterValue.TypeAnimeSerial.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterName.WithMaterialData.GetStringValue(), RequestParameterValue.WithMaterialData.GetStringValue(), ParameterType.QueryString);
+        
+        var response = await client.ExecuteAsync(request);
+        if (response.Content == null) throw new Exception("GetKodikDataAsync content is null");
+        
+        var kodikApiResponse = JsonSerializer.Deserialize<KodikApiResponse>(response.Content);
+        _nextUrlRequest = kodikApiResponse!.NextPage;
+        return kodikApiResponse;
     }
 
-    public Task<KodikApiResponse?> GetMoreKodikDataAsync()
+    public async Task<KodikApiResponse> GetMoreKodikDataAsync()
     {
-        throw new NotImplementedException();
+        if (string.IsNullOrEmpty(_nextUrlRequest)) throw new Exception("_nextUrlRequest is empty");
+        
+        var client = new RestClient(_nextUrlRequest);
+        var request = new RestRequest
+        {
+            Method = Method.Get,
+        };
+        
+        request.AddHeader("Accept", "application/json");
+        request.AddHeader("Content-Type", "application/json");
+
+        var response = await client.ExecuteAsync(request);
+        if (response.Content == null) throw new Exception("GetMoreKodikDataAsync content is null");
+        
+        var kodikApiResponse = JsonSerializer.Deserialize<KodikApiResponse>(response.Content);
+        _nextUrlRequest = kodikApiResponse!.NextPage;
+        return kodikApiResponse;
     }
 
-    public Task<KodikApiResponse?> GetKodikDataSortedByRatingAsync()
+    public async Task<KodikApiResponse> GetKodikDataSortedByRatingAsync()
     {
-        throw new NotImplementedException();
+        var client = new RestClient(ApiRequestUrl.KodikList.GetStringValue());
+        var request = new RestRequest
+        {
+            Method = Method.Get,
+        };
+        
+        request.AddHeader("Accept", "application/json");
+        request.AddHeader("Content-Type", "application/json");
+
+        request.AddParameter(RequestParameterName.Token.GetStringValue(), RequestParameterValue.Token.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterName.Type.GetStringValue(), RequestParameterValue.TypeAnimeSerial.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterName.WithMaterialData.GetStringValue(), RequestParameterValue.WithMaterialData.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterName.Sort.GetStringValue(), RequestParameterValue.Sort.GetStringValue(), ParameterType.QueryString);
+        
+        var response = await client.ExecuteAsync(request);
+        if (response.Content == null) throw new Exception("GetKodikDataSortedByRatingAsync content is null");
+        
+        var kodikApiResponse = JsonSerializer.Deserialize<KodikApiResponse>(response.Content);
+        _nextUrlRequestPopular = kodikApiResponse!.NextPage;
+        return kodikApiResponse;
     }
 
-    public Task<KodikApiResponse?> GetMoreKodikDataSortedByRatingAsync()
+    public async Task<KodikApiResponse> GetMoreKodikDataSortedByRatingAsync()
     {
-        throw new NotImplementedException();
+        if (string.IsNullOrEmpty(_nextUrlRequestPopular)) throw new Exception("_nextUrlRequest is empty");
+        
+        var client = new RestClient(_nextUrlRequestPopular);
+        var request = new RestRequest
+        {
+            Method = Method.Get,
+        };
+        
+        request.AddHeader("Accept", "application/json");
+        request.AddHeader("Content-Type", "application/json");
+
+        var response = await client.ExecuteAsync(request);
+        if (response.Content == null) throw new Exception("GetMoreKodikDataSortedByRatingAsync content is null");
+        
+        var kodikApiResponse = JsonSerializer.Deserialize<KodikApiResponse>(response.Content);
+        _nextUrlRequestPopular = kodikApiResponse!.NextPage;
+        return kodikApiResponse;
     }
 
-    public Task<SearchKodikApiResponse?> GetAnimeById(string id)
+    public async Task<KodikApiResponse> GetAnimeDataByIdAsync(string id)
     {
-        throw new NotImplementedException();
+        var client = new RestClient(ApiRequestUrl.KodikSearch.GetStringValue());
+        var request = new RestRequest
+        {
+            Method = Method.Post
+        };
+        
+        request.AddHeader("Accept", "application/json");
+        request.AddHeader("Content-Type", "application/json");
+        
+        request.AddParameter(RequestParameterName.Token.GetStringValue(), RequestParameterValue.Token.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterName.Type.GetStringValue(), RequestParameterValue.TypeAnimeSerial.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterName.WithMaterialData.GetStringValue(), RequestParameterValue.WithMaterialData.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterName.Id.GetStringValue(), id, ParameterType.QueryString);
+        
+        var response = await client.ExecuteAsync(request);
+        if (response.Content == null) throw new Exception("GetAnimeDataById content is null");
+        
+        return JsonSerializer.Deserialize<KodikApiResponse>(response.Content)!;
     }
 
-    public Task<SearchKodikApiResponse?> SearchAnimeByTitleAsync(string title)
+    public async Task<KodikApiResponse> SearchAnimeByTitleAsync(string title)
     {
-        throw new NotImplementedException();
+        var client = new RestClient(ApiRequestUrl.KodikSearch.GetStringValue());
+        var request = new RestRequest
+        {
+            Method = Method.Post
+        };
+        
+        request.AddHeader("Accept", "application/json");
+        request.AddHeader("Content-Type", "application/json");
+        
+        request.AddParameter(RequestParameterName.Token.GetStringValue(), RequestParameterValue.Token.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterName.Type.GetStringValue(), RequestParameterValue.TypeAnimeSerial.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterName.WithMaterialData.GetStringValue(), RequestParameterValue.WithMaterialData.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterName.Title.GetStringValue(), title, ParameterType.QueryString);
+        
+        var response = await client.ExecuteAsync(request);
+        if (response.Content == null) throw new Exception("SearchAnimeByTitleAsync content is null");
+        
+        return JsonSerializer.Deserialize<KodikApiResponse>(response.Content)!;
     }
 
-    public Task<ShiikmoriCalendarApiResponse?> GetCalendarDataAsync()
+    public async Task<List<ShikimoriCalendarApiResponse>> GetCalendarDataAsync()
     {
-        throw new NotImplementedException();
+        var client = new RestClient(ApiRequestUrl.Calendar.GetStringValue());
+        var request = new RestRequest
+        {
+            Method = Method.Get
+        };
+        
+        request.AddHeader("Accept", "application/json");
+        request.AddHeader("Content-Type", "application/json");
+        
+        var response = await client.ExecuteAsync(request);
+        if (response.Content == null) throw new Exception("GetCalendarDataAsync content is null");
+        
+        return JsonSerializer.Deserialize<List<ShikimoriCalendarApiResponse>>(response.Content)!;
     }
 }

@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace AnimeWaveWebserver.Models.ApiModels.ShikimoriCalendarApiModel;
 
-public class ShiikmoriCalendarApiResponse
+public class ShikimoriCalendarApiResponse
 {
     [JsonPropertyName("next_episode")]
     public int NextEpisode { get; set; }

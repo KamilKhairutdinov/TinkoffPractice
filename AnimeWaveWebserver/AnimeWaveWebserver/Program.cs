@@ -1,7 +1,10 @@
+using AnimeWaveWebserver.Interfaces;
+using AnimeWaveWebserver.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-var app = builder.Build();
+builder.Services.AddScoped<IApiService, ApiService>();
 
-// app.MapGet("/", () => "asdasd");
+var app = builder.Build();
 
 app.Run();
