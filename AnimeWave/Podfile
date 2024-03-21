@@ -9,6 +9,7 @@ target 'AnimeWave' do
 	pod 'SwiftLint'
 	pod 'SnapKit'
 	pod 'Moya'
+  pod 'SwiftGen'
 
   pod 'FirebaseAuth'
   pod 'FirebaseStorage'

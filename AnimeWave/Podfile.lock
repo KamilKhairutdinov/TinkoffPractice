@@ -775,6 +775,7 @@ PODS:
   - PromisesObjC (2.4.0)
   - RecaptchaInterop (100.0.0)
   - SnapKit (5.7.1)
+  - SwiftGen (6.6.3)
   - SwiftLint (0.54.0)
 
 DEPENDENCIES:
@@ -783,6 +784,7 @@ DEPENDENCIES:
   - FirebaseStorage
   - Moya
   - SnapKit
+  - SwiftGen
   - SwiftLint
 
 SPEC REPOS:
@@ -810,6 +812,7 @@ SPEC REPOS:
     - PromisesObjC
     - RecaptchaInterop
     - SnapKit
+    - SwiftGen
     - SwiftLint
 
 SPEC CHECKSUMS:
@@ -836,8 +839,9 @@ SPEC CHECKSUMS:
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  SwiftGen: 4993cbf71cbc4886f775e26f8d5c3a1188ec9f99
   SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
 
-PODFILE CHECKSUM: 708950f7aa43fe8a17cd0879efd149c31c8780cf
+PODFILE CHECKSUM: 898ae1bbe9bb2de55871f9449221f9ff2cb95d93
 
 COCOAPODS: 1.15.2
