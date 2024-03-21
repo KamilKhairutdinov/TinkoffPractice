@@ -2,7 +2,7 @@ using AnimeWaveWebserver.Helpers;
 
 namespace AnimeWaveWebserver.Enums;
 
-public enum RequestParameterName
+public enum RequestParameterNames
 {
     [StringValue("token")]
     Token,

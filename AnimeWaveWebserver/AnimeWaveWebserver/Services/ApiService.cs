@@ -15,7 +15,7 @@ public class ApiService: IApiService
     
     public async Task<KodikApiResponse> GetKodikDataAsync()
     {
-        var client = new RestClient(ApiRequestUrl.KodikList.GetStringValue());
+        var client = new RestClient(Urls.KodikList.GetStringValue());
         var request = new RestRequest
         {
             Method = Method.Get,
@@ -24,9 +24,9 @@ public class ApiService: IApiService
         request.AddHeader("Accept", "application/json");
         request.AddHeader("Content-Type", "application/json");
 
-        request.AddParameter(RequestParameterName.Token.GetStringValue(), RequestParameterValue.Token.GetStringValue(), ParameterType.QueryString);
-        request.AddParameter(RequestParameterName.Type.GetStringValue(), RequestParameterValue.TypeAnimeSerial.GetStringValue(), ParameterType.QueryString);
-        request.AddParameter(RequestParameterName.WithMaterialData.GetStringValue(), RequestParameterValue.WithMaterialData.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.Token.GetStringValue(), RequestParameterValues.Token.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.Type.GetStringValue(), RequestParameterValues.TypeAnimeSerial.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.WithMaterialData.GetStringValue(), RequestParameterValues.WithMaterialData.GetStringValue(), ParameterType.QueryString);
         
         var response = await client.ExecuteAsync(request);
         if (response.Content == null) throw new Exception("GetKodikDataAsync content is null");
@@ -59,7 +59,7 @@ public class ApiService: IApiService
 
     public async Task<KodikApiResponse> GetKodikDataSortedByRatingAsync()
     {
-        var client = new RestClient(ApiRequestUrl.KodikList.GetStringValue());
+        var client = new RestClient(Urls.KodikList.GetStringValue());
         var request = new RestRequest
         {
             Method = Method.Get,
@@ -68,10 +68,10 @@ public class ApiService: IApiService
         request.AddHeader("Accept", "application/json");
         request.AddHeader("Content-Type", "application/json");
 
-        request.AddParameter(RequestParameterName.Token.GetStringValue(), RequestParameterValue.Token.GetStringValue(), ParameterType.QueryString);
-        request.AddParameter(RequestParameterName.Type.GetStringValue(), RequestParameterValue.TypeAnimeSerial.GetStringValue(), ParameterType.QueryString);
-        request.AddParameter(RequestParameterName.WithMaterialData.GetStringValue(), RequestParameterValue.WithMaterialData.GetStringValue(), ParameterType.QueryString);
-        request.AddParameter(RequestParameterName.Sort.GetStringValue(), RequestParameterValue.Sort.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.Token.GetStringValue(), RequestParameterValues.Token.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.Type.GetStringValue(), RequestParameterValues.TypeAnimeSerial.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.WithMaterialData.GetStringValue(), RequestParameterValues.WithMaterialData.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.Sort.GetStringValue(), RequestParameterValues.Sort.GetStringValue(), ParameterType.QueryString);
         
         var response = await client.ExecuteAsync(request);
         if (response.Content == null) throw new Exception("GetKodikDataSortedByRatingAsync content is null");
@@ -104,7 +104,7 @@ public class ApiService: IApiService
 
     public async Task<KodikApiResponse> GetAnimeDataByIdAsync(string id)
     {
-        var client = new RestClient(ApiRequestUrl.KodikSearch.GetStringValue());
+        var client = new RestClient(Urls.KodikSearch.GetStringValue());
         var request = new RestRequest
         {
             Method = Method.Post
@@ -113,10 +113,10 @@ public class ApiService: IApiService
         request.AddHeader("Accept", "application/json");
         request.AddHeader("Content-Type", "application/json");
         
-        request.AddParameter(RequestParameterName.Token.GetStringValue(), RequestParameterValue.Token.GetStringValue(), ParameterType.QueryString);
-        request.AddParameter(RequestParameterName.Type.GetStringValue(), RequestParameterValue.TypeAnimeSerial.GetStringValue(), ParameterType.QueryString);
-        request.AddParameter(RequestParameterName.WithMaterialData.GetStringValue(), RequestParameterValue.WithMaterialData.GetStringValue(), ParameterType.QueryString);
-        request.AddParameter(RequestParameterName.Id.GetStringValue(), id, ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.Token.GetStringValue(), RequestParameterValues.Token.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.Type.GetStringValue(), RequestParameterValues.TypeAnimeSerial.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.WithMaterialData.GetStringValue(), RequestParameterValues.WithMaterialData.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.Id.GetStringValue(), id, ParameterType.QueryString);
         
         var response = await client.ExecuteAsync(request);
         if (response.Content == null) throw new Exception("GetAnimeDataById content is null");
@@ -126,7 +126,7 @@ public class ApiService: IApiService
 
     public async Task<KodikApiResponse> SearchAnimeByTitleAsync(string title)
     {
-        var client = new RestClient(ApiRequestUrl.KodikSearch.GetStringValue());
+        var client = new RestClient(Urls.KodikSearch.GetStringValue());
         var request = new RestRequest
         {
             Method = Method.Post
@@ -135,10 +135,10 @@ public class ApiService: IApiService
         request.AddHeader("Accept", "application/json");
         request.AddHeader("Content-Type", "application/json");
         
-        request.AddParameter(RequestParameterName.Token.GetStringValue(), RequestParameterValue.Token.GetStringValue(), ParameterType.QueryString);
-        request.AddParameter(RequestParameterName.Type.GetStringValue(), RequestParameterValue.TypeAnimeSerial.GetStringValue(), ParameterType.QueryString);
-        request.AddParameter(RequestParameterName.WithMaterialData.GetStringValue(), RequestParameterValue.WithMaterialData.GetStringValue(), ParameterType.QueryString);
-        request.AddParameter(RequestParameterName.Title.GetStringValue(), title, ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.Token.GetStringValue(), RequestParameterValues.Token.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.Type.GetStringValue(), RequestParameterValues.TypeAnimeSerial.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.WithMaterialData.GetStringValue(), RequestParameterValues.WithMaterialData.GetStringValue(), ParameterType.QueryString);
+        request.AddParameter(RequestParameterNames.Title.GetStringValue(), title, ParameterType.QueryString);
         
         var response = await client.ExecuteAsync(request);
         if (response.Content == null) throw new Exception("SearchAnimeByTitleAsync content is null");
@@ -148,7 +148,7 @@ public class ApiService: IApiService
 
     public async Task<List<ShikimoriCalendarApiResponse>> GetCalendarDataAsync()
     {
-        var client = new RestClient(ApiRequestUrl.Calendar.GetStringValue());
+        var client = new RestClient(Urls.Calendar.GetStringValue());
         var request = new RestRequest
         {
             Method = Method.Get

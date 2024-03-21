@@ -17,6 +17,6 @@ public class KodikApiResponse
     public string NextPage { get; set; }
 
     [JsonPropertyName("results")]
-    public List<AnimeInfo> Results { get; set; }
+    public List<AnimeData> Results { get; set; }
 }
 

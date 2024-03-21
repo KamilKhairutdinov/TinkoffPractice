@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace AnimeWaveWebserver.Models.ApiModels.KodikApiModels;
 
-public class AnimeInfo
+public class AnimeData
 {
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -74,5 +74,5 @@ public class AnimeInfo
         public MaterialData MaterialData { get; set; }
 
         [JsonPropertyName("screenshots")]
-        public List<Uri> Screenshots { get; set; }
+        public List<string> Screenshots { get; set; }
 }
