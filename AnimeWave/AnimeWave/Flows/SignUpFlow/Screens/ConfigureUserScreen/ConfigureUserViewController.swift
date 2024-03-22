@@ -100,33 +100,46 @@ extension ConfigureUserViewController: UITextFieldDelegate {
 
     private func configureUI() {
         fillProfileLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(70)
+            make.top.equalToSuperview().offset(
+                LayoutConstants.ConfigureUserView.FillProfileLabel.topOffset
+            )
             make.centerX.equalToSuperview()
         }
 
         userAvatarImageView.snp.makeConstraints { make in
-            make.width.height.equalTo(view.frame.width / 2)
-            make.top.equalTo(fillProfileLabel.snp.bottom).offset(100)
+            make.width.height.equalTo(
+                view.frame.width * LayoutConstants.ConfigureUserView.UserAvatarImageView.widthHeightMultiplier
+            )
+            make.top.equalTo(fillProfileLabel.snp.bottom).offset(
+                LayoutConstants.ConfigureUserView.UserAvatarImageView.topOffset
+            )
             make.centerX.equalToSuperview()
         }
 
         pickImageButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(userAvatarImageView.snp.bottom).offset(10)
+            make.top.equalTo(userAvatarImageView.snp.bottom).offset(
+                LayoutConstants.ConfigureUserView.PickImageButton.topOffset
+            )
         }
 
         loginTextField.snp.makeConstraints { make in
-            make.top.equalTo(pickImageButton.snp.bottom).offset(30)
-            make.left.right.equalToSuperview().inset(50)
+            make.top.equalTo(pickImageButton.snp.bottom).offset(
+                LayoutConstants.ConfigureUserView.LoginTextField.topOffset
+            )
+            make.left.right.equalToSuperview().inset(
+                LayoutConstants.ConfigureUserView.LoginTextField.horizontalInset
+            )
             make.centerX.equalToSuperview()
         }
 
         signUpButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(loginTextField)
-            make.bottom.equalToSuperview().inset(50)
+            make.bottom.equalToSuperview().inset(
+                LayoutConstants.ConfigureUserView.SignUpButton.bottomOffset
+            )
         }
-
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

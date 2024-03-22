@@ -63,20 +63,26 @@ extension AuthViewController {
     private func configureUI() {
         logoImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(view.frame.height / 3)
+            make.top.equalToSuperview().offset(
+                view.frame.height * LayoutConstants.AuthView.LogoImageView.topOffsetMultiplier
+            )
         }
 
         signInButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(signUpButton)
-            make.bottom.equalTo(logoImageView).offset(70)
-            make.height.equalTo(35)
+            make.bottom.equalTo(logoImageView).offset(
+                LayoutConstants.AuthView.SignInButton.bottomOffset
+            )
+            make.height.equalTo(LayoutConstants.buttonsHeight)
         }
 
         signUpButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(signInButton.snp.bottom).offset(25)
-            make.height.equalTo(35)
+            make.top.equalTo(signInButton.snp.bottom).offset(
+                LayoutConstants.AuthView.SignUpButton.topOffset
+            )
+            make.height.equalTo(LayoutConstants.buttonsHeight)
         }
     }
 }

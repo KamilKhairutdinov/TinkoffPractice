@@ -109,19 +109,25 @@ extension SignUpViewController {
 
         stackView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
-            make.left.right.equalToSuperview().inset(50)
+            make.left.right.equalToSuperview().inset(
+                LayoutConstants.SignUpView.StackView.horizontalInset
+            )
         }
 
         validationErrorsLabel.snp.makeConstraints { make in
             make.left.equalTo(stackView.snp.left)
-            make.top.equalTo(stackView.snp.bottom).offset(10)
+            make.top.equalTo(stackView.snp.bottom).offset(
+                LayoutConstants.SignUpView.ValidationErrorsLabel.topOffset
+            )
             make.width.equalTo(emailTextField)
         }
 
         nextButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(emailTextField)
-            make.bottom.equalToSuperview().inset(50)
+            make.bottom.equalToSuperview().inset(
+                LayoutConstants.SignUpView.NextButton.bottomOffset
+            )
         }
     }
 
