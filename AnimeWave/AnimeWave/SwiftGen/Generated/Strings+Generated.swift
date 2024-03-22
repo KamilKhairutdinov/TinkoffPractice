@@ -34,21 +34,23 @@ internal enum Strings {
     /// Sign Up
     internal static let signUp = Strings.tr("Localizable", "buttons.signUp", fallback: "Sign Up")
   }
-  internal enum Labels {
+  internal enum Errors {
     /// Fill email field
-    internal static let emptyEmailField = Strings.tr("Localizable", "labels.EmptyEmailField", fallback: "Fill email field")
+    internal static let emptyEmailField = Strings.tr("Localizable", "errors.EmptyEmailField", fallback: "Fill email field")
     /// Fill password field
-    internal static let emptyPasswordField = Strings.tr("Localizable", "labels.EmptyPasswordField", fallback: "Fill password field")
+    internal static let emptyPasswordField = Strings.tr("Localizable", "errors.EmptyPasswordField", fallback: "Fill password field")
+    /// Invalid mail format
+    internal static let incorrectEmail = Strings.tr("Localizable", "errors.IncorrectEmail", fallback: "Invalid mail format")
+    /// Password length must be longer than 6 characters
+    internal static let incorrectPasswordLenght = Strings.tr("Localizable", "errors.IncorrectPasswordLenght", fallback: "Password length must be longer than 6 characters")
+    /// Passwords don't match
+    internal static let passwordsDontMatch = Strings.tr("Localizable", "errors.PasswordsDontMatch", fallback: "Passwords don't match")
+    /// Fill all fields
+    internal static let signInValidationError = Strings.tr("Localizable", "errors.signInValidationError", fallback: "Fill all fields")
+  }
+  internal enum Labels {
     /// Complete your profile
     internal static let fillProfileLabel = Strings.tr("Localizable", "labels.fillProfileLabel", fallback: "Complete your profile")
-    /// Invalid mail format
-    internal static let incorrectEmail = Strings.tr("Localizable", "labels.IncorrectEmail", fallback: "Invalid mail format")
-    /// Password length must be longer than 6 characters
-    internal static let incorrectPasswordLenght = Strings.tr("Localizable", "labels.IncorrectPasswordLenght", fallback: "Password length must be longer than 6 characters")
-    /// Passwords don't match
-    internal static let passwordsDontMatch = Strings.tr("Localizable", "labels.PasswordsDontMatch", fallback: "Passwords don't match")
-    /// Fill all fields
-    internal static let signInValidationError = Strings.tr("Localizable", "labels.signInValidationError", fallback: "Fill all fields")
   }
   internal enum TextFields {
     ///  Email

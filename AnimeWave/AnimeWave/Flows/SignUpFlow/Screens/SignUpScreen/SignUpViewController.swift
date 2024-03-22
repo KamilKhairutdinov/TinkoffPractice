@@ -12,7 +12,7 @@ final class SignUpViewController: UIViewController, FlowController {
 
     // MARK: - UI elements
     private lazy var emailTextField: UITextField = {
-        let textField = textFieldFactory.createTextField(placeholder: "email_placeholder".localized)
+        let textField = textFieldFactory.createTextField(placeholder: Strings.TextFields.emailPlaceholder)
         textField.keyboardType = .emailAddress
         textField.returnKeyType = .next
         textField.delegate = self
@@ -21,7 +21,7 @@ final class SignUpViewController: UIViewController, FlowController {
     }()
 
     private lazy var passwordTextField: UITextField = {
-        let textField = textFieldFactory.createTextField(placeholder: "password_placeholder".localized)
+        let textField = textFieldFactory.createTextField(placeholder: Strings.TextFields.loginPlaceholder)
         textField.isSecureTextEntry = true
         textField.returnKeyType = .next
         textField.delegate = self
@@ -31,7 +31,9 @@ final class SignUpViewController: UIViewController, FlowController {
     }()
 
     private lazy var passwordConfirmationTextField: UITextField = {
-        let textField = textFieldFactory.createTextField(placeholder: "password_confirmation_placeholder".localized)
+        let textField = textFieldFactory.createTextField(
+            placeholder: Strings.TextFields.passwordConfirmationPlaceholder
+        )
         textField.isSecureTextEntry = true
         textField.returnKeyType = .done
         textField.delegate = self
@@ -58,7 +60,7 @@ final class SignUpViewController: UIViewController, FlowController {
                 self.passwordConfirmationTextField.text
             )
         }
-        let button = buttonFactory.createButton(title: "next_button".localized, action: action)
+        let button = buttonFactory.createButton(title: Strings.Buttons.next, action: action)
 
         return button
     }()
@@ -90,7 +92,7 @@ final class SignUpViewController: UIViewController, FlowController {
 extension SignUpViewController {
     private func setupView() {
         view.backgroundColor = UIColor.background
-        navigationItem.title = "sign_up_title".localized
+        navigationItem.title = Strings.Titles.signUp
         configureUI()
     }
 

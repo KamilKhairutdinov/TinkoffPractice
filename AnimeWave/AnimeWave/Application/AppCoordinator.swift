@@ -24,7 +24,7 @@ class AppCoordinator: BaseCoordinator {
         } else {
             runAuthFlow()
         }
-        // authService.currentUser == nil ? runAuthFlow() : runMainFlow()
+    // authService.currentUser == nil ? runAuthFlow() : runMainFlow()
     }
 
     private func runAuthFlow() {

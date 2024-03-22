@@ -45,7 +45,7 @@ class SignUpViewModel {
                     self.isSuccessfulRegistered.value = true
                 case .failure(let error):
                     print(error)
-                    self.errorStringFormatted.value = error.localizedDescription.localized
+                    self.errorStringFormatted.value = error.localizedDescription
                     self.isSuccessfulRegistered.value = false
                 }
             }
@@ -54,9 +54,9 @@ class SignUpViewModel {
         }
     }
 
-    private func formatErrors(_ errors: [ValidationError]) {
+    private func formatErrors(_ errors: [String]) {
         errors.forEach { error in
-            errorStringFormatted.value += "\(error.rawValue.localized)\n"
+            errorStringFormatted.value += "\(error)\n"
         }
     }
 }

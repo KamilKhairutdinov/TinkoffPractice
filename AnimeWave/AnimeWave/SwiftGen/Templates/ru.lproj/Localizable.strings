@@ -11,13 +11,15 @@
 "textFields.passwordConfirmationPlaceholder" = " Подтверждение пароля";
 
 // Labels
-"labels.IncorrectEmail" = "Неправильный формат почты";
-"labels.IncorrectPasswordLenght" = "Длина пароля должна быть больше 6 символов";
-"labels.EmptyEmailField" = "Заполните поле почты";
-"labels.EmptyPasswordField" = "Заполните поле пароля";
-"labels.PasswordsDontMatch" = "Заполните свой профиль";
-"labels.fillProfileLabel" = "Пароли не совпадают";
-"labels.signInValidationError" = "Заполните все поля";
+"labels.fillProfileLabel" = "Заполните свой профиль";
+
+// Custom errors
+"errors.IncorrectEmail" = "Неправильный формат почты";
+"errors.IncorrectPasswordLenght" = "Длина пароля должна быть больше 6 символов";
+"errors.EmptyEmailField" = "Заполните поле почты";
+"errors.EmptyPasswordField" = "Заполните поле пароля";
+"errors.PasswordsDontMatch" = "Пароли не совпадают";
+"errors.signInValidationError" = "Заполните все поля";
 
 // Titles
 "titles.signUp" = "Рeгистрация";

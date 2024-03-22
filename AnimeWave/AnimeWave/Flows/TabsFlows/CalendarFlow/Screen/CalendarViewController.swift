@@ -11,6 +11,6 @@ final class CalendarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "calendar_title".localized
+        navigationItem.title = Strings.Titles.calendar
     }
 }

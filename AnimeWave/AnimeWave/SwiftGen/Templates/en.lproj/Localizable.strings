@@ -11,13 +11,15 @@
 "textFields.passwordConfirmationPlaceholder" = " Password confirmation";
 
 // Labels
-"labels.IncorrectEmail" = "Invalid mail format";
-"labels.IncorrectPasswordLenght" = "Password length must be longer than 6 characters";
-"labels.EmptyEmailField" = "Fill email field";
-"labels.EmptyPasswordField" = "Fill password field";
-"labels.PasswordsDontMatch" = "Passwords don't match";
 "labels.fillProfileLabel" = "Complete your profile";
-"labels.signInValidationError" = "Fill all fields";
+
+// Custom errors
+"errors.IncorrectEmail" = "Invalid mail format";
+"errors.IncorrectPasswordLenght" = "Password length must be longer than 6 characters";
+"errors.EmptyEmailField" = "Fill email field";
+"errors.EmptyPasswordField" = "Fill password field";
+"errors.PasswordsDontMatch" = "Passwords don't match";
+"errors.signInValidationError" = "Fill all fields";
 
 // Titles
 "titles.signUp" = "Registration";

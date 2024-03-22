@@ -16,7 +16,7 @@ final class AuthViewController: UIViewController, FlowControllerWithValue {
 
     // MARK: - UI elements
     private lazy var logoImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "AnimeWaveLogo"))
+        let imageView = UIImageView(image: UIImage.animeWaveLogo)
         imageView.contentMode = .scaleAspectFill
 
         return imageView
@@ -27,7 +27,7 @@ final class AuthViewController: UIViewController, FlowControllerWithValue {
             guard let self else { return }
             self.complitionHandler?(.signIn)
         }
-        let button = buttonFactory.createButton(title: "sign_in_button".localized, action: action)
+        let button = buttonFactory.createButton(title: Strings.Buttons.signIn, action: action)
 
         return button
     }()
@@ -37,7 +37,7 @@ final class AuthViewController: UIViewController, FlowControllerWithValue {
             guard let self else { return }
             self.complitionHandler?(.signUp)
         }
-        let button = buttonFactory.createButton(title: "sign_up_button".localized, action: action)
+        let button = buttonFactory.createButton(title: Strings.Buttons.signUp, action: action)
 
         return button
     }()

@@ -7,18 +7,10 @@
 
 import Foundation
 
-enum ValidationError: String {
-    case incorrectEmail = "incorrect_email"
-    case incorrectPasswordLenght = "incorrect_password_lenght"
-    case emptyEmailField = "empty_email_field"
-    case emptyPasswordField = "empty_password_field"
-    case passwordDontMatch = "passwords_dont_match"
-}
-
 class ValidatorService {
 
     // MARK: - Variables
-    private var validationErrors: [ValidationError]
+    private var validationErrors: [String]
 
     // MARK: - Init
     init() {
@@ -26,30 +18,30 @@ class ValidatorService {
     }
 
     // MARK: - Functions
-    func validateUser(_ email: String, _ password: String, _ passwordConfirmation: String) -> [ValidationError] {
+    func validateUser(_ email: String, _ password: String, _ passwordConfirmation: String) -> [String] {
         validationErrors = []
 
         if email.count == 0 {
-            validationErrors.append(.emptyEmailField)
+            validationErrors.append(Strings.Errors.emptyEmailField)
         }
 
         if password.count == 0 {
-            validationErrors.append(.emptyPasswordField)
+            validationErrors.append(Strings.Errors.emptyPasswordField)
         }
 
         if !validationErrors.isEmpty {
             return validationErrors
         } else {
             if !isValidEmail(email) {
-                validationErrors.append(.incorrectEmail)
+                validationErrors.append(Strings.Errors.incorrectEmail)
             }
 
             if !isValidPassword(password) {
-                validationErrors.append(.incorrectPasswordLenght)
+                validationErrors.append(Strings.Errors.incorrectPasswordLenght)
             }
 
             if password != passwordConfirmation {
-                validationErrors.append(.passwordDontMatch)
+                validationErrors.append(Strings.Errors.passwordsDontMatch)
             }
             return validationErrors
         }

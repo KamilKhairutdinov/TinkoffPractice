@@ -15,7 +15,7 @@ final class ConfigureUserViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = UIColor.mainText
-        label.text = "fillProfileLabel_text".localized
+        label.text = Strings.Labels.fillProfileLabel
 
         return label
     }()
@@ -28,19 +28,19 @@ final class ConfigureUserViewController: UIViewController {
         return imageView
     }()
 
-    private lazy var selectImageButton: UIButton = {
+    private lazy var pickImageButton: UIButton = {
         let action = UIAction { [weak self] _ in
             guard let self else { return }
             self.present(self.avatarImagePickerController, animated: true)
         }
-        let button = buttonFactory.createPlainButton(title: "pick_image_button".localized, action: action)
+        let button = buttonFactory.createPlainButton(title: Strings.Buttons.pickImage, action: action)
         button.translatesAutoresizingMaskIntoConstraints = false
 
         return button
     }()
 
     private lazy var loginTextField: UITextField = {
-        let textField = textFieldFactory.createTextField(placeholder: "login_placeholder".localized)
+        let textField = textFieldFactory.createTextField(placeholder: Strings.TextFields.loginPlaceholder)
         textField.returnKeyType = .done
         textField.delegate = self
 
@@ -52,7 +52,7 @@ final class ConfigureUserViewController: UIViewController {
             guard let self else { return }
             self.complitionHandler?()
         }
-        let button = buttonFactory.createButton(title: "sign_up_button".localized, action: action)
+        let button = buttonFactory.createButton(title: Strings.Buttons.signUp, action: action)
 
         return button
     }()
@@ -91,7 +91,7 @@ extension ConfigureUserViewController: UITextFieldDelegate {
         addSubviews(
             fillProfileLabel,
             userAvatarImageView,
-            selectImageButton,
+            pickImageButton,
             loginTextField,
             signUpButton
         )
@@ -110,13 +110,13 @@ extension ConfigureUserViewController: UITextFieldDelegate {
             make.centerX.equalToSuperview()
         }
 
-        selectImageButton.snp.makeConstraints { make in
+        pickImageButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(userAvatarImageView.snp.bottom).offset(10)
         }
 
         loginTextField.snp.makeConstraints { make in
-            make.top.equalTo(selectImageButton.snp.bottom).offset(30)
+            make.top.equalTo(pickImageButton.snp.bottom).offset(30)
             make.left.right.equalToSuperview().inset(50)
             make.centerX.equalToSuperview()
         }
