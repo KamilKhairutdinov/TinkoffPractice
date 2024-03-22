@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class ConfigureUserViewController: UIViewController {
+final class ConfigureProfileViewController: UIViewController {
 
     // MARK: - UI elements
     private lazy var fillProfileLabel: UILabel = {
@@ -59,7 +59,7 @@ final class ConfigureUserViewController: UIViewController {
 
     // MARK: - Variables
     var complitionHandler: (() -> Void)?
-    private var viewModel: ConfigureUserViewModel
+    private var viewModel: ConfigureProfileViewModel
     private var buttonFactory = ButtonFactory()
     private var textFieldFactory = TextFieldFactory()
     private lazy var avatarImagePickerController: UIImagePickerController = {
@@ -69,7 +69,7 @@ final class ConfigureUserViewController: UIViewController {
     }()
 
     // MARK: - Init
-    init(viewModel: ConfigureUserViewModel) {
+    init(viewModel: ConfigureProfileViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -85,7 +85,7 @@ final class ConfigureUserViewController: UIViewController {
     }
 }
 
-extension ConfigureUserViewController: UITextFieldDelegate {
+extension ConfigureProfileViewController: UITextFieldDelegate {
     private func setupView() {
         view.backgroundColor = UIColor.background
         addSubviews(
@@ -101,17 +101,17 @@ extension ConfigureUserViewController: UITextFieldDelegate {
     private func configureUI() {
         fillProfileLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(
-                LayoutConstants.ConfigureUserView.FillProfileLabel.topOffset
+                LayoutConstants.ConfigureProfileView.FillProfileLabel.topOffset
             )
             make.centerX.equalToSuperview()
         }
 
         userAvatarImageView.snp.makeConstraints { make in
             make.width.height.equalTo(
-                view.frame.width * LayoutConstants.ConfigureUserView.UserAvatarImageView.widthHeightMultiplier
+                view.frame.width * LayoutConstants.ConfigureProfileView.UserAvatarImageView.widthHeightMultiplier
             )
             make.top.equalTo(fillProfileLabel.snp.bottom).offset(
-                LayoutConstants.ConfigureUserView.UserAvatarImageView.topOffset
+                LayoutConstants.ConfigureProfileView.UserAvatarImageView.topOffset
             )
             make.centerX.equalToSuperview()
         }
@@ -119,16 +119,16 @@ extension ConfigureUserViewController: UITextFieldDelegate {
         pickImageButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(userAvatarImageView.snp.bottom).offset(
-                LayoutConstants.ConfigureUserView.PickImageButton.topOffset
+                LayoutConstants.ConfigureProfileView.PickImageButton.topOffset
             )
         }
 
         loginTextField.snp.makeConstraints { make in
             make.top.equalTo(pickImageButton.snp.bottom).offset(
-                LayoutConstants.ConfigureUserView.LoginTextField.topOffset
+                LayoutConstants.ConfigureProfileView.LoginTextField.topOffset
             )
             make.left.right.equalToSuperview().inset(
-                LayoutConstants.ConfigureUserView.LoginTextField.horizontalInset
+                LayoutConstants.ConfigureProfileView.LoginTextField.horizontalInset
             )
             make.centerX.equalToSuperview()
         }
@@ -137,7 +137,7 @@ extension ConfigureUserViewController: UITextFieldDelegate {
             make.centerX.equalToSuperview()
             make.height.equalTo(loginTextField)
             make.bottom.equalToSuperview().inset(
-                LayoutConstants.ConfigureUserView.SignUpButton.bottomOffset
+                LayoutConstants.ConfigureProfileView.SignUpButton.bottomOffset
             )
         }
     }
@@ -148,6 +148,6 @@ extension ConfigureUserViewController: UITextFieldDelegate {
     }
 }
 
-extension ConfigureUserViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ConfigureProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 }

@@ -37,8 +37,8 @@ import UIKit
          }
      }
 
-     // MARK: - ConfigureUserViewController
-     enum ConfigureUserView {
+     // MARK: - ConfigureProfileViewController
+     enum ConfigureProfileView {
          enum FillProfileLabel {
              static let topOffset: CGFloat = 70
          }

@@ -21,7 +21,7 @@ class SignUpFlowCoordinator: BaseCoordinator {
 
     private func showSignUpController() {
         let signUpViewController = SignUpViewController(viewModel: SignUpViewModel())
-        signUpViewController.complitionHandler = { [weak self] in
+        signUpViewController.completionHandler = { [weak self] in
             guard let self else { return }
             self.showConfigureProfileController()
         }
@@ -29,14 +29,14 @@ class SignUpFlowCoordinator: BaseCoordinator {
     }
 
     private func showConfigureProfileController() {
-        let configureUserViewModel = ConfigureUserViewModel()
-        let configureUserViewController = ConfigureUserViewController(viewModel: configureUserViewModel)
-        configureUserViewController.navigationItem.hidesBackButton = true
-        configureUserViewController.complitionHandler = { [weak self] in
+        let configureProfileViewModel = ConfigureProfileViewModel()
+        let configureProfileViewController = ConfigureProfileViewController(viewModel: configureProfileViewModel)
+        configureProfileViewController.navigationItem.hidesBackButton = true
+        configureProfileViewController.complitionHandler = { [weak self] in
             guard let self else { return }
-            self.flowComplitionHandler?()
+            self.flowCompletionHandler?()
         }
 
-        router.push(configureUserViewController, animated: true)
+        router.push(configureProfileViewController, animated: true)
     }
 }

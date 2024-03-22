@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-class ConfigureUserViewModel {
+class ConfigureProfileViewModel {
 
     // MARK: - Variables
     var authService: AuthService

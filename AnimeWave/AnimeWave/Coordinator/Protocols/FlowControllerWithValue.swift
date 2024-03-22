@@ -9,5 +9,5 @@ import Foundation
 
 protocol FlowControllerWithValue: AnyObject {
     associatedtype OutValue
-    var complitionHandler: ((OutValue) -> Void)? { get set }
+    var completionHandler: ((OutValue) -> Void)? { get set }
 }

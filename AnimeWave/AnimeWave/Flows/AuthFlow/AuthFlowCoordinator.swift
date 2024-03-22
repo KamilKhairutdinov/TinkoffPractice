@@ -21,7 +21,7 @@ class AuthFlowCoordinator: BaseCoordinator {
 
     private func showAuthController() {
         let authViewController = AuthViewController()
-        authViewController.complitionHandler = { [weak self] states in
+        authViewController.completionHandler = { [weak self] states in
             guard let self else { return }
             switch states {
             case .signIn:
@@ -37,7 +37,7 @@ class AuthFlowCoordinator: BaseCoordinator {
         let signUpFlowCoordinator = coordinatorFactory.createSignUpCoordinator(router: router)
         signUpFlowCoordinator.start()
         addDependency(signUpFlowCoordinator)
-        signUpFlowCoordinator.flowComplitionHandler = { [weak self] in
+        signUpFlowCoordinator.flowCompletionHandler = { [weak self] in
             guard let self else { return }
             self.router.popToRootController(animated: false)
             self.runSignInFlow()
@@ -48,10 +48,10 @@ class AuthFlowCoordinator: BaseCoordinator {
     private func runSignInFlow() {
         let signInFlowCoordinator = coordinatorFactory.createSignInCoordinator(router: router)
         addDependency(signInFlowCoordinator)
-        signInFlowCoordinator.flowComplitionHandler = { [weak self] in
+        signInFlowCoordinator.flowCompletionHandler = { [weak self] in
             guard let self else { return }
             self.removeDependency(signInFlowCoordinator)
-            self.flowComplitionHandler?()
+            self.flowCompletionHandler?()
         }
         signInFlowCoordinator.start()
     }

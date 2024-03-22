@@ -25,7 +25,7 @@ final class AuthViewController: UIViewController, FlowControllerWithValue {
     private lazy var signInButton: UIButton = {
         let action = UIAction { [weak self] _ in
             guard let self else { return }
-            self.complitionHandler?(.signIn)
+            self.completionHandler?(.signIn)
         }
         let button = buttonFactory.createButton(title: Strings.Buttons.signIn, action: action)
 
@@ -35,7 +35,7 @@ final class AuthViewController: UIViewController, FlowControllerWithValue {
     private lazy var signUpButton: UIButton = {
         let action = UIAction { [weak self] _ in
             guard let self else { return }
-            self.complitionHandler?(.signUp)
+            self.completionHandler?(.signUp)
         }
         let button = buttonFactory.createButton(title: Strings.Buttons.signUp, action: action)
 
@@ -43,7 +43,7 @@ final class AuthViewController: UIViewController, FlowControllerWithValue {
     }()
 
     // MARK: - Variables
-    var complitionHandler: ((AuthViewControllerStates) -> Void)?
+    var completionHandler: ((AuthViewControllerStates) -> Void)?
     private let buttonFactory = ButtonFactory()
 
     // MARK: - Lifecycle

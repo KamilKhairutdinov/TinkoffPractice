@@ -16,8 +16,8 @@
 		27261F992BA7AF6A00225F5D /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F982BA7AF6A00225F5D /* UIViewController+extension.swift */; };
 		27261F9B2BA7B9DF00225F5D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F9A2BA7B9DF00225F5D /* SignUpViewModel.swift */; };
 		27261FA02BA81EEB00225F5D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F9F2BA81EEB00225F5D /* Observable.swift */; };
-		27261FA82BA8A4C800225F5D /* ConfigureUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FA72BA8A4C800225F5D /* ConfigureUserViewController.swift */; };
-		27261FAA2BA8A4E500225F5D /* ConfigureUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FA92BA8A4E500225F5D /* ConfigureUserViewModel.swift */; };
+		27261FA82BA8A4C800225F5D /* ConfigureProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FA72BA8A4C800225F5D /* ConfigureProfileViewController.swift */; };
+		27261FAA2BA8A4E500225F5D /* ConfigureProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FA92BA8A4E500225F5D /* ConfigureProfileViewModel.swift */; };
 		27261FAD2BA8B56C00225F5D /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FAC2BA8B56C00225F5D /* FlowController.swift */; };
 		27261FAF2BA8CE6100225F5D /* ValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FAE2BA8CE6100225F5D /* ValidatorService.swift */; };
 		27261FB22BA8D70600225F5D /* MainTabBarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FB12BA8D70600225F5D /* MainTabBarFlowCoordinator.swift */; };
@@ -67,8 +67,8 @@
 		27261F982BA7AF6A00225F5D /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		27261F9A2BA7B9DF00225F5D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		27261F9F2BA81EEB00225F5D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		27261FA72BA8A4C800225F5D /* ConfigureUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureUserViewController.swift; sourceTree = "<group>"; };
-		27261FA92BA8A4E500225F5D /* ConfigureUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureUserViewModel.swift; sourceTree = "<group>"; };
+		27261FA72BA8A4C800225F5D /* ConfigureProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureProfileViewController.swift; sourceTree = "<group>"; };
+		27261FA92BA8A4E500225F5D /* ConfigureProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureProfileViewModel.swift; sourceTree = "<group>"; };
 		27261FAC2BA8B56C00225F5D /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		27261FAE2BA8CE6100225F5D /* ValidatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorService.swift; sourceTree = "<group>"; };
 		27261FB12BA8D70600225F5D /* MainTabBarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -196,8 +196,8 @@
 		27261FA62BA8A4B000225F5D /* ConfigureUserScreen */ = {
 			isa = PBXGroup;
 			children = (
-				27261FA72BA8A4C800225F5D /* ConfigureUserViewController.swift */,
-				27261FA92BA8A4E500225F5D /* ConfigureUserViewModel.swift */,
+				27261FA72BA8A4C800225F5D /* ConfigureProfileViewController.swift */,
+				27261FA92BA8A4E500225F5D /* ConfigureProfileViewModel.swift */,
 			);
 			path = ConfigureUserScreen;
 			sourceTree = "<group>";
@@ -658,13 +658,13 @@
 				27DAA1DA2BA776B100EAC8A4 /* AuthFlowCoordinator.swift in Sources */,
 				2707895A2BADF50C00874D60 /* LayoutConstant.swift in Sources */,
 				27DAA1DC2BA7789400EAC8A4 /* AuthService.swift in Sources */,
-				27261FA82BA8A4C800225F5D /* ConfigureUserViewController.swift in Sources */,
+				27261FA82BA8A4C800225F5D /* ConfigureProfileViewController.swift in Sources */,
 				27261FAD2BA8B56C00225F5D /* FlowController.swift in Sources */,
 				27DAA1D62BA76C4200EAC8A4 /* TextFieldFactory.swift in Sources */,
 				276791982BA1908E00628CCE /* AppCoordinator.swift in Sources */,
 				27261FA02BA81EEB00225F5D /* Observable.swift in Sources */,
 				27261FB82BA8E16D00225F5D /* SignInViewModel.swift in Sources */,
-				27261FAA2BA8A4E500225F5D /* ConfigureUserViewModel.swift in Sources */,
+				27261FAA2BA8A4E500225F5D /* ConfigureProfileViewModel.swift in Sources */,
 				27261FC32BA8F46C00225F5D /* MainTabBarViewController.swift in Sources */,
 				27261FD32BA8F82900225F5D /* AnimeListViewController.swift in Sources */,
 			);

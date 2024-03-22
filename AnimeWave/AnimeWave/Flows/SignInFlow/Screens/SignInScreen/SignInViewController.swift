@@ -55,7 +55,7 @@ final class SignInViewController: UIViewController, FlowController {
     }()
 
     // MARK: - Variables
-    var complitionHandler: (() -> Void)?
+    var completionHandler: (() -> Void)?
     private var viewModel: SignInViewModel
     private let textFieldFactory = TextFieldFactory()
     private let buttonFactory = ButtonFactory()
@@ -130,7 +130,7 @@ extension SignInViewController {
         viewModel.isSuccessfullyLoggedIn.bind { [weak self] (isSuccessfullyLoggedIn) in
             guard let self else { return }
             if isSuccessfullyLoggedIn {
-                self.complitionHandler?()
+                self.completionHandler?()
             } else {
                 self.showLoginErrorAlert()
             }

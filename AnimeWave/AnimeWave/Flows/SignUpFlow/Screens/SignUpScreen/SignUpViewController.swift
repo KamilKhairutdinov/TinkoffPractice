@@ -66,7 +66,7 @@ final class SignUpViewController: UIViewController, FlowController {
     }()
 
     // MARK: - Variables
-    var complitionHandler: (() -> Void)?
+    var completionHandler: (() -> Void)?
     private let textFieldFactory = TextFieldFactory()
     private let buttonFactory = ButtonFactory()
     private let viewModel: SignUpViewModel
@@ -135,7 +135,7 @@ extension SignUpViewController {
         viewModel.isSuccessfulRegistered.bind({ [weak self] (isSuccessfulRegistered) in
             if isSuccessfulRegistered {
                 guard let self else { return }
-                self.complitionHandler?()
+                self.completionHandler?()
             }
         })
 
