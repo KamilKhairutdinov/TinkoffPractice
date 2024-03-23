@@ -4,6 +4,7 @@
 //
 //  Created by Камил Хайрутдинов on 22.03.2024.
 //
+// swiftlint:disable all
 
 import UIKit
 
@@ -76,4 +77,10 @@ import UIKit
              static let bottomOffset: CGFloat = 50
          }
      }
+
+     // MARK: - Global
+     static let buttonsHeight: CGFloat = 40
+     static let textFieldsheight: CGFloat = 40
  }
+
+// swiftlint:enable all
