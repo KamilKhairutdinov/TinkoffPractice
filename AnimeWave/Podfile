@@ -9,9 +9,9 @@ target 'AnimeWave' do
 	pod 'SwiftLint'
 	pod 'SnapKit'
 	pod 'Moya'
-  pod 'SwiftGen'
+    pod 'SwiftGen'
 
-  pod 'FirebaseAuth'
-  pod 'FirebaseStorage'
-  pod 'FirebaseFirestore'
+    pod 'FirebaseAuth'
+    pod 'FirebaseStorage'
+    pod 'FirebaseFirestore'
 end

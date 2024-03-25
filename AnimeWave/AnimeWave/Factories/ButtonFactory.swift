@@ -10,7 +10,8 @@ import UIKit
 class ButtonFactory {
 
     func createButton(title: String, action: UIAction) -> UIButton {
-        let button = UIButton(configuration: .bordered())
+        // let button = UIButton(configuration: .bordered())
+        let button = UIButton()
         button.tintColor = .clear
         button.layer.cornerRadius = 12
         button.backgroundColor = UIColor.buttonAndTextField
@@ -23,7 +24,8 @@ class ButtonFactory {
     }
 
     func createPlainButton(title: String, action: UIAction) -> UIButton {
-        let button = UIButton(configuration: .plain())
+        // let button = UIButton(configuration: .plain())
+        let button = UIButton()
         button.tintColor = .clear
         button.setTitle(title, for: .normal)
         button.setTitleColor(UIColor.mainText, for: .normal)
