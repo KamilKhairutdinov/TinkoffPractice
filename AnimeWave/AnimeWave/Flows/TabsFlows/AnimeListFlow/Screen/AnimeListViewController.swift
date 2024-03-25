@@ -11,6 +11,6 @@ final class AnimeListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "anime_title".localized
+        navigationItem.title = Strings.Titles.anime
     }
 }

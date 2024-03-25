@@ -1,0 +1,39 @@
+// Buttons
+"buttons.signIn" = "Войти";
+"buttons.signUp" = "Зарегестрироваться";
+"buttons.next" = "Продолжить";
+"buttons.pickImage" = "Выбрать фото";
+
+// TextFields
+"textFields.emailPlaceholder" = " Почта";
+"textFields.passwordPlaceholder" = " Пароль";
+"textFields.loginPlaceholder" = " Логин";
+"textFields.passwordConfirmationPlaceholder" = " Подтверждение пароля";
+
+// Labels
+"labels.fillProfileLabel" = "Заполните свой профиль";
+
+// Custom errors
+"errors.IncorrectEmail" = "Неправильный формат почты";
+"errors.IncorrectPasswordLenght" = "Длина пароля должна быть больше 6 символов";
+"errors.EmptyEmailField" = "Заполните поле почты";
+"errors.EmptyPasswordField" = "Заполните поле пароля";
+"errors.PasswordsDontMatch" = "Пароли не совпадают";
+"errors.signInValidationError" = "Заполните все поля";
+
+// Titles
+"titles.signUp" = "Рeгистрация";
+"titles.signIn" = "Вход";
+"titles.profile" = "Профиль";
+"titles.anime" = "Аниме";
+"titles.search" = "Поиск";
+"titles.calendar" = "Календарь";
+
+// Alert titles
+"alerts.titles.errorAlertTitle" = "Ошибка";
+
+// Alert messages
+"alerts.messages.signInErrorAlert" = "Неправильный логин или пароль";
+
+// Alert action titles
+"alerts.action.alertActionTryAgain" = "Попробовать ещё раз";

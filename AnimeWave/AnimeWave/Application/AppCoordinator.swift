@@ -24,14 +24,14 @@ class AppCoordinator: BaseCoordinator {
         } else {
             runAuthFlow()
         }
-        // authService.currentUser == nil ? runAuthFlow() : runMainFlow()
+    // authService.currentUser == nil ? runAuthFlow() : runMainFlow()
     }
 
     private func runAuthFlow() {
         let authFlowCoordinator = coordinatorFactory.createAuthCoordinator(router: router)
         authFlowCoordinator.start()
         addDependency(authFlowCoordinator)
-        authFlowCoordinator.flowComplitionHandler = { [weak self] in
+        authFlowCoordinator.flowCompletionHandler = { [weak self] in
             guard let self else { return }
             self.isLoggedIn = true
             self.runMainFlow()
@@ -43,7 +43,7 @@ class AppCoordinator: BaseCoordinator {
         let mainTabBarViewController = MainTabBarViewController()
         let mainTabBarFlowCoordinator = coordinatorFactory.createMainTabBarCoordinator(controller: mainTabBarViewController)
         addDependency(mainTabBarFlowCoordinator)
-        mainTabBarFlowCoordinator.flowComplitionHandler = { [weak self] in
+        mainTabBarFlowCoordinator.flowCompletionHandler = { [weak self] in
             guard let self else { return }
             self.removeDependency(mainTabBarFlowCoordinator)
         }

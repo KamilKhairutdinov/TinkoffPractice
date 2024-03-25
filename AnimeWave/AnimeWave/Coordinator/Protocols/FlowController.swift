@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FlowController: AnyObject {
-    var complitionHandler: (() -> Void)? { get set }
+    var completionHandler: (() -> Void)? { get set }
 }

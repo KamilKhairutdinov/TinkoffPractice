@@ -10,8 +10,8 @@ import UIKit
 class AlertFactory {
 
     func createErrorAlert(message: String) -> UIAlertController {
-        let alert = UIAlertController(title: "error_alert_title".localized, message: message.localized, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "alert_action_try_again".localized, style: .cancel))
+        let alert = UIAlertController(title: Strings.Alerts.Titles.errorAlertTitle, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Strings.Alerts.Action.alertActionTryAgain, style: .cancel))
 
         return alert
     }

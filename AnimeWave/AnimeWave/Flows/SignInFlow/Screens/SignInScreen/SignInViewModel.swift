@@ -26,7 +26,7 @@ class SignInViewModel {
         guard let email, let password else { return }
         validationError.value = ""
         if email.count == 0 || password.count == 0 {
-            validationError.value = "login_validation_error".localized
+            validationError.value = Strings.Errors.signInValidationError
         } else {
             authService.signIn(email: email, password: password) { [weak self] result in
                 guard let self else { return }

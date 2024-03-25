@@ -12,7 +12,7 @@ final class SignUpViewController: UIViewController, FlowController {
 
     // MARK: - UI elements
     private lazy var emailTextField: UITextField = {
-        let textField = textFieldFactory.createTextField(placeholder: "email_placeholder".localized)
+        let textField = textFieldFactory.createTextField(placeholder: Strings.TextFields.emailPlaceholder)
         textField.keyboardType = .emailAddress
         textField.returnKeyType = .next
         textField.delegate = self
@@ -21,7 +21,7 @@ final class SignUpViewController: UIViewController, FlowController {
     }()
 
     private lazy var passwordTextField: UITextField = {
-        let textField = textFieldFactory.createTextField(placeholder: "password_placeholder".localized)
+        let textField = textFieldFactory.createTextField(placeholder: Strings.TextFields.loginPlaceholder)
         textField.isSecureTextEntry = true
         textField.returnKeyType = .next
         textField.delegate = self
@@ -31,7 +31,9 @@ final class SignUpViewController: UIViewController, FlowController {
     }()
 
     private lazy var passwordConfirmationTextField: UITextField = {
-        let textField = textFieldFactory.createTextField(placeholder: "password_confirmation_placeholder".localized)
+        let textField = textFieldFactory.createTextField(
+            placeholder: Strings.TextFields.passwordConfirmationPlaceholder
+        )
         textField.isSecureTextEntry = true
         textField.returnKeyType = .done
         textField.delegate = self
@@ -58,13 +60,13 @@ final class SignUpViewController: UIViewController, FlowController {
                 self.passwordConfirmationTextField.text
             )
         }
-        let button = buttonFactory.createButton(title: "next_button".localized, action: action)
+        let button = buttonFactory.createButton(title: Strings.Buttons.next, action: action)
 
         return button
     }()
 
     // MARK: - Variables
-    var complitionHandler: (() -> Void)?
+    var completionHandler: (() -> Void)?
     private let textFieldFactory = TextFieldFactory()
     private let buttonFactory = ButtonFactory()
     private let viewModel: SignUpViewModel
@@ -90,7 +92,7 @@ final class SignUpViewController: UIViewController, FlowController {
 extension SignUpViewController {
     private func setupView() {
         view.backgroundColor = UIColor.background
-        navigationItem.title = "sign_up_title".localized
+        navigationItem.title = Strings.Titles.signUp
         configureUI()
     }
 
@@ -107,19 +109,25 @@ extension SignUpViewController {
 
         stackView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
-            make.left.right.equalToSuperview().inset(50)
+            make.left.right.equalToSuperview().inset(
+                LayoutConstants.SignUpView.StackView.horizontalInset
+            )
         }
 
         validationErrorsLabel.snp.makeConstraints { make in
             make.left.equalTo(stackView.snp.left)
-            make.top.equalTo(stackView.snp.bottom).offset(10)
+            make.top.equalTo(stackView.snp.bottom).offset(
+                LayoutConstants.SignUpView.ValidationErrorsLabel.topOffset
+            )
             make.width.equalTo(emailTextField)
         }
 
         nextButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(emailTextField)
-            make.bottom.equalToSuperview().inset(50)
+            make.bottom.equalToSuperview().inset(
+                LayoutConstants.SignUpView.NextButton.bottomOffset
+            )
         }
     }
 
@@ -127,7 +135,7 @@ extension SignUpViewController {
         viewModel.isSuccessfulRegistered.bind({ [weak self] (isSuccessfulRegistered) in
             if isSuccessfulRegistered {
                 guard let self else { return }
-                self.complitionHandler?()
+                self.completionHandler?()
             }
         })
 

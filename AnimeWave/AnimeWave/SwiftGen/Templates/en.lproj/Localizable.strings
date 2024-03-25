@@ -1,0 +1,39 @@
+// Buttons
+"buttons.signIn" = "Sign in";
+"buttons.signUp" = "Sign Up";
+"buttons.next" = "Go next";
+"buttons.pickImage" = "Select photo";
+
+// TextFields
+"textFields.emailPlaceholder" = " Email";
+"textFields.passwordPlaceholder" = " Password";
+"textFields.loginPlaceholder" = " Login";
+"textFields.passwordConfirmationPlaceholder" = " Password confirmation";
+
+// Labels
+"labels.fillProfileLabel" = "Complete your profile";
+
+// Custom errors
+"errors.IncorrectEmail" = "Invalid mail format";
+"errors.IncorrectPasswordLenght" = "Password length must be longer than 6 characters";
+"errors.EmptyEmailField" = "Fill email field";
+"errors.EmptyPasswordField" = "Fill password field";
+"errors.PasswordsDontMatch" = "Passwords don't match";
+"errors.signInValidationError" = "Fill all fields";
+
+// Titles
+"titles.signUp" = "Registration";
+"titles.signIn" = "Login";
+"titles.profile" = "Profile";
+"titles.anime" = "Anime";
+"titles.search" = "Search";
+"titles.calendar" = "Calendar";
+
+// Alert titles
+"alerts.titles.errorAlertTitle" = "Error";
+
+// Alert messages
+"alerts.messages.signInErrorAlert" = "Incorrect login or password";
+
+// Alert action titles
+"alerts.action.alertActionTryAgain" = "Try again";

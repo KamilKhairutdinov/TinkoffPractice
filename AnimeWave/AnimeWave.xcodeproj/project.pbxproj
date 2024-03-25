@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270789452BADC11600874D60 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 270789472BADC11600874D60 /* Localizable.strings */; };
+		270789582BADF34000874D60 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270789572BADF34000874D60 /* Strings+Generated.swift */; };
+		2707895A2BADF50C00874D60 /* LayoutConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270789592BADF50C00874D60 /* LayoutConstant.swift */; };
 		27261F8A2BA7964600225F5D /* SignUpFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F892BA7964600225F5D /* SignUpFlowCoordinator.swift */; };
 		27261F8C2BA7967F00225F5D /* SignInFLowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F8B2BA7967F00225F5D /* SignInFLowCoordinator.swift */; };
 		27261F8F2BA79A9000225F5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F8E2BA79A9000225F5D /* SignUpViewController.swift */; };
-		27261F992BA7AF6A00225F5D /* UIViewController + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F982BA7AF6A00225F5D /* UIViewController + extension.swift */; };
+		27261F992BA7AF6A00225F5D /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F982BA7AF6A00225F5D /* UIViewController+extension.swift */; };
 		27261F9B2BA7B9DF00225F5D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F9A2BA7B9DF00225F5D /* SignUpViewModel.swift */; };
 		27261FA02BA81EEB00225F5D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F9F2BA81EEB00225F5D /* Observable.swift */; };
-		27261FA82BA8A4C800225F5D /* ConfigureUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FA72BA8A4C800225F5D /* ConfigureUserViewController.swift */; };
-		27261FAA2BA8A4E500225F5D /* ConfigureUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FA92BA8A4E500225F5D /* ConfigureUserViewModel.swift */; };
+		27261FA82BA8A4C800225F5D /* ConfigureProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FA72BA8A4C800225F5D /* ConfigureProfileViewController.swift */; };
+		27261FAA2BA8A4E500225F5D /* ConfigureProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FA92BA8A4E500225F5D /* ConfigureProfileViewModel.swift */; };
 		27261FAD2BA8B56C00225F5D /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FAC2BA8B56C00225F5D /* FlowController.swift */; };
 		27261FAF2BA8CE6100225F5D /* ValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FAE2BA8CE6100225F5D /* ValidatorService.swift */; };
 		27261FB22BA8D70600225F5D /* MainTabBarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261FB12BA8D70600225F5D /* MainTabBarFlowCoordinator.swift */; };
@@ -49,20 +52,23 @@
 		27DAA1D82BA7724300EAC8A4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAA1D72BA7724300EAC8A4 /* AuthViewController.swift */; };
 		27DAA1DA2BA776B100EAC8A4 /* AuthFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAA1D92BA776B100EAC8A4 /* AuthFlowCoordinator.swift */; };
 		27DAA1DC2BA7789400EAC8A4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAA1DB2BA7789400EAC8A4 /* AuthService.swift */; };
-		27DAA1E12BA77AD900EAC8A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27DAA1E32BA77AD900EAC8A4 /* Localizable.strings */; };
-		27DAA1E72BA77BD600EAC8A4 /* String + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAA1E62BA77BD600EAC8A4 /* String + extension.swift */; };
 		FD9FE6C0DB5BCF5837DAF31A /* Pods_AnimeWave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FBF8D7DF60560D2638FB25 /* Pods_AnimeWave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2707892D2BADB55100874D60 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		270789462BADC11600874D60 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		270789482BADC11800874D60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		270789572BADF34000874D60 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		270789592BADF50C00874D60 /* LayoutConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstant.swift; sourceTree = "<group>"; };
 		27261F892BA7964600225F5D /* SignUpFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFlowCoordinator.swift; sourceTree = "<group>"; };
 		27261F8B2BA7967F00225F5D /* SignInFLowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFLowCoordinator.swift; sourceTree = "<group>"; };
 		27261F8E2BA79A9000225F5D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		27261F982BA7AF6A00225F5D /* UIViewController + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + extension.swift"; sourceTree = "<group>"; };
+		27261F982BA7AF6A00225F5D /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		27261F9A2BA7B9DF00225F5D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		27261F9F2BA81EEB00225F5D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		27261FA72BA8A4C800225F5D /* ConfigureUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureUserViewController.swift; sourceTree = "<group>"; };
-		27261FA92BA8A4E500225F5D /* ConfigureUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureUserViewModel.swift; sourceTree = "<group>"; };
+		27261FA72BA8A4C800225F5D /* ConfigureProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureProfileViewController.swift; sourceTree = "<group>"; };
+		27261FA92BA8A4E500225F5D /* ConfigureProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureProfileViewModel.swift; sourceTree = "<group>"; };
 		27261FAC2BA8B56C00225F5D /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		27261FAE2BA8CE6100225F5D /* ValidatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorService.swift; sourceTree = "<group>"; };
 		27261FB12BA8D70600225F5D /* MainTabBarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -100,9 +106,6 @@
 		27DAA1D92BA776B100EAC8A4 /* AuthFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowCoordinator.swift; sourceTree = "<group>"; };
 		27DAA1DB2BA7789400EAC8A4 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		27DAA1DD2BA77A7500EAC8A4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		27DAA1E22BA77AD900EAC8A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		27DAA1E42BA77ADA00EAC8A4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		27DAA1E62BA77BD600EAC8A4 /* String + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extension.swift"; sourceTree = "<group>"; };
 		6ED05530A6FBA8763B17CDE8 /* Pods-AnimeWave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeWave.release.xcconfig"; path = "Target Support Files/Pods-AnimeWave/Pods-AnimeWave.release.xcconfig"; sourceTree = "<group>"; };
 		D4FBF8D7DF60560D2638FB25 /* Pods_AnimeWave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimeWave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF056F94524860C389BC088D /* Pods-AnimeWave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeWave.debug.xcconfig"; path = "Target Support Files/Pods-AnimeWave/Pods-AnimeWave.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +123,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		270789302BADBA1600874D60 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				270789322BADBA2300874D60 /* Generated */,
+				270789312BADBA1C00874D60 /* Templates */,
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		270789312BADBA1C00874D60 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				270789472BADC11600874D60 /* Localizable.strings */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		270789322BADBA2300874D60 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				270789572BADF34000874D60 /* Strings+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		27261F872BA7961200225F5D /* SignInFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				27261F9F2BA81EEB00225F5D /* Observable.swift */,
+				270789592BADF50C00874D60 /* LayoutConstant.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -167,8 +196,8 @@
 		27261FA62BA8A4B000225F5D /* ConfigureUserScreen */ = {
 			isa = PBXGroup;
 			children = (
-				27261FA72BA8A4C800225F5D /* ConfigureUserViewController.swift */,
-				27261FA92BA8A4E500225F5D /* ConfigureUserViewModel.swift */,
+				27261FA72BA8A4C800225F5D /* ConfigureProfileViewController.swift */,
+				27261FA92BA8A4E500225F5D /* ConfigureProfileViewModel.swift */,
 			);
 			path = ConfigureUserScreen;
 			sourceTree = "<group>";
@@ -339,6 +368,7 @@
 		2788367C2B9E4FBA000A585C = {
 			isa = PBXGroup;
 			children = (
+				2707892D2BADB55100874D60 /* swiftgen.yml */,
 				278836872B9E4FBA000A585C /* AnimeWave */,
 				278836862B9E4FBA000A585C /* Products */,
 				E81FDE08E4CBB3660D006712 /* Pods */,
@@ -365,8 +395,8 @@
 				27261F9E2BA81ED800225F5D /* Helpers */,
 				276791992BA190D100628CCE /* Factories */,
 				27DAA1E52BA77BAB00EAC8A4 /* Extensions */,
+				270789302BADBA1600874D60 /* SwiftGen */,
 				2788369D2B9E4FF3000A585C /* Supporting Files */,
-				27DAA1DE2BA77AA400EAC8A4 /* Localizable */,
 				276BEC5C2BA7261F00313135 /* GoogleService-Info.plist */,
 			);
 			path = AnimeWave;
@@ -413,19 +443,10 @@
 			path = AuthFlow;
 			sourceTree = "<group>";
 		};
-		27DAA1DE2BA77AA400EAC8A4 /* Localizable */ = {
-			isa = PBXGroup;
-			children = (
-				27DAA1E32BA77AD900EAC8A4 /* Localizable.strings */,
-			);
-			path = Localizable;
-			sourceTree = "<group>";
-		};
 		27DAA1E52BA77BAB00EAC8A4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				27DAA1E62BA77BD600EAC8A4 /* String + extension.swift */,
-				27261F982BA7AF6A00225F5D /* UIViewController + extension.swift */,
+				27261F982BA7AF6A00225F5D /* UIViewController+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -455,6 +476,7 @@
 			buildConfigurationList = 278836992B9E4FBC000A585C /* Build configuration list for PBXNativeTarget "AnimeWave" */;
 			buildPhases = (
 				D6C7528AC2D95F15622C4C63 /* [CP] Check Pods Manifest.lock */,
+				278B70802BACE18D00162A1F /* SwiftGen */,
 				278836812B9E4FBA000A585C /* Sources */,
 				278836822B9E4FBA000A585C /* Frameworks */,
 				278836832B9E4FBA000A585C /* Resources */,
@@ -510,7 +532,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				278836952B9E4FBC000A585C /* LaunchScreen.storyboard in Resources */,
-				27DAA1E12BA77AD900EAC8A4 /* Localizable.strings in Resources */,
+				270789452BADC11600874D60 /* Localizable.strings in Resources */,
 				278836922B9E4FBC000A585C /* Assets.xcassets in Resources */,
 				276BEC5D2BA7261F00313135 /* GoogleService-Info.plist in Resources */,
 			);
@@ -538,6 +560,25 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 			showEnvVarsInLog = 0;
+		};
+		278B70802BACE18D00162A1F /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT\"/SwiftGen/bin/swiftgen\n";
 		};
 		D6C7528AC2D95F15622C4C63 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -596,7 +637,6 @@
 				27261FB22BA8D70600225F5D /* MainTabBarFlowCoordinator.swift in Sources */,
 				27DAA1D42BA76C3700EAC8A4 /* ButtonFactory.swift in Sources */,
 				27261FB62BA8E16000225F5D /* SignInViewController.swift in Sources */,
-				27DAA1E72BA77BD600EAC8A4 /* String + extension.swift in Sources */,
 				276791962BA18D9E00628CCE /* BaseCoordinator.swift in Sources */,
 				276BEC522BA7204000313135 /* RouterProtocol.swift in Sources */,
 				27261F8C2BA7967F00225F5D /* SignInFLowCoordinator.swift in Sources */,
@@ -609,20 +649,22 @@
 				27261FD82BA8F87D00225F5D /* CalendarViewController.swift in Sources */,
 				27261FDA2BA8F89100225F5D /* ProfileViewController.swift in Sources */,
 				2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */,
+				270789582BADF34000874D60 /* Strings+Generated.swift in Sources */,
 				27261FBB2BA8ED4300225F5D /* AlertFactory.swift in Sources */,
 				27DAA1D82BA7724300EAC8A4 /* AuthViewController.swift in Sources */,
 				276BEC582BA7224C00313135 /* CoordinatorFactoryProtocol.swift in Sources */,
-				27261F992BA7AF6A00225F5D /* UIViewController + extension.swift in Sources */,
+				27261F992BA7AF6A00225F5D /* UIViewController+extension.swift in Sources */,
 				276BEC5A2BA7228300313135 /* CoordinatorFactory.swift in Sources */,
 				27DAA1DA2BA776B100EAC8A4 /* AuthFlowCoordinator.swift in Sources */,
+				2707895A2BADF50C00874D60 /* LayoutConstant.swift in Sources */,
 				27DAA1DC2BA7789400EAC8A4 /* AuthService.swift in Sources */,
-				27261FA82BA8A4C800225F5D /* ConfigureUserViewController.swift in Sources */,
+				27261FA82BA8A4C800225F5D /* ConfigureProfileViewController.swift in Sources */,
 				27261FAD2BA8B56C00225F5D /* FlowController.swift in Sources */,
 				27DAA1D62BA76C4200EAC8A4 /* TextFieldFactory.swift in Sources */,
 				276791982BA1908E00628CCE /* AppCoordinator.swift in Sources */,
 				27261FA02BA81EEB00225F5D /* Observable.swift in Sources */,
 				27261FB82BA8E16D00225F5D /* SignInViewModel.swift in Sources */,
-				27261FAA2BA8A4E500225F5D /* ConfigureUserViewModel.swift in Sources */,
+				27261FAA2BA8A4E500225F5D /* ConfigureProfileViewModel.swift in Sources */,
 				27261FC32BA8F46C00225F5D /* MainTabBarViewController.swift in Sources */,
 				27261FD32BA8F82900225F5D /* AnimeListViewController.swift in Sources */,
 			);
@@ -631,6 +673,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		270789472BADC11600874D60 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				270789462BADC11600874D60 /* ru */,
+				270789482BADC11800874D60 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		278836932B9E4FBC000A585C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -638,15 +689,6 @@
 				27DAA1DD2BA77A7500EAC8A4 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		27DAA1E32BA77AD900EAC8A4 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27DAA1E22BA77AD900EAC8A4 /* en */,
-				27DAA1E42BA77ADA00EAC8A4 /* ru */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -705,7 +747,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -763,7 +805,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

@@ -11,7 +11,7 @@ final class SignInViewController: UIViewController, FlowController {
 
     // MARK: - UI elements
     private lazy var emailTextField: UITextField = {
-        let textField = textFieldFactory.createTextField(placeholder: "email_placeholder".localized)
+        let textField = textFieldFactory.createTextField(placeholder: Strings.TextFields.emailPlaceholder)
         textField.keyboardType = .emailAddress
         textField.returnKeyType = .next
         textField.delegate = self
@@ -20,7 +20,7 @@ final class SignInViewController: UIViewController, FlowController {
     }()
 
     private lazy var passwordTextField: UITextField = {
-        let textField = textFieldFactory.createTextField(placeholder: "password_placeholder".localized)
+        let textField = textFieldFactory.createTextField(placeholder: Strings.TextFields.passwordPlaceholder)
         textField.isSecureTextEntry = true
         textField.returnKeyType = .done
         textField.delegate = self
@@ -46,13 +46,16 @@ final class SignInViewController: UIViewController, FlowController {
                 password: self.passwordTextField.text
             )
         }
-        let button = buttonFactory.createButton(title: "sign_in_button".localized, action: action)
+        let button = buttonFactory.createButton(
+            title: Strings.Buttons.signIn,
+            action: action
+        )
 
         return button
     }()
 
     // MARK: - Variables
-    var complitionHandler: (() -> Void)?
+    var completionHandler: (() -> Void)?
     private var viewModel: SignInViewModel
     private let textFieldFactory = TextFieldFactory()
     private let buttonFactory = ButtonFactory()
@@ -80,7 +83,7 @@ extension SignInViewController {
 
     private func setupView() {
         view.backgroundColor = UIColor.background
-        navigationItem.title = "sign_in_title".localized
+        navigationItem.title = Strings.Titles.signIn
         configureUI()
     }
 
@@ -96,19 +99,25 @@ extension SignInViewController {
 
         stackView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
-            make.left.right.equalToSuperview().inset(50)
+            make.left.right.equalToSuperview().inset(
+                LayoutConstants.SignInView.StackView.horizontalInset
+            )
         }
 
         validationErrorsLabel.snp.makeConstraints { make in
             make.left.equalTo(stackView.snp.left)
-            make.top.equalTo(stackView.snp.bottom).offset(10)
+            make.top.equalTo(stackView.snp.bottom).offset(
+                LayoutConstants.SignInView.ValidationErrorsLabel.topOffset
+            )
             make.width.equalTo(emailTextField)
         }
 
         signInButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(emailTextField)
-            make.bottom.equalToSuperview().inset(50)
+            make.bottom.equalToSuperview().inset(
+                LayoutConstants.SignInView.SignInButton.bottomOffset
+            )
         }
     }
 
@@ -121,7 +130,7 @@ extension SignInViewController {
         viewModel.isSuccessfullyLoggedIn.bind { [weak self] (isSuccessfullyLoggedIn) in
             guard let self else { return }
             if isSuccessfullyLoggedIn {
-                self.complitionHandler?()
+                self.completionHandler?()
             } else {
                 self.showLoginErrorAlert()
             }
@@ -131,7 +140,7 @@ extension SignInViewController {
 
 extension SignInViewController {
     private func showLoginErrorAlert() {
-        let alert = alertFactory.createErrorAlert(message: "sign_in_error_alert".localized)
+        let alert = alertFactory.createErrorAlert(message: Strings.Alerts.Messages.signInErrorAlert)
         present(alert, animated: true)
     }
 }

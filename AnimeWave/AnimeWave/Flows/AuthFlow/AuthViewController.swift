@@ -16,7 +16,7 @@ final class AuthViewController: UIViewController, FlowControllerWithValue {
 
     // MARK: - UI elements
     private lazy var logoImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "AnimeWaveLogo"))
+        let imageView = UIImageView(image: UIImage.animeWaveLogo)
         imageView.contentMode = .scaleAspectFill
 
         return imageView
@@ -25,9 +25,9 @@ final class AuthViewController: UIViewController, FlowControllerWithValue {
     private lazy var signInButton: UIButton = {
         let action = UIAction { [weak self] _ in
             guard let self else { return }
-            self.complitionHandler?(.signIn)
+            self.completionHandler?(.signIn)
         }
-        let button = buttonFactory.createButton(title: "sign_in_button".localized, action: action)
+        let button = buttonFactory.createButton(title: Strings.Buttons.signIn, action: action)
 
         return button
     }()
@@ -35,15 +35,15 @@ final class AuthViewController: UIViewController, FlowControllerWithValue {
     private lazy var signUpButton: UIButton = {
         let action = UIAction { [weak self] _ in
             guard let self else { return }
-            self.complitionHandler?(.signUp)
+            self.completionHandler?(.signUp)
         }
-        let button = buttonFactory.createButton(title: "sign_up_button".localized, action: action)
+        let button = buttonFactory.createButton(title: Strings.Buttons.signUp, action: action)
 
         return button
     }()
 
     // MARK: - Variables
-    var complitionHandler: ((AuthViewControllerStates) -> Void)?
+    var completionHandler: ((AuthViewControllerStates) -> Void)?
     private let buttonFactory = ButtonFactory()
 
     // MARK: - Lifecycle
@@ -63,20 +63,26 @@ extension AuthViewController {
     private func configureUI() {
         logoImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(view.frame.height / 3)
+            make.top.equalToSuperview().offset(
+                view.frame.height * LayoutConstants.AuthView.LogoImageView.topOffsetMultiplier
+            )
         }
 
         signInButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(signUpButton)
-            make.bottom.equalTo(logoImageView).offset(70)
-            make.height.equalTo(35)
+            make.bottom.equalTo(logoImageView).offset(
+                LayoutConstants.AuthView.SignInButton.bottomOffset
+            )
+            make.height.equalTo(LayoutConstants.buttonsHeight)
         }
 
         signUpButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(signInButton.snp.bottom).offset(25)
-            make.height.equalTo(35)
+            make.top.equalTo(signInButton.snp.bottom).offset(
+                LayoutConstants.AuthView.SignUpButton.topOffset
+            )
+            make.height.equalTo(LayoutConstants.buttonsHeight)
         }
     }
 }

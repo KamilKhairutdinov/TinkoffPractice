@@ -1,0 +1,12 @@
+## Strings
+strings:
+
+#Localization
+  inputs:
+    - AnimeWave/SwiftGen/Templates/en.lproj
+
+  outputs:
+    - templateName: structured-swift5
+      output: AnimeWave/SwiftGen/Generated/Strings+Generated.swift
+      params:
+        enumName: Strings

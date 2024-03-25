@@ -8,6 +8,6 @@
 import UIKit
 
 protocol CoordinatorProtocol: AnyObject {
-    var flowComplitionHandler: (() -> Void)? { get set }
+    var flowCompletionHandler: (() -> Void)? { get set }
     func start()
 }
