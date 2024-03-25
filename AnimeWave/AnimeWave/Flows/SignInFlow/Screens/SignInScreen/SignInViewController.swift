@@ -104,6 +104,14 @@ extension SignInViewController {
             )
         }
 
+        emailTextField.snp.makeConstraints { make in
+            make.height.equalTo(LayoutConstants.textFieldsHeight)
+        } 
+
+        passwordTextField.snp.makeConstraints { make in
+            make.height.equalTo(LayoutConstants.textFieldsHeight)
+        }
+
         validationErrorsLabel.snp.makeConstraints { make in
             make.left.equalTo(stackView.snp.left)
             make.top.equalTo(stackView.snp.bottom).offset(
@@ -114,7 +122,7 @@ extension SignInViewController {
 
         signInButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(emailTextField)
+            make.height.equalTo(LayoutConstants.buttonsHeight)
             make.bottom.equalToSuperview().inset(
                 LayoutConstants.SignInView.SignInButton.bottomOffset
             )

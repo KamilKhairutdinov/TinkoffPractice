@@ -16,8 +16,8 @@ internal enum Strings {
       internal static let alertActionTryAgain = Strings.tr("Localizable", "alerts.action.alertActionTryAgain", fallback: "Try again")
     }
     internal enum Messages {
-      /// Incorrect login or password
-      internal static let signInErrorAlert = Strings.tr("Localizable", "alerts.messages.signInErrorAlert", fallback: "Incorrect login or password")
+      /// Incorrect email or password
+      internal static let signInErrorAlert = Strings.tr("Localizable", "alerts.messages.signInErrorAlert", fallback: "Incorrect email or password")
     }
     internal enum Titles {
       /// Error

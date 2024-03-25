@@ -13,10 +13,10 @@ enum LayoutConstants {
     // MARK: - AuthViewController
     enum AuthView {
         enum LogoImageView {
-            static let topOffsetMultiplier: CGFloat = 1.0 / 3.0
+            static let topOffsetMultiplier: CGFloat = 1.0 / 6.0
         }
         enum SignInButton {
-            static let bottomOffset: CGFloat = 70
+            static let bottomOffset: CGFloat = 150
         }
         enum SignUpButton {
             static let topOffset: CGFloat = 25
@@ -80,6 +80,6 @@ enum LayoutConstants {
 
     // MARK: - Global
     static let buttonsHeight: CGFloat = 40
-    static let textFieldsheight: CGFloat = 40
+    static let textFieldsHeight: CGFloat = 40
 }
 // swiftlint:enable all

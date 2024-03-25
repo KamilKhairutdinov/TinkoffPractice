@@ -33,7 +33,7 @@
 "alerts.titles.errorAlertTitle" = "Error";
 
 // Alert messages
-"alerts.messages.signInErrorAlert" = "Incorrect login or password";
+"alerts.messages.signInErrorAlert" = "Incorrect email or password";
 
 // Alert action titles
 "alerts.action.alertActionTryAgain" = "Try again";

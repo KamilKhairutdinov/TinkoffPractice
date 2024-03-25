@@ -1,6 +1,6 @@
 // Buttons
 "buttons.signIn" = "Войти";
-"buttons.signUp" = "Зарегестрироваться";
+"buttons.signUp" = "Зарегистрироваться";
 "buttons.next" = "Продолжить";
 "buttons.pickImage" = "Выбрать фото";
 
@@ -33,7 +33,7 @@
 "alerts.titles.errorAlertTitle" = "Ошибка";
 
 // Alert messages
-"alerts.messages.signInErrorAlert" = "Неправильный логин или пароль";
+"alerts.messages.signInErrorAlert" = "Неправильная почта или пароль";
 
 // Alert action titles
 "alerts.action.alertActionTryAgain" = "Попробовать ещё раз";
