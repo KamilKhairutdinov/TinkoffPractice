@@ -106,7 +106,7 @@ extension SignInViewController {
 
         emailTextField.snp.makeConstraints { make in
             make.height.equalTo(LayoutConstants.textFieldsHeight)
-        } 
+        }
 
         passwordTextField.snp.makeConstraints { make in
             make.height.equalTo(LayoutConstants.textFieldsHeight)
@@ -140,14 +140,14 @@ extension SignInViewController {
             if isSuccessfullyLoggedIn {
                 self.completionHandler?()
             } else {
-                self.showLoginErrorAlert()
+                self.showErrorAlert()
             }
         }
     }
 }
 
 extension SignInViewController {
-    private func showLoginErrorAlert() {
+    private func showErrorAlert() {
         let alert = alertFactory.createErrorAlert(message: Strings.Alerts.Messages.signInErrorAlert)
         present(alert, animated: true)
     }

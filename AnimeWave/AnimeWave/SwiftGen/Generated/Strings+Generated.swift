@@ -18,6 +18,8 @@ internal enum Strings {
     internal enum Messages {
       /// Incorrect email or password
       internal static let signInErrorAlert = Strings.tr("Localizable", "alerts.messages.signInErrorAlert", fallback: "Incorrect email or password")
+      /// An error occurred during registration
+      internal static let signUpErrorAlert = Strings.tr("Localizable", "alerts.messages.signUpErrorAlert", fallback: "An error occurred during registration")
     }
     internal enum Titles {
       /// Error
@@ -43,6 +45,8 @@ internal enum Strings {
     internal static let incorrectEmail = Strings.tr("Localizable", "errors.IncorrectEmail", fallback: "Invalid mail format")
     /// Password length must be longer than 6 characters
     internal static let incorrectPasswordLenght = Strings.tr("Localizable", "errors.IncorrectPasswordLenght", fallback: "Password length must be longer than 6 characters")
+    /// Login cannot be empty
+    internal static let loginError = Strings.tr("Localizable", "errors.loginError", fallback: "Login cannot be empty")
     /// Passwords don't match
     internal static let passwordsDontMatch = Strings.tr("Localizable", "errors.PasswordsDontMatch", fallback: "Passwords don't match")
     /// Fill all fields

@@ -41,11 +41,11 @@ enum LayoutConstants {
     // MARK: - ConfigureProfileViewController
     enum ConfigureProfileView {
         enum FillProfileLabel {
-            static let topOffset: CGFloat = 70
+            static let topOffset: CGFloat = 90
         }
 
         enum UserAvatarImageView {
-            static let topOffset: CGFloat = 100
+            static let topOffset: CGFloat = 40
             static let widthHeightMultiplier: CGFloat = 0.5
         }
 
@@ -60,6 +60,10 @@ enum LayoutConstants {
 
         enum SignUpButton {
             static let bottomOffset: CGFloat = 50
+        }
+
+        enum ValidationErrorsLabel {
+            static let topOffset: CGFloat = 10
         }
     }
 

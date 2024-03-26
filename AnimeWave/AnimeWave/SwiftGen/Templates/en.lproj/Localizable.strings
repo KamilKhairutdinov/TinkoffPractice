@@ -20,6 +20,7 @@
 "errors.EmptyPasswordField" = "Fill password field";
 "errors.PasswordsDontMatch" = "Passwords don't match";
 "errors.signInValidationError" = "Fill all fields";
+"errors.loginError" = "Login cannot be empty";
 
 // Titles
 "titles.signUp" = "Registration";
@@ -34,6 +35,7 @@
 
 // Alert messages
 "alerts.messages.signInErrorAlert" = "Incorrect email or password";
+"alerts.messages.signUpErrorAlert" = "An error occurred during registration";
 
 // Alert action titles
 "alerts.action.alertActionTryAgain" = "Try again";

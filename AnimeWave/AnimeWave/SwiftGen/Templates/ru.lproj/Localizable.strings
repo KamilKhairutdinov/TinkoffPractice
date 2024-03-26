@@ -20,6 +20,7 @@
 "errors.EmptyPasswordField" = "Заполните поле пароля";
 "errors.PasswordsDontMatch" = "Пароли не совпадают";
 "errors.signInValidationError" = "Заполните все поля";
+"errors.loginError" = "Логин не может быть пустым";
 
 // Titles
 "titles.signUp" = "Рeгистрация";
@@ -34,6 +35,7 @@
 
 // Alert messages
 "alerts.messages.signInErrorAlert" = "Неправильная почта или пароль";
+"alerts.messages.signUpErrorAlert" = "Произошла ошибка при регистрации";
 
 // Alert action titles
 "alerts.action.alertActionTryAgain" = "Попробовать ещё раз";
