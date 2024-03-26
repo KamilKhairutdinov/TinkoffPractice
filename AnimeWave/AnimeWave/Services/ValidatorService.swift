@@ -21,11 +21,11 @@ class ValidatorService {
     func validateUser(_ email: String, _ password: String, _ passwordConfirmation: String) -> [String] {
         validationErrors = []
 
-        if email.count == 0 {
+        if email.isEmpty {
             validationErrors.append(Strings.Errors.emptyEmailField)
         }
 
-        if password.count == 0 {
+        if password.isEmpty {
             validationErrors.append(Strings.Errors.emptyPasswordField)
         }
 
@@ -56,5 +56,10 @@ class ValidatorService {
 
     private func isValidPassword(_ password: String) -> Bool {
         return password.count > 6
+    }
+
+    func validateLogin(login: String) -> String {
+        guard login.isEmpty else { return "" }
+        return Strings.Errors.loginError
     }
 }
