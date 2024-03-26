@@ -54,6 +54,13 @@ final class SignInViewController: UIViewController, FlowController {
         return button
     }()
 
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.isHidden = true
+
+        return activityIndicator
+    }()
+
     // MARK: - Variables
     var completionHandler: (() -> Void)?
     private var viewModel: SignInViewModel
@@ -95,7 +102,12 @@ extension SignInViewController {
 
         stackView.axis = .vertical
         stackView.spacing = 20
-        addSubviews(stackView, validationErrorsLabel, signInButton)
+        addSubviews(
+            stackView,
+            validationErrorsLabel,
+            signInButton,
+            activityIndicator
+        )
 
         stackView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
@@ -127,6 +139,11 @@ extension SignInViewController {
                 LayoutConstants.SignInView.SignInButton.bottomOffset
             )
         }
+
+        activityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(signInButton.snp.top).offset(-20)
+        }
     }
 
     private func setupBindings() {
@@ -143,6 +160,11 @@ extension SignInViewController {
                 self.showErrorAlert()
             }
         }
+
+        viewModel.isLoadingData.bind { [weak self] isLoadingData in
+            guard let self else { return }
+            self.deactivateUI(isLoadingData)
+        }
     }
 }
 
@@ -150,6 +172,18 @@ extension SignInViewController {
     private func showErrorAlert() {
         let alert = alertFactory.createErrorAlert(message: Strings.Alerts.Messages.signInErrorAlert)
         present(alert, animated: true)
+    }
+
+    private func deactivateUI(_ deactivate: Bool) {
+        signInButton.isEnabled = !deactivate
+        activityIndicator.isHidden = !deactivate
+        navigationItem.hidesBackButton = deactivate
+
+        if deactivate {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
     }
 }
 

@@ -12,12 +12,14 @@ class SignInViewModel {
     // MARK: - Variables
     var validationError: Observable<String>
     var isSuccessfullyLoggedIn: Observable<Bool>
+    var isLoadingData: Observable<Bool>
     private let authService: AuthService
 
     // MARK: - Init
     init() {
         validationError = Observable("")
         isSuccessfullyLoggedIn = Observable(false)
+        isLoadingData = Observable(false)
         authService = AuthService.shared
     }
 
@@ -25,16 +27,19 @@ class SignInViewModel {
     func signInUser(email: String?, password: String?) {
         guard let email, let password else { return }
         validationError.value = ""
-        if email.count == 0 || password.count == 0 {
+        if email.isEmpty || password.isEmpty {
             validationError.value = Strings.Errors.signInValidationError
         } else {
+            isLoadingData.value = true
             authService.signIn(email: email, password: password) { [weak self] result in
                 guard let self else { return }
                 switch result {
                 case .success:
+                    self.isLoadingData.value = false
                     self.isSuccessfullyLoggedIn.value = true
                 case .failure(let error):
-                    print(error)
+                    print(error.localizedDescription)
+                    self.isLoadingData.value = false
                     self.isSuccessfullyLoggedIn.value = false
                 }
             }

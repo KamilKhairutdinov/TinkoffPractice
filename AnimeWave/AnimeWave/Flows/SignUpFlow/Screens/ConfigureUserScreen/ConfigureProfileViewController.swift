@@ -98,6 +98,7 @@ final class ConfigureProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupBindings()
     }
 }
 
@@ -114,7 +115,6 @@ extension ConfigureProfileViewController: UITextFieldDelegate {
             activityIndicator
         )
         configureUI()
-        setupBindings()
     }
 
     private func configureUI() {
@@ -209,9 +209,9 @@ extension ConfigureProfileViewController {
     }
 
     private func deactivateUI(_ deactivate: Bool) {
-        navigationController?.navigationBar.isHidden = !deactivate
         signUpButton.isEnabled = !deactivate
         activityIndicator.isHidden = !deactivate
+        navigationItem.hidesBackButton = deactivate
 
         if deactivate {
             activityIndicator.startAnimating()
