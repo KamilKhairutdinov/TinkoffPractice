@@ -142,7 +142,9 @@ extension SignInViewController {
 
         activityIndicator.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(signInButton.snp.top).offset(-20)
+            make.bottom.equalTo(signInButton.snp.top).offset(
+                LayoutConstants.SignInView.ActivityIndicator.bottonOffset
+            )
         }
     }
 

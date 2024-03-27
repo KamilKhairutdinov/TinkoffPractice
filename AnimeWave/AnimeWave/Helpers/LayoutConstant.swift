@@ -65,6 +65,10 @@ enum LayoutConstants {
         enum ValidationErrorsLabel {
             static let topOffset: CGFloat = 10
         }
+
+        enum ActivityIndicator {
+            static let bottonOffset = -20
+        }
     }
 
     // MARK: - SignInViewController
@@ -79,6 +83,10 @@ enum LayoutConstants {
 
         enum SignInButton {
             static let bottomOffset: CGFloat = 50
+        }
+
+        enum ActivityIndicator {
+            static let bottonOffset = -20
         }
     }
 

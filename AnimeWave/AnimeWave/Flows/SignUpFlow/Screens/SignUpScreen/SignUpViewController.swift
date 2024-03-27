@@ -21,7 +21,7 @@ final class SignUpViewController: UIViewController, FlowControllerWithValue {
     }()
 
     private lazy var passwordTextField: UITextField = {
-        let textField = textFieldFactory.createTextField(placeholder: Strings.TextFields.loginPlaceholder)
+        let textField = textFieldFactory.createTextField(placeholder: Strings.TextFields.passwordPlaceholder)
         textField.isSecureTextEntry = true
         textField.returnKeyType = .next
         textField.delegate = self

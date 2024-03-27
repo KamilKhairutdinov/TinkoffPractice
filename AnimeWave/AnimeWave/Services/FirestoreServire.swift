@@ -1,5 +1,5 @@
 //
-//  FirebaseServire.swift
+//  FirestoreServire.swift
 //  AnimeWave
 //
 //  Created by Камил Хайрутдинов on 26.03.2024.
@@ -8,10 +8,10 @@
 import Foundation
 import FirebaseFirestore
 
-class FirebaseServire {
+class FirestoreServire {
 
     // MARK: - Variables
-    static let shared = FirebaseServire()
+    static let shared = FirestoreServire()
     private let firestore = Firestore.firestore()
     private var usersReference: CollectionReference {
         return firestore.collection("users")

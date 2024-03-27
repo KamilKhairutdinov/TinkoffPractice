@@ -24,7 +24,7 @@ final class ConfigureProfileViewController: UIViewController {
         let imageView = UIImageView(image: UIImage.defaultAvatar)
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = view.frame.width / 4
-
+        imageView.clipsToBounds = true
         return imageView
     }()
 
@@ -37,6 +37,14 @@ final class ConfigureProfileViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
 
         return button
+    }()
+
+    private lazy var avatarImagePickerController: UIImagePickerController = {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = false
+        imagePickerController.mediaTypes = ["public.image"]
+        return imagePickerController
     }()
 
     private lazy var loginTextField: UITextField = {
@@ -59,7 +67,9 @@ final class ConfigureProfileViewController: UIViewController {
     private lazy var signUpButton: UIButton = {
         let action = UIAction { [weak self] _ in
             guard let self else { return }
-            self.viewModel.signUpUser(login: self.loginTextField.text)
+            self.viewModel.signUpUser(
+                login: self.loginTextField.text,
+                imageData: self.pickedUserImage?.jpegData(compressionQuality: 0.15) ?? UIImage.defaultAvatar.pngData())
         }
         let button = buttonFactory.createButton(title: Strings.Buttons.signUp, action: action)
         return button
@@ -74,15 +84,11 @@ final class ConfigureProfileViewController: UIViewController {
 
     // MARK: - Variables
     var complitionHandler: (() -> Void)?
+    private var pickedUserImage: UIImage?
     private var viewModel: ConfigureProfileViewModel
     private var buttonFactory = ButtonFactory()
     private var alertFactory = AlertFactory()
     private var textFieldFactory = TextFieldFactory()
-    private lazy var avatarImagePickerController: UIImagePickerController = {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        return imagePickerController
-    }()
 
     // MARK: - Init
     init(viewModel: ConfigureProfileViewModel) {
@@ -171,7 +177,9 @@ extension ConfigureProfileViewController: UITextFieldDelegate {
 
         activityIndicator.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(signUpButton.snp.top).offset(-20)
+            make.bottom.equalTo(signUpButton.snp.top).offset(
+                LayoutConstants.ConfigureProfileView.ActivityIndicator.bottonOffset
+            )
         }
     }
 
@@ -222,5 +230,13 @@ extension ConfigureProfileViewController {
 }
 
 extension ConfigureProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+    ) {
+        dismiss(animated: true)
+        guard let image = info[.originalImage] as? UIImage else { return }
+        pickedUserImage = image
+        userAvatarImageView.image = image
+    }
 }

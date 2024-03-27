@@ -12,7 +12,7 @@ class TextFieldFactory {
     func createTextField(placeholder: String) -> UITextField {
         let textField = UITextField()
         textField.layer.cornerRadius = 8
-        textField.borderStyle = .roundedRect
+        textField.borderStyle = .none
         textField.backgroundColor = UIColor.buttonAndTextField
         textField.textColor = UIColor.textFieldText
         textField.attributedPlaceholder = NSAttributedString(

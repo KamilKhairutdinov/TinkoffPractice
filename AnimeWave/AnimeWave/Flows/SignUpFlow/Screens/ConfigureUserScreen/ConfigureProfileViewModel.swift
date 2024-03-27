@@ -15,33 +15,45 @@ class ConfigureProfileViewModel {
     var loginValidationError: Observable<String>
     private var userForSignUp: UserForSignUp
     private var authService: AuthService
-    private var firebaseService: FirebaseServire
+    private var firebaseService: FirestoreServire
+    private var storageService: StorageService
     private var validatorService: ValidatorService
+    private var occurredErrorWhileDataSet: Bool
 
     // MARK: - Init
     init(userForSignUp: UserForSignUp) {
         authService = AuthService.shared
-        firebaseService = FirebaseServire.shared
+        firebaseService = FirestoreServire.shared
+        storageService = StorageService.shared
         validatorService = ValidatorService()
         isSuccessfulSignUp = Observable(false)
         loginValidationError = Observable("")
         isLoadingData = Observable(false)
+        occurredErrorWhileDataSet = false
         self.userForSignUp = userForSignUp
     }
 
     // MARK: - Functions
-    func signUpUser(login: String?) {
-        guard let login else { return }
+    func signUpUser(login: String?, imageData: Data?) {
         isLoadingData.value = true
-        let validationError = validatorService.validateLogin(login: login)
+        guard let login else { return }
+        guard let imageData else { return }
 
+        let validationError = validatorService.validateLogin(login: login)
         if validationError.isEmpty {
             authService.signUp(email: userForSignUp.email, password: userForSignUp.password) { [weak self] result in
                 guard let self else { return }
                 switch result {
                 case .success:
                     self.setUserData(login: login)
+                    self.setUserAvatar(imageData: imageData)
                     self.isLoadingData.value = false
+
+                    if occurredErrorWhileDataSet {
+                        self.isSuccessfulSignUp.value = false
+                    } else {
+                        self.isSuccessfulSignUp.value = true
+                    }
                 case .failure(let error):
                     self.isLoadingData.value = false
                     self.isSuccessfulSignUp.value = false
@@ -54,6 +66,18 @@ class ConfigureProfileViewModel {
         }
     }
 
+    private func setUserAvatar(imageData: Data) {
+        storageService.uploadAvatar(userId: userForSignUp.id, imageData: imageData) { result in
+            switch result {
+            case .success:
+                break
+            case .failure(let error):
+                self.occurredErrorWhileDataSet = true
+                print(error.localizedDescription)
+            }
+        }
+    }
+
     private func setUserData(login: String) {
         guard let currentUser = authService.currentUser else { return }
         userForSignUp.id = currentUser.uid
@@ -62,9 +86,9 @@ class ConfigureProfileViewModel {
         firebaseService.setUsetData(user: userForSignUp) { result in
             switch result {
             case .success:
-                self.isSuccessfulSignUp.value = true
+                break
             case .failure(let error):
-                self.isSuccessfulSignUp.value = false
+                self.occurredErrorWhileDataSet = true
                 print(error.localizedDescription)
             }
         }
