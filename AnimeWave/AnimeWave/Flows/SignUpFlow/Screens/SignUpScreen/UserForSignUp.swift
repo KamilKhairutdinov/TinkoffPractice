@@ -27,4 +27,6 @@ struct UserForSignUp: Identifiable {
 
         return representation
     }
+
+    static let empty: UserForSignUp = UserForSignUp(id: "", login: "", email: "", password: "")
 }

@@ -20,7 +20,7 @@ class SignUpViewModel {
     // MARK: - Init
     init() {
         errorStringFormatted = Observable("")
-        userForSingUp = Observable(UserForSignUp(id: "", login: "", email: "", password: ""))
+        userForSingUp = Observable(UserForSignUp.empty)
         validatorService = ValidatorService()
         password = ""
         email = ""

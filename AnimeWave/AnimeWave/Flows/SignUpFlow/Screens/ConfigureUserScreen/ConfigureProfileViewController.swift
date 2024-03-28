@@ -69,7 +69,7 @@ final class ConfigureProfileViewController: UIViewController {
             guard let self else { return }
             self.viewModel.signUpUser(
                 login: self.loginTextField.text,
-                imageData: self.pickedUserImage?.jpegData(compressionQuality: 0.15) ?? UIImage.defaultAvatar.pngData())
+                imageData: self.pickedUserImage?.jpegData(compressionQuality: 0.15) ?? UIImage.defaultAvatar.jpegData(compressionQuality: 0.15))
         }
         let button = buttonFactory.createButton(title: Strings.Buttons.signUp, action: action)
         return button

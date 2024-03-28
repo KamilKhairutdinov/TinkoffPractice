@@ -147,7 +147,6 @@ extension SignUpViewController {
         viewModel.userForSingUp.bind({ [weak self] (user) in
             guard let self else { return }
             self.completionHandler?(user)
-
         })
 
         viewModel.errorStringFormatted.bind({ [weak self] (errorStringFormatted) in

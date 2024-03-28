@@ -10,11 +10,10 @@ import UIKit
 class SignUpFlowCoordinator: BaseCoordinator {
 
     var router: Router
-    var userForSignUp: UserForSignUp
+    var userForSignUp: UserForSignUp?
 
     init(router: Router) {
         self.router = router
-        self.userForSignUp = UserForSignUp(id: "", login: "", email: "", password: "")
     }
 
     override func start() {
@@ -32,6 +31,7 @@ class SignUpFlowCoordinator: BaseCoordinator {
     }
 
     private func showConfigureProfileController() {
+        guard let userForSignUp else { return }
         let configureProfileViewModel = ConfigureProfileViewModel(userForSignUp: userForSignUp)
         let configureProfileViewController = ConfigureProfileViewController(viewModel: configureProfileViewModel)
         configureProfileViewController.complitionHandler = { [weak self] in
