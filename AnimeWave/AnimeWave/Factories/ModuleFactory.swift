@@ -44,6 +44,6 @@ class ModuleFactory: ModuleFactoryProtocol {
     }
 
     func createProfileModule() -> ProfileViewController {
-        ProfileViewController()
+        ProfileViewController(viewModel: ProfileViewModel())
     }
 }
