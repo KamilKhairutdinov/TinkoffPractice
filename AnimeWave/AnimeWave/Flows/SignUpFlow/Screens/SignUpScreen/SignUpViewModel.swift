@@ -11,46 +11,32 @@ import FirebaseAuth
 class SignUpViewModel {
 
     // MARK: - Variables
-    var isSuccessfulRegistered: Observable<Bool>
     var errorStringFormatted: Observable<String>
-    private var email: String
-    private var password: String
-    private var authService: AuthService
+    var userForSingUp: Observable<UserForSignUp>
+    private var email: String?
+    private var password: String?
     private var validatorService: ValidatorService
 
     // MARK: - Init
     init() {
-        isSuccessfulRegistered = Observable(false)
         errorStringFormatted = Observable("")
+        userForSingUp = Observable(UserForSignUp.empty)
         validatorService = ValidatorService()
-        authService = AuthService.shared
-        password = ""
-        email = ""
     }
 
     // MARK: - Functions
-    func signUpUser(_ email: String?, _ password: String?, _ passwordConfirmation: String?) {
+    func validateUser(_ email: String?, _ password: String?, _ passwordConfirmation: String?) {
         guard let email, let password, let passwordConfirmation else { return }
         self.email = email
         self.password = password
 
         errorStringFormatted.value = ""
-        let errors = validatorService.validateUser(email, password, passwordConfirmation)
+        let validationErrors = validatorService.validateUser(email, password, passwordConfirmation)
 
-        if errors.isEmpty {
-            authService.signUp(email: email, password: password) { [weak self] result in
-                guard let self else { return }
-                switch result {
-                case .success:
-                    self.isSuccessfulRegistered.value = true
-                case .failure(let error):
-                    print(error)
-                    self.errorStringFormatted.value = error.localizedDescription
-                    self.isSuccessfulRegistered.value = false
-                }
-            }
+        if validationErrors.isEmpty {
+            userForSingUp.value = UserForSignUp(id: "", login: "", email: email, password: password)
         } else {
-            formatErrors(errors)
+            formatErrors(validationErrors)
         }
     }
 

@@ -1,6 +1,6 @@
 // Buttons
 "buttons.signIn" = "Войти";
-"buttons.signUp" = "Зарегестрироваться";
+"buttons.signUp" = "Зарегистрироваться";
 "buttons.next" = "Продолжить";
 "buttons.pickImage" = "Выбрать фото";
 
@@ -20,6 +20,7 @@
 "errors.EmptyPasswordField" = "Заполните поле пароля";
 "errors.PasswordsDontMatch" = "Пароли не совпадают";
 "errors.signInValidationError" = "Заполните все поля";
+"errors.loginError" = "Логин не может быть пустым";
 
 // Titles
 "titles.signUp" = "Рeгистрация";
@@ -33,7 +34,8 @@
 "alerts.titles.errorAlertTitle" = "Ошибка";
 
 // Alert messages
-"alerts.messages.signInErrorAlert" = "Неправильный логин или пароль";
+"alerts.messages.signUpErrorAlert" = "Произошла ошибка при регистрации";
+"alerts.messages.saveImageErrorAlert" = "Произошла ошибка при сохранении изобрашения";
 
 // Alert action titles
-"alerts.action.alertActionTryAgain" = "Попробовать ещё раз";
+"alerts.action.alertActionOk" = "Ок";

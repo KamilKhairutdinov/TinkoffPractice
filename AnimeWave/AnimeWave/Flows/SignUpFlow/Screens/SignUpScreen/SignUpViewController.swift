@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class SignUpViewController: UIViewController, FlowController {
+final class SignUpViewController: UIViewController, FlowControllerWithValue {
 
     // MARK: - UI elements
     private lazy var emailTextField: UITextField = {
@@ -21,7 +21,7 @@ final class SignUpViewController: UIViewController, FlowController {
     }()
 
     private lazy var passwordTextField: UITextField = {
-        let textField = textFieldFactory.createTextField(placeholder: Strings.TextFields.loginPlaceholder)
+        let textField = textFieldFactory.createTextField(placeholder: Strings.TextFields.passwordPlaceholder)
         textField.isSecureTextEntry = true
         textField.returnKeyType = .next
         textField.delegate = self
@@ -54,7 +54,7 @@ final class SignUpViewController: UIViewController, FlowController {
     private lazy var nextButton: UIButton = {
         let action = UIAction { [weak self] _ in
             guard let self else { return }
-            self.viewModel.signUpUser(
+            self.viewModel.validateUser(
                 self.emailTextField.text,
                 self.passwordTextField.text,
                 self.passwordConfirmationTextField.text
@@ -66,7 +66,7 @@ final class SignUpViewController: UIViewController, FlowController {
     }()
 
     // MARK: - Variables
-    var completionHandler: (() -> Void)?
+    var completionHandler: ((UserForSignUp) -> Void)?
     private let textFieldFactory = TextFieldFactory()
     private let buttonFactory = ButtonFactory()
     private let viewModel: SignUpViewModel
@@ -89,6 +89,7 @@ final class SignUpViewController: UIViewController, FlowController {
     }
 }
 
+// MARK: - UI handling
 extension SignUpViewController {
     private func setupView() {
         view.backgroundColor = UIColor.background
@@ -114,6 +115,18 @@ extension SignUpViewController {
             )
         }
 
+        emailTextField.snp.makeConstraints { make in
+            make.height.equalTo(LayoutConstants.textFieldsHeight)
+        }
+
+        passwordTextField.snp.makeConstraints { make in
+            make.height.equalTo(LayoutConstants.textFieldsHeight)
+        }
+
+        passwordConfirmationTextField.snp.makeConstraints { make in
+            make.height.equalTo(LayoutConstants.textFieldsHeight)
+        }
+
         validationErrorsLabel.snp.makeConstraints { make in
             make.left.equalTo(stackView.snp.left)
             make.top.equalTo(stackView.snp.bottom).offset(
@@ -124,19 +137,20 @@ extension SignUpViewController {
 
         nextButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(emailTextField)
+            make.height.equalTo(LayoutConstants.buttonsHeight)
             make.bottom.equalToSuperview().inset(
                 LayoutConstants.SignUpView.NextButton.bottomOffset
             )
         }
     }
+}
 
+// MARK: - Bindings
+extension SignUpViewController {
     private func setupBindings() {
-        viewModel.isSuccessfulRegistered.bind({ [weak self] (isSuccessfulRegistered) in
-            if isSuccessfulRegistered {
-                guard let self else { return }
-                self.completionHandler?()
-            }
+        viewModel.userForSingUp.bind({ [weak self] (user) in
+            guard let self else { return }
+            self.completionHandler?(user)
         })
 
         viewModel.errorStringFormatted.bind({ [weak self] (errorStringFormatted) in
@@ -146,6 +160,7 @@ extension SignUpViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

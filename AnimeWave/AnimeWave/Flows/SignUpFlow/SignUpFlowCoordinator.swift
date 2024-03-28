@@ -10,6 +10,7 @@ import UIKit
 class SignUpFlowCoordinator: BaseCoordinator {
 
     var router: Router
+    var userForSignUp: UserForSignUp?
 
     init(router: Router) {
         self.router = router
@@ -21,17 +22,18 @@ class SignUpFlowCoordinator: BaseCoordinator {
 
     private func showSignUpController() {
         let signUpViewController = SignUpViewController(viewModel: SignUpViewModel())
-        signUpViewController.completionHandler = { [weak self] in
+        signUpViewController.completionHandler = { [weak self] user in
             guard let self else { return }
+            self.userForSignUp = user
             self.showConfigureProfileController()
         }
         router.push(signUpViewController, animated: true)
     }
 
     private func showConfigureProfileController() {
-        let configureProfileViewModel = ConfigureProfileViewModel()
+        guard let userForSignUp else { return }
+        let configureProfileViewModel = ConfigureProfileViewModel(userForSignUp: userForSignUp)
         let configureProfileViewController = ConfigureProfileViewController(viewModel: configureProfileViewModel)
-        configureProfileViewController.navigationItem.hidesBackButton = true
         configureProfileViewController.complitionHandler = { [weak self] in
             guard let self else { return }
             self.flowCompletionHandler?()

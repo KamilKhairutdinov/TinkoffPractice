@@ -24,19 +24,29 @@ final class ConfigureProfileViewController: UIViewController {
         let imageView = UIImageView(image: UIImage.defaultAvatar)
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = view.frame.width / 4
-
+        imageView.clipsToBounds = true
         return imageView
     }()
 
     private lazy var pickImageButton: UIButton = {
         let action = UIAction { [weak self] _ in
             guard let self else { return }
-            self.present(self.avatarImagePickerController, animated: true)
+            DispatchQueue.main.async {
+                self.present(self.avatarImagePickerController, animated: true)
+            }
         }
         let button = buttonFactory.createPlainButton(title: Strings.Buttons.pickImage, action: action)
         button.translatesAutoresizingMaskIntoConstraints = false
 
         return button
+    }()
+
+    private lazy var avatarImagePickerController: UIImagePickerController = {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = false
+        imagePickerController.mediaTypes = ["public.image"]
+        return imagePickerController
     }()
 
     private lazy var loginTextField: UITextField = {
@@ -47,26 +57,40 @@ final class ConfigureProfileViewController: UIViewController {
         return textField
     }()
 
+    private lazy var validationErrorsLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .red
+        label.font = UIFont.systemFont(ofSize: 10)
+        label.numberOfLines = 0
+
+        return label
+    }()
+
     private lazy var signUpButton: UIButton = {
         let action = UIAction { [weak self] _ in
             guard let self else { return }
-            self.complitionHandler?()
+            self.viewModel.signUpUser(
+                login: self.loginTextField.text,
+                imageData: self.pickedUserImage?.jpegData(compressionQuality: 0.15) ?? UIImage.defaultAvatar.jpegData(compressionQuality: 0.15))
         }
         let button = buttonFactory.createButton(title: Strings.Buttons.signUp, action: action)
-
         return button
+    }()
+
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.isHidden = true
+
+        return activityIndicator
     }()
 
     // MARK: - Variables
     var complitionHandler: (() -> Void)?
+    private var pickedUserImage: UIImage?
     private var viewModel: ConfigureProfileViewModel
     private var buttonFactory = ButtonFactory()
+    private var alertFactory = AlertFactory()
     private var textFieldFactory = TextFieldFactory()
-    private lazy var avatarImagePickerController: UIImagePickerController = {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        return imagePickerController
-    }()
 
     // MARK: - Init
     init(viewModel: ConfigureProfileViewModel) {
@@ -82,9 +106,11 @@ final class ConfigureProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupBindings()
     }
 }
 
+// MARK: - UI handling
 extension ConfigureProfileViewController: UITextFieldDelegate {
     private func setupView() {
         view.backgroundColor = UIColor.background
@@ -93,7 +119,9 @@ extension ConfigureProfileViewController: UITextFieldDelegate {
             userAvatarImageView,
             pickImageButton,
             loginTextField,
-            signUpButton
+            validationErrorsLabel,
+            signUpButton,
+            activityIndicator
         )
         configureUI()
     }
@@ -130,15 +158,43 @@ extension ConfigureProfileViewController: UITextFieldDelegate {
             make.left.right.equalToSuperview().inset(
                 LayoutConstants.ConfigureProfileView.LoginTextField.horizontalInset
             )
+            make.height.equalTo(LayoutConstants.textFieldsHeight)
             make.centerX.equalToSuperview()
+        }
+
+        validationErrorsLabel.snp.makeConstraints { make in
+            make.left.equalTo(loginTextField.snp.left)
+            make.top.equalTo(loginTextField.snp.bottom).offset(
+                LayoutConstants.ConfigureProfileView.ValidationErrorsLabel.topOffset
+            )
+            make.width.equalTo(loginTextField)
         }
 
         signUpButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(loginTextField)
+            make.height.equalTo(LayoutConstants.buttonsHeight)
             make.bottom.equalToSuperview().inset(
                 LayoutConstants.ConfigureProfileView.SignUpButton.bottomOffset
             )
+        }
+
+        activityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(signUpButton.snp.top).offset(
+                LayoutConstants.ConfigureProfileView.ActivityIndicator.bottonOffset
+            )
+        }
+    }
+
+    private func deactivateUI(_ deactivate: Bool) {
+        signUpButton.isEnabled = !deactivate
+        activityIndicator.isHidden = !deactivate
+        navigationItem.hidesBackButton = deactivate
+
+        if deactivate {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
         }
     }
 
@@ -148,6 +204,66 @@ extension ConfigureProfileViewController: UITextFieldDelegate {
     }
 }
 
-extension ConfigureProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+// MARK: - Bindings and alerts
+extension ConfigureProfileViewController {
+    private func setupBindings() {
+        viewModel.isSuccessfulSignUp.bind { [weak self] (isSuccessfulSignUp) in
+            guard let self else { return }
+            if isSuccessfulSignUp {
+                self.complitionHandler?()
+            } else {
+                self.showSignUpErrorAlert()
+            }
+        }
 
+        viewModel.loginValidationError.bind { [weak self] (loginValidationError) in
+            guard let self else { return }
+            self.validationErrorsLabel.text = loginValidationError
+        }
+
+        viewModel.isLoadingData.bind { [weak self] (isLoadingData) in
+            guard let self else { return }
+            self.deactivateUI(isLoadingData)
+        }
+
+        viewModel.firebaseError.bind { [weak self] (firebaseError) in
+            guard let self else { return }
+            self.showFirebaseErrorAlert(massage: firebaseError)
+        }
+
+        viewModel.occurredErrorWhileSavingImage.bind { [weak self] (occurredErrorWhileSavingImage) in
+            guard let self else { return }
+            if occurredErrorWhileSavingImage {
+                self.showSavingImageErrorAlert()
+            }
+        }
+    }
+
+    private func showSignUpErrorAlert() {
+        let alert = alertFactory.createErrorAlert(message: Strings.Alerts.Messages.signUpErrorAlert)
+        present(alert, animated: true)
+    }
+
+    private func showFirebaseErrorAlert(massage: String) {
+        let alert = alertFactory.createErrorAlert(message: massage)
+        present(alert, animated: true)
+    }
+
+    private func showSavingImageErrorAlert() {
+        let alert = alertFactory.createErrorAlert(message: Strings.Alerts.Messages.saveImageErrorAlert)
+        present(alert, animated: true)
+    }
+}
+
+// MARK: - UIImagePickerController handling
+extension ConfigureProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+    ) {
+        dismiss(animated: true)
+        guard let image = info[.originalImage] as? UIImage else { return }
+        pickedUserImage = image
+        userAvatarImageView.image = image
+    }
 }

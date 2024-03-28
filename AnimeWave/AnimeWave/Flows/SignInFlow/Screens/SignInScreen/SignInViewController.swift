@@ -54,6 +54,13 @@ final class SignInViewController: UIViewController, FlowController {
         return button
     }()
 
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.isHidden = true
+
+        return activityIndicator
+    }()
+
     // MARK: - Variables
     var completionHandler: (() -> Void)?
     private var viewModel: SignInViewModel
@@ -79,6 +86,7 @@ final class SignInViewController: UIViewController, FlowController {
     }
 }
 
+// MARK: - UI handling
 extension SignInViewController {
 
     private func setupView() {
@@ -95,13 +103,26 @@ extension SignInViewController {
 
         stackView.axis = .vertical
         stackView.spacing = 20
-        addSubviews(stackView, validationErrorsLabel, signInButton)
+        addSubviews(
+            stackView,
+            validationErrorsLabel,
+            signInButton,
+            activityIndicator
+        )
 
         stackView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
             make.left.right.equalToSuperview().inset(
                 LayoutConstants.SignInView.StackView.horizontalInset
             )
+        }
+
+        emailTextField.snp.makeConstraints { make in
+            make.height.equalTo(LayoutConstants.textFieldsHeight)
+        }
+
+        passwordTextField.snp.makeConstraints { make in
+            make.height.equalTo(LayoutConstants.textFieldsHeight)
         }
 
         validationErrorsLabel.snp.makeConstraints { make in
@@ -114,13 +135,35 @@ extension SignInViewController {
 
         signInButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(emailTextField)
+            make.height.equalTo(LayoutConstants.buttonsHeight)
             make.bottom.equalToSuperview().inset(
                 LayoutConstants.SignInView.SignInButton.bottomOffset
             )
         }
+
+        activityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(signInButton.snp.top).offset(
+                LayoutConstants.SignInView.ActivityIndicator.bottonOffset
+            )
+        }
     }
 
+    private func deactivateUI(_ deactivate: Bool) {
+        signInButton.isEnabled = !deactivate
+        activityIndicator.isHidden = !deactivate
+        navigationItem.hidesBackButton = deactivate
+
+        if deactivate {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+    }
+}
+
+// MARK: - Bindings and alerts
+extension SignInViewController {
     private func setupBindings() {
         viewModel.validationError.bind { [weak self] (validationError) in
             guard let self else { return }
@@ -131,20 +174,27 @@ extension SignInViewController {
             guard let self else { return }
             if isSuccessfullyLoggedIn {
                 self.completionHandler?()
-            } else {
-                self.showLoginErrorAlert()
             }
         }
-    }
-}
 
-extension SignInViewController {
-    private func showLoginErrorAlert() {
-        let alert = alertFactory.createErrorAlert(message: Strings.Alerts.Messages.signInErrorAlert)
+        viewModel.isLoadingData.bind { [weak self] isLoadingData in
+            guard let self else { return }
+            self.deactivateUI(isLoadingData)
+        }
+
+        viewModel.firebaseError.bind { [weak self] (firebaseError) in
+            guard let self else { return }
+            self.showSignInErrorAlert(message: firebaseError)
+        }
+    }
+
+    private func showSignInErrorAlert(message: String) {
+        let alert = alertFactory.createErrorAlert(message: message)
         present(alert, animated: true)
     }
 }
 
+// MARK: - UITextFieldDelegate
 extension SignInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

@@ -20,6 +20,7 @@
 "errors.EmptyPasswordField" = "Fill password field";
 "errors.PasswordsDontMatch" = "Passwords don't match";
 "errors.signInValidationError" = "Fill all fields";
+"errors.loginError" = "Login cannot be empty";
 
 // Titles
 "titles.signUp" = "Registration";
@@ -33,7 +34,8 @@
 "alerts.titles.errorAlertTitle" = "Error";
 
 // Alert messages
-"alerts.messages.signInErrorAlert" = "Incorrect login or password";
+"alerts.messages.signUpErrorAlert" = "An error occurred during registration";
+"alerts.messages.saveImageErrorAlert" = "An error occurred while saving image";
 
 // Alert action titles
-"alerts.action.alertActionTryAgain" = "Try again";
+"alerts.action.alertActionOk" = "Ok";
