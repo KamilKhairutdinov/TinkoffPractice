@@ -90,6 +90,22 @@ enum LayoutConstants {
         }
     }
 
+    // MARK: - ProfileViewController
+    enum ProfileView {
+        enum AvatarImageView {
+            static let topOffset = 100
+            static let widthHeightMultiplier: CGFloat = 0.5
+        }
+
+        enum LoginLabel {
+            static let topOffset = 20
+        }
+
+        enum EmailLabel {
+            static let topOffset = 5
+        }
+    }
+
     // MARK: - Global
     static let buttonsHeight: CGFloat = 40
     static let textFieldsHeight: CGFloat = 40

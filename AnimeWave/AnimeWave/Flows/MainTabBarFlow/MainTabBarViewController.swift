@@ -41,10 +41,10 @@ extension MainTabBarViewController {
 
     private func setupTabs() {
         setViewControllers([
-            setupControllerForTabBar(imageName: "house"),
-            setupControllerForTabBar(imageName: "magnifyingglass"),
-            setupControllerForTabBar(imageName: "calendar"),
-            setupControllerForTabBar(imageName: "person")
+            setupControllerForTabBar(imageName: SystemImage.house),
+            setupControllerForTabBar(imageName: SystemImage.magnifyingglass),
+            setupControllerForTabBar(imageName: SystemImage.calendar),
+            setupControllerForTabBar(imageName: SystemImage.person)
         ], animated: true)
     }
 

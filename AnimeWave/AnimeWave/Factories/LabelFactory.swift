@@ -9,7 +9,7 @@ import UIKit
 
 class LabelFactory {
 
-    func createMainLabel() -> UILabel {
+    func createLabel() -> UILabel {
         let label = UILabel()
         label.textColor = UIColor.mainText
         label.font = UIFont.boldSystemFont(ofSize: 20)
@@ -17,7 +17,7 @@ class LabelFactory {
         return label
     }
 
-    func createMainLabel(color: UIColor, font: UIFont) -> UILabel {
+    func createLabel(color: UIColor, font: UIFont) -> UILabel {
         let label = UILabel()
         label.textColor = color
         label.font = font

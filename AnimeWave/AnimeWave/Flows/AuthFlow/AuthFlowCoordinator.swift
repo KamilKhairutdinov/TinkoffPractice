@@ -50,12 +50,12 @@ class AuthFlowCoordinator: BaseCoordinator {
 
     private func runSignInFlow() {
         let signInFlowCoordinator = coordinatorFactory.createSignInCoordinator(router: router)
+        signInFlowCoordinator.start()
         addDependency(signInFlowCoordinator)
         signInFlowCoordinator.flowCompletionHandler = { [weak self] in
             guard let self else { return }
             self.removeDependency(signInFlowCoordinator)
             self.flowCompletionHandler?()
         }
-        signInFlowCoordinator.start()
     }
 }

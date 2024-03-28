@@ -12,6 +12,9 @@
 
 // Labels
 "labels.fillProfileLabel" = "Заполните свой профиль";
+"labels.watching" = "Смотрю";
+"labels.watched" = "Просмотрено";
+"labels.postponed" = "Отложено";
 
 // Custom errors
 "errors.IncorrectEmail" = "Неправильный формат почты";

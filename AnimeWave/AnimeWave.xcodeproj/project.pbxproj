@@ -12,6 +12,14 @@
 		2707895A2BADF50C00874D60 /* LayoutConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270789592BADF50C00874D60 /* LayoutConstant.swift */; };
 		272612602BB599AD00F16272 /* ModuleFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2726125F2BB599AD00F16272 /* ModuleFactoryProtocol.swift */; };
 		272612622BB59AEC00F16272 /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272612612BB59AEC00F16272 /* ModuleFactory.swift */; };
+		272612652BB5AAA000F16272 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272612642BB5AAA000F16272 /* ProfileViewModel.swift */; };
+		272612672BB5AAC300F16272 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272612662BB5AAC300F16272 /* UserProfile.swift */; };
+		272612692BB5AB9E00F16272 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272612682BB5AB9E00F16272 /* LabelFactory.swift */; };
+		2726126B2BB5C57300F16272 /* SystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2726126A2BB5C57300F16272 /* SystemImage.swift */; };
+		2726126F2BB5D2B200F16272 /* WatchingStatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2726126E2BB5D2B200F16272 /* WatchingStatusCollectionViewCell.swift */; };
+		272612712BB5D30400F16272 /* CollectionViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272612702BB5D30400F16272 /* CollectionViewFactory.swift */; };
+		272612732BB5D56100F16272 /* WatchingStatusCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272612722BB5D56100F16272 /* WatchingStatusCellViewModel.swift */; };
+		272612762BB5D7DD00F16272 /* ProfileCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272612752BB5D7DD00F16272 /* ProfileCollectionViewDataSource.swift */; };
 		27261F8A2BA7964600225F5D /* SignUpFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F892BA7964600225F5D /* SignUpFlowCoordinator.swift */; };
 		27261F8C2BA7967F00225F5D /* SignInFLowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F8B2BA7967F00225F5D /* SignInFLowCoordinator.swift */; };
 		27261F8F2BA79A9000225F5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F8E2BA79A9000225F5D /* SignUpViewController.swift */; };
@@ -68,6 +76,14 @@
 		270789592BADF50C00874D60 /* LayoutConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstant.swift; sourceTree = "<group>"; };
 		2726125F2BB599AD00F16272 /* ModuleFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryProtocol.swift; sourceTree = "<group>"; };
 		272612612BB59AEC00F16272 /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
+		272612642BB5AAA000F16272 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		272612662BB5AAC300F16272 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		272612682BB5AB9E00F16272 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
+		2726126A2BB5C57300F16272 /* SystemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImage.swift; sourceTree = "<group>"; };
+		2726126E2BB5D2B200F16272 /* WatchingStatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingStatusCollectionViewCell.swift; sourceTree = "<group>"; };
+		272612702BB5D30400F16272 /* CollectionViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFactory.swift; sourceTree = "<group>"; };
+		272612722BB5D56100F16272 /* WatchingStatusCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingStatusCellViewModel.swift; sourceTree = "<group>"; };
+		272612752BB5D7DD00F16272 /* ProfileCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		27261F892BA7964600225F5D /* SignUpFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFlowCoordinator.swift; sourceTree = "<group>"; };
 		27261F8B2BA7967F00225F5D /* SignInFLowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFLowCoordinator.swift; sourceTree = "<group>"; };
 		27261F8E2BA79A9000225F5D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +174,35 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		2726126C2BB5C82700F16272 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2726126D2BB5D0A700F16272 /* CollectionView */,
+				27261FD92BA8F89100225F5D /* ProfileViewController.swift */,
+				272612642BB5AAA000F16272 /* ProfileViewModel.swift */,
+				272612662BB5AAC300F16272 /* UserProfile.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		2726126D2BB5D0A700F16272 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				272612742BB5D7C900F16272 /* Cell */,
+				272612752BB5D7DD00F16272 /* ProfileCollectionViewDataSource.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		272612742BB5D7C900F16272 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2726126E2BB5D2B200F16272 /* WatchingStatusCollectionViewCell.swift */,
+				272612722BB5D56100F16272 /* WatchingStatusCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		27261F872BA7961200225F5D /* SignInFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +245,7 @@
 			children = (
 				27261F9F2BA81EEB00225F5D /* Observable.swift */,
 				270789592BADF50C00874D60 /* LayoutConstant.swift */,
+				2726126A2BB5C57300F16272 /* SystemImage.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -255,7 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				27261FCC2BA8F7AD00225F5D /* ProfileFlowCoordinator.swift */,
-				27261FD12BA8F81300225F5D /* Screen */,
+				27261FD12BA8F81300225F5D /* Screens */,
 			);
 			path = ProfileFlow;
 			sourceTree = "<group>";
@@ -311,12 +357,12 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		27261FD12BA8F81300225F5D /* Screen */ = {
+		27261FD12BA8F81300225F5D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				27261FD92BA8F89100225F5D /* ProfileViewController.swift */,
+				2726126C2BB5C82700F16272 /* Profile */,
 			);
-			path = Screen;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		2767918F2BA189DB00628CCE /* Coordinator */ = {
@@ -347,6 +393,8 @@
 				27DAA1D32BA76C3700EAC8A4 /* ButtonFactory.swift */,
 				27DAA1D52BA76C4200EAC8A4 /* TextFieldFactory.swift */,
 				27261FBA2BA8ED4300225F5D /* AlertFactory.swift */,
+				272612682BB5AB9E00F16272 /* LabelFactory.swift */,
+				272612702BB5D30400F16272 /* CollectionViewFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -645,7 +693,9 @@
 				276791922BA18B3100628CCE /* CoordinatorProtocol.swift in Sources */,
 				27261F8F2BA79A9000225F5D /* SignUpViewController.swift in Sources */,
 				27261FC72BA8F78300225F5D /* AnimeListCoordinator.swift in Sources */,
+				272612732BB5D56100F16272 /* WatchingStatusCellViewModel.swift in Sources */,
 				27261FD62BA8F85300225F5D /* SearchViewController.swift in Sources */,
+				2726126F2BB5D2B200F16272 /* WatchingStatusCollectionViewCell.swift in Sources */,
 				27261FCD2BA8F7AD00225F5D /* ProfileFlowCoordinator.swift in Sources */,
 				27261FC92BA8F79000225F5D /* SearchFlowCoordinator.swift in Sources */,
 				2768379B2BB33985008649D0 /* StorageService.swift in Sources */,
@@ -661,16 +711,20 @@
 				27261FAF2BA8CE6100225F5D /* ValidatorService.swift in Sources */,
 				27261F9B2BA7B9DF00225F5D /* SignUpViewModel.swift in Sources */,
 				276791942BA18BEC00628CCE /* FlowControllerWithValue.swift in Sources */,
+				272612712BB5D30400F16272 /* CollectionViewFactory.swift in Sources */,
 				27261FC52BA8F49000225F5D /* TabBarFlowDelegate.swift in Sources */,
 				27261FD82BA8F87D00225F5D /* CalendarViewController.swift in Sources */,
+				272612652BB5AAA000F16272 /* ProfileViewModel.swift in Sources */,
 				27261FDA2BA8F89100225F5D /* ProfileViewController.swift in Sources */,
 				2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */,
 				270789582BADF34000874D60 /* Strings+Generated.swift in Sources */,
 				27261FBB2BA8ED4300225F5D /* AlertFactory.swift in Sources */,
 				272612622BB59AEC00F16272 /* ModuleFactory.swift in Sources */,
 				27DAA1D82BA7724300EAC8A4 /* AuthViewController.swift in Sources */,
+				272612762BB5D7DD00F16272 /* ProfileCollectionViewDataSource.swift in Sources */,
 				276BEC582BA7224C00313135 /* CoordinatorFactoryProtocol.swift in Sources */,
 				27261F992BA7AF6A00225F5D /* UIViewController+extension.swift in Sources */,
+				272612692BB5AB9E00F16272 /* LabelFactory.swift in Sources */,
 				276BEC5A2BA7228300313135 /* CoordinatorFactory.swift in Sources */,
 				27DAA1DA2BA776B100EAC8A4 /* AuthFlowCoordinator.swift in Sources */,
 				2707895A2BADF50C00874D60 /* LayoutConstant.swift in Sources */,
@@ -684,8 +738,10 @@
 				27261FA02BA81EEB00225F5D /* Observable.swift in Sources */,
 				27261FB82BA8E16D00225F5D /* SignInViewModel.swift in Sources */,
 				27261FAA2BA8A4E500225F5D /* ConfigureProfileViewModel.swift in Sources */,
+				272612672BB5AAC300F16272 /* UserProfile.swift in Sources */,
 				27261FC32BA8F46C00225F5D /* MainTabBarViewController.swift in Sources */,
 				27261FD32BA8F82900225F5D /* AnimeListViewController.swift in Sources */,
+				2726126B2BB5C57300F16272 /* SystemImage.swift in Sources */,
 				27809FAC2BB21DE80001D938 /* FirestoreServire.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

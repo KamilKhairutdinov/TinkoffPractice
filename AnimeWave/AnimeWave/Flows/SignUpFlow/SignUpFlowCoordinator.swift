@@ -42,7 +42,6 @@ class SignUpFlowCoordinator: BaseCoordinator {
             guard let self else { return }
             self.flowCompletionHandler?()
         }
-
         router.push(configureProfileViewController, animated: true)
     }
 }

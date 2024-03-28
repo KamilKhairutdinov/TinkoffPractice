@@ -55,6 +55,12 @@ internal enum Strings {
   internal enum Labels {
     /// Complete your profile
     internal static let fillProfileLabel = Strings.tr("Localizable", "labels.fillProfileLabel", fallback: "Complete your profile")
+    /// Postponed
+    internal static let postponed = Strings.tr("Localizable", "labels.postponed", fallback: "Postponed")
+    /// Watched
+    internal static let watched = Strings.tr("Localizable", "labels.watched", fallback: "Watched")
+    /// Watching
+    internal static let watching = Strings.tr("Localizable", "labels.watching", fallback: "Watching")
   }
   internal enum TextFields {
     ///  Email

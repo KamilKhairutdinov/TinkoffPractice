@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-enum AuthViewControllerStates {
+enum AuthStates {
     case signIn, signUp
 }
 
@@ -43,7 +43,7 @@ final class AuthViewController: UIViewController, FlowControllerWithValue {
     }()
 
     // MARK: - Variables
-    var completionHandler: ((AuthViewControllerStates) -> Void)?
+    var completionHandler: ((AuthStates) -> Void)?
     private let buttonFactory = ButtonFactory()
 
     // MARK: - Lifecycle

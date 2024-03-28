@@ -12,6 +12,9 @@
 
 // Labels
 "labels.fillProfileLabel" = "Complete your profile";
+"labels.watching" = "Watching";
+"labels.watched" = "Watched";
+"labels.postponed" = "Postponed";
 
 // Custom errors
 "errors.IncorrectEmail" = "Invalid mail format";
