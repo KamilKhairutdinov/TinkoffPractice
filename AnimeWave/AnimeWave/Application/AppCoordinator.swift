@@ -9,22 +9,19 @@ import UIKit
 
 class AppCoordinator: BaseCoordinator {
 
+    // MARK: - Variables
     private var router: Router
     private let authService: AuthService
-    private var isLoggedIn: Bool = false // Mock for test
 
+    // MARK: - Init
     init(router: Router) {
         self.router = router
         authService = AuthService.shared
     }
 
+    // MARK: - Functions
     override func start() {
-        if isLoggedIn {
-            runMainFlow()
-        } else {
-            runAuthFlow()
-        }
-    // authService.currentUser == nil ? runAuthFlow() : runMainFlow()
+        authService.currentUser == nil ? runAuthFlow() : runMainFlow()
     }
 
     private func runAuthFlow() {
@@ -33,7 +30,6 @@ class AppCoordinator: BaseCoordinator {
         addDependency(authFlowCoordinator)
         authFlowCoordinator.flowCompletionHandler = { [weak self] in
             guard let self else { return }
-            self.isLoggedIn = true
             self.runMainFlow()
             self.removeDependency(authFlowCoordinator)
         }

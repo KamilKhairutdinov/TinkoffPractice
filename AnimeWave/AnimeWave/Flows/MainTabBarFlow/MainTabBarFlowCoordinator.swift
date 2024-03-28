@@ -9,12 +9,15 @@ import UIKit
 
 class MainTabBarFlowCoordinator: BaseCoordinator {
 
+    // MARK: - Variables
     private var tabBatFlowDelegate: TabBarFlowDelegate
 
+    // MARK: - Init
     init(controller: TabBarFlowDelegate) {
         self.tabBatFlowDelegate = controller
     }
 
+    // MARK: - Functions
     override func start() {
         tabBatFlowDelegate.onViewDidAppear = runAnimeListFlow()
         tabBatFlowDelegate.onAnimeListFlowSelect = runAnimeListFlow()

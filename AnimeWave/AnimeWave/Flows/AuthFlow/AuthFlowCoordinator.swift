@@ -9,12 +9,15 @@ import UIKit
 
 class AuthFlowCoordinator: BaseCoordinator {
 
-    var router: Router
+    // MARK: - Variables
+    private var router: Router
 
+    // MARK: - Init
     init(router: Router) {
         self.router = router
     }
 
+    // MARK: - Functions
     override func start() {
         showAuthController()
     }

@@ -9,13 +9,16 @@ import UIKit
 
 class SignUpFlowCoordinator: BaseCoordinator {
 
-    var router: Router
-    var userForSignUp: UserForSignUp?
+    // MARK: - Variables
+    private var router: Router
+    private var userForSignUp: UserForSignUp?
 
+    // MARK: - Init
     init(router: Router) {
         self.router = router
     }
 
+    // MARK: - Functions
     override func start() {
         showSignUpController()
     }
