@@ -20,7 +20,7 @@ class AuthFlowCoordinator: BaseCoordinator {
     }
 
     private func showAuthController() {
-        let authViewController = AuthViewController()
+        let authViewController = moduleFactory.createAuthModule()
         authViewController.completionHandler = { [weak self] states in
             guard let self else { return }
             switch states {

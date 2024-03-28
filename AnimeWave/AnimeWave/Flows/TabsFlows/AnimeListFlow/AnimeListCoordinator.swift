@@ -20,7 +20,7 @@ class AnimeListCoordinator: BaseCoordinator {
     }
 
     private func showAnimeListController() {
-        let animeListController = AnimeListViewController()
+        let animeListController = moduleFactory.createAnimeListModule()
         router.setRootController(animeListController)
     }
 }

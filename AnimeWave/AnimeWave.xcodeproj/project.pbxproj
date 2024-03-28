@@ -10,6 +10,8 @@
 		270789452BADC11600874D60 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 270789472BADC11600874D60 /* Localizable.strings */; };
 		270789582BADF34000874D60 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270789572BADF34000874D60 /* Strings+Generated.swift */; };
 		2707895A2BADF50C00874D60 /* LayoutConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270789592BADF50C00874D60 /* LayoutConstant.swift */; };
+		272612602BB599AD00F16272 /* ModuleFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2726125F2BB599AD00F16272 /* ModuleFactoryProtocol.swift */; };
+		272612622BB59AEC00F16272 /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272612612BB59AEC00F16272 /* ModuleFactory.swift */; };
 		27261F8A2BA7964600225F5D /* SignUpFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F892BA7964600225F5D /* SignUpFlowCoordinator.swift */; };
 		27261F8C2BA7967F00225F5D /* SignInFLowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F8B2BA7967F00225F5D /* SignInFLowCoordinator.swift */; };
 		27261F8F2BA79A9000225F5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27261F8E2BA79A9000225F5D /* SignUpViewController.swift */; };
@@ -64,6 +66,8 @@
 		270789482BADC11800874D60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		270789572BADF34000874D60 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		270789592BADF50C00874D60 /* LayoutConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstant.swift; sourceTree = "<group>"; };
+		2726125F2BB599AD00F16272 /* ModuleFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryProtocol.swift; sourceTree = "<group>"; };
+		272612612BB59AEC00F16272 /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
 		27261F892BA7964600225F5D /* SignUpFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFlowCoordinator.swift; sourceTree = "<group>"; };
 		27261F8B2BA7967F00225F5D /* SignInFLowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFLowCoordinator.swift; sourceTree = "<group>"; };
 		27261F8E2BA79A9000225F5D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				276BEC552BA721CB00313135 /* Protocols */,
+				272612612BB59AEC00F16272 /* ModuleFactory.swift */,
 				276BEC592BA7228300313135 /* CoordinatorFactory.swift */,
 				27DAA1D32BA76C3700EAC8A4 /* ButtonFactory.swift */,
 				27DAA1D52BA76C4200EAC8A4 /* TextFieldFactory.swift */,
@@ -359,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				276BEC572BA7224C00313135 /* CoordinatorFactoryProtocol.swift */,
+				2726125F2BB599AD00F16272 /* ModuleFactoryProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -661,6 +667,7 @@
 				2788368B2B9E4FBA000A585C /* SceneDelegate.swift in Sources */,
 				270789582BADF34000874D60 /* Strings+Generated.swift in Sources */,
 				27261FBB2BA8ED4300225F5D /* AlertFactory.swift in Sources */,
+				272612622BB59AEC00F16272 /* ModuleFactory.swift in Sources */,
 				27DAA1D82BA7724300EAC8A4 /* AuthViewController.swift in Sources */,
 				276BEC582BA7224C00313135 /* CoordinatorFactoryProtocol.swift in Sources */,
 				27261F992BA7AF6A00225F5D /* UIViewController+extension.swift in Sources */,
@@ -672,6 +679,7 @@
 				27261FA82BA8A4C800225F5D /* ConfigureProfileViewController.swift in Sources */,
 				27261FAD2BA8B56C00225F5D /* FlowController.swift in Sources */,
 				27DAA1D62BA76C4200EAC8A4 /* TextFieldFactory.swift in Sources */,
+				272612602BB599AD00F16272 /* ModuleFactoryProtocol.swift in Sources */,
 				276791982BA1908E00628CCE /* AppCoordinator.swift in Sources */,
 				27261FA02BA81EEB00225F5D /* Observable.swift in Sources */,
 				27261FB82BA8E16D00225F5D /* SignInViewModel.swift in Sources */,

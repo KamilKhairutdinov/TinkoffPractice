@@ -20,7 +20,7 @@ class SignInFLowCoordinator: BaseCoordinator {
     }
 
     private func showSignInViewController() {
-        let signInViewController = SignInViewController(viewModel: SignInViewModel())
+        let signInViewController = moduleFactory.createSignInModule()
         signInViewController.completionHandler = { [weak self] in
             guard let self else { return }
             self.flowCompletionHandler?()

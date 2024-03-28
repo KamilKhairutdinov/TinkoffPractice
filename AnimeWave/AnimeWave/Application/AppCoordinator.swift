@@ -40,7 +40,7 @@ class AppCoordinator: BaseCoordinator {
     }
 
     private func runMainFlow() {
-        let mainTabBarViewController = MainTabBarViewController()
+        let mainTabBarViewController = moduleFactory.createMainModule()
         let mainTabBarFlowCoordinator = coordinatorFactory.createMainTabBarCoordinator(controller: mainTabBarViewController)
         addDependency(mainTabBarFlowCoordinator)
         mainTabBarFlowCoordinator.flowCompletionHandler = { [weak self] in

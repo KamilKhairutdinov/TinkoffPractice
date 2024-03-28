@@ -21,7 +21,7 @@ class SignUpFlowCoordinator: BaseCoordinator {
     }
 
     private func showSignUpController() {
-        let signUpViewController = SignUpViewController(viewModel: SignUpViewModel())
+        let signUpViewController = moduleFactory.createSignUpModule()
         signUpViewController.completionHandler = { [weak self] user in
             guard let self else { return }
             self.userForSignUp = user
@@ -32,8 +32,9 @@ class SignUpFlowCoordinator: BaseCoordinator {
 
     private func showConfigureProfileController() {
         guard let userForSignUp else { return }
-        let configureProfileViewModel = ConfigureProfileViewModel(userForSignUp: userForSignUp)
-        let configureProfileViewController = ConfigureProfileViewController(viewModel: configureProfileViewModel)
+        let configureProfileViewController = moduleFactory.createConfigureProfileModule(
+            userForSignUp: userForSignUp
+        )
         configureProfileViewController.complitionHandler = { [weak self] in
             guard let self else { return }
             self.flowCompletionHandler?()

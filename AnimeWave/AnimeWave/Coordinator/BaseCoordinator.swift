@@ -9,15 +9,20 @@ import UIKit
 
 class BaseCoordinator: CoordinatorProtocol {
 
+    // MARK: - Variables
     var childCoordinators: [CoordinatorProtocol]
     var flowCompletionHandler: (() -> Void)?
     let coordinatorFactory: CoordinatorFactoryProtocol
+    let moduleFactory: ModuleFactory
 
+    // MARK: - Init
     init() {
         childCoordinators = []
         coordinatorFactory = CoordinatorFactory()
+        moduleFactory = ModuleFactory()
     }
 
+    // MARK: - Functions
     func start() {
         fatalError("Function start must be overriden")
     }
