@@ -86,6 +86,7 @@ final class SignInViewController: UIViewController, FlowController {
     }
 }
 
+// MARK: - UI handling
 extension SignInViewController {
 
     private func setupView() {
@@ -148,34 +149,6 @@ extension SignInViewController {
         }
     }
 
-    private func setupBindings() {
-        viewModel.validationError.bind { [weak self] (validationError) in
-            guard let self else { return }
-            self.validationErrorsLabel.text = validationError
-        }
-
-        viewModel.isSuccessfullyLoggedIn.bind { [weak self] (isSuccessfullyLoggedIn) in
-            guard let self else { return }
-            if isSuccessfullyLoggedIn {
-                self.completionHandler?()
-            } else {
-                self.showErrorAlert()
-            }
-        }
-
-        viewModel.isLoadingData.bind { [weak self] isLoadingData in
-            guard let self else { return }
-            self.deactivateUI(isLoadingData)
-        }
-    }
-}
-
-extension SignInViewController {
-    private func showErrorAlert() {
-        let alert = alertFactory.createErrorAlert(message: Strings.Alerts.Messages.signInErrorAlert)
-        present(alert, animated: true)
-    }
-
     private func deactivateUI(_ deactivate: Bool) {
         signInButton.isEnabled = !deactivate
         activityIndicator.isHidden = !deactivate
@@ -189,6 +162,39 @@ extension SignInViewController {
     }
 }
 
+// MARK: - Bindings and alerts
+extension SignInViewController {
+    private func setupBindings() {
+        viewModel.validationError.bind { [weak self] (validationError) in
+            guard let self else { return }
+            self.validationErrorsLabel.text = validationError
+        }
+
+        viewModel.isSuccessfullyLoggedIn.bind { [weak self] (isSuccessfullyLoggedIn) in
+            guard let self else { return }
+            if isSuccessfullyLoggedIn {
+                self.completionHandler?()
+            }
+        }
+
+        viewModel.isLoadingData.bind { [weak self] isLoadingData in
+            guard let self else { return }
+            self.deactivateUI(isLoadingData)
+        }
+
+        viewModel.firebaseError.bind { [weak self] (firebaseError) in
+            guard let self else { return }
+            self.showSignInErrorAlert(message: firebaseError)
+        }
+    }
+
+    private func showSignInErrorAlert(message: String) {
+        let alert = alertFactory.createErrorAlert(message: message)
+        present(alert, animated: true)
+    }
+}
+
+// MARK: - UITextFieldDelegate
 extension SignInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

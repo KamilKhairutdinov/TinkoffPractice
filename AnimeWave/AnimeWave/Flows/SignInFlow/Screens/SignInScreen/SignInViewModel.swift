@@ -10,16 +10,19 @@ import Foundation
 class SignInViewModel {
 
     // MARK: - Variables
-    var validationError: Observable<String>
     var isSuccessfullyLoggedIn: Observable<Bool>
     var isLoadingData: Observable<Bool>
+    var validationError: Observable<String>
+    var firebaseError: Observable<String>
     private let authService: AuthService
 
     // MARK: - Init
     init() {
-        validationError = Observable("")
         isSuccessfullyLoggedIn = Observable(false)
         isLoadingData = Observable(false)
+        validationError = Observable("")
+        firebaseError = Observable("")
+
         authService = AuthService.shared
     }
 
@@ -38,9 +41,8 @@ class SignInViewModel {
                     self.isLoadingData.value = false
                     self.isSuccessfullyLoggedIn.value = true
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    firebaseError.value = error.localizedDescription
                     self.isLoadingData.value = false
-                    self.isSuccessfullyLoggedIn.value = false
                 }
             }
         }

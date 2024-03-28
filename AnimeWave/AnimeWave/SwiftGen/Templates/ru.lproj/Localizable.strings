@@ -34,8 +34,8 @@
 "alerts.titles.errorAlertTitle" = "Ошибка";
 
 // Alert messages
-"alerts.messages.signInErrorAlert" = "Неправильная почта или пароль";
 "alerts.messages.signUpErrorAlert" = "Произошла ошибка при регистрации";
+"alerts.messages.saveImageErrorAlert" = "Произошла ошибка при сохранении изобрашения";
 
 // Alert action titles
-"alerts.action.alertActionTryAgain" = "Попробовать ещё раз";
+"alerts.action.alertActionOk" = "Ок";

@@ -13,8 +13,8 @@ class SignUpViewModel {
     // MARK: - Variables
     var errorStringFormatted: Observable<String>
     var userForSingUp: Observable<UserForSignUp>
-    private var email: String
-    private var password: String
+    private var email: String?
+    private var password: String?
     private var validatorService: ValidatorService
 
     // MARK: - Init
@@ -22,8 +22,6 @@ class SignUpViewModel {
         errorStringFormatted = Observable("")
         userForSingUp = Observable(UserForSignUp.empty)
         validatorService = ValidatorService()
-        password = ""
-        email = ""
     }
 
     // MARK: - Functions

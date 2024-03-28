@@ -34,8 +34,8 @@
 "alerts.titles.errorAlertTitle" = "Error";
 
 // Alert messages
-"alerts.messages.signInErrorAlert" = "Incorrect email or password";
 "alerts.messages.signUpErrorAlert" = "An error occurred during registration";
+"alerts.messages.saveImageErrorAlert" = "An error occurred while saving image";
 
 // Alert action titles
-"alerts.action.alertActionTryAgain" = "Try again";
+"alerts.action.alertActionOk" = "Ok";

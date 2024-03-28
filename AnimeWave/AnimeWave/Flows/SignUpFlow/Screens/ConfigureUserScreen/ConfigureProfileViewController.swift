@@ -31,7 +31,9 @@ final class ConfigureProfileViewController: UIViewController {
     private lazy var pickImageButton: UIButton = {
         let action = UIAction { [weak self] _ in
             guard let self else { return }
-            self.present(self.avatarImagePickerController, animated: true)
+            DispatchQueue.main.async {
+                self.present(self.avatarImagePickerController, animated: true)
+            }
         }
         let button = buttonFactory.createPlainButton(title: Strings.Buttons.pickImage, action: action)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -108,6 +110,7 @@ final class ConfigureProfileViewController: UIViewController {
     }
 }
 
+// MARK: - UI handling
 extension ConfigureProfileViewController: UITextFieldDelegate {
     private func setupView() {
         view.backgroundColor = UIColor.background
@@ -183,12 +186,25 @@ extension ConfigureProfileViewController: UITextFieldDelegate {
         }
     }
 
+    private func deactivateUI(_ deactivate: Bool) {
+        signUpButton.isEnabled = !deactivate
+        activityIndicator.isHidden = !deactivate
+        navigationItem.hidesBackButton = deactivate
+
+        if deactivate {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+    }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return true
     }
 }
 
+// MARK: - Bindings and alerts
 extension ConfigureProfileViewController {
     private func setupBindings() {
         viewModel.isSuccessfulSignUp.bind { [weak self] (isSuccessfulSignUp) in
@@ -196,7 +212,7 @@ extension ConfigureProfileViewController {
             if isSuccessfulSignUp {
                 self.complitionHandler?()
             } else {
-                self.showErrorAlert()
+                self.showSignUpErrorAlert()
             }
         }
 
@@ -209,26 +225,37 @@ extension ConfigureProfileViewController {
             guard let self else { return }
             self.deactivateUI(isLoadingData)
         }
+
+        viewModel.firebaseError.bind { [weak self] (firebaseError) in
+            guard let self else { return }
+            self.showFirebaseErrorAlert(massage: firebaseError)
+        }
+
+        viewModel.occurredErrorWhileSavingImage.bind { [weak self] (occurredErrorWhileSavingImage) in
+            guard let self else { return }
+            if occurredErrorWhileSavingImage {
+                self.showSavingImageErrorAlert()
+            }
+        }
     }
 
-    private func showErrorAlert() {
+    private func showSignUpErrorAlert() {
         let alert = alertFactory.createErrorAlert(message: Strings.Alerts.Messages.signUpErrorAlert)
         present(alert, animated: true)
     }
 
-    private func deactivateUI(_ deactivate: Bool) {
-        signUpButton.isEnabled = !deactivate
-        activityIndicator.isHidden = !deactivate
-        navigationItem.hidesBackButton = deactivate
+    private func showFirebaseErrorAlert(massage: String) {
+        let alert = alertFactory.createErrorAlert(message: massage)
+        present(alert, animated: true)
+    }
 
-        if deactivate {
-            activityIndicator.startAnimating()
-        } else {
-            activityIndicator.stopAnimating()
-        }
+    private func showSavingImageErrorAlert() {
+        let alert = alertFactory.createErrorAlert(message: Strings.Alerts.Messages.saveImageErrorAlert)
+        present(alert, animated: true)
     }
 }
 
+// MARK: - UIImagePickerController handling
 extension ConfigureProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(
         _ picker: UIImagePickerController,

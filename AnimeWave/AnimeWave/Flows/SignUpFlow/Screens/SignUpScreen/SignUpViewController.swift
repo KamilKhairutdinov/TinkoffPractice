@@ -89,6 +89,7 @@ final class SignUpViewController: UIViewController, FlowControllerWithValue {
     }
 }
 
+// MARK: - UI handling
 extension SignUpViewController {
     private func setupView() {
         view.backgroundColor = UIColor.background
@@ -142,7 +143,10 @@ extension SignUpViewController {
             )
         }
     }
+}
 
+// MARK: - Bindings
+extension SignUpViewController {
     private func setupBindings() {
         viewModel.userForSingUp.bind({ [weak self] (user) in
             guard let self else { return }
@@ -156,6 +160,7 @@ extension SignUpViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

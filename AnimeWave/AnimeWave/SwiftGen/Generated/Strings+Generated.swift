@@ -12,12 +12,12 @@ import Foundation
 internal enum Strings {
   internal enum Alerts {
     internal enum Action {
-      /// Try again
-      internal static let alertActionTryAgain = Strings.tr("Localizable", "alerts.action.alertActionTryAgain", fallback: "Try again")
+      /// Ok
+      internal static let alertActionOk = Strings.tr("Localizable", "alerts.action.alertActionOk", fallback: "Ok")
     }
     internal enum Messages {
-      /// Incorrect email or password
-      internal static let signInErrorAlert = Strings.tr("Localizable", "alerts.messages.signInErrorAlert", fallback: "Incorrect email or password")
+      /// An error occurred while saving image
+      internal static let saveImageErrorAlert = Strings.tr("Localizable", "alerts.messages.saveImageErrorAlert", fallback: "An error occurred while saving image")
       /// An error occurred during registration
       internal static let signUpErrorAlert = Strings.tr("Localizable", "alerts.messages.signUpErrorAlert", fallback: "An error occurred during registration")
     }
