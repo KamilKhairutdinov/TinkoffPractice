@@ -20,7 +20,7 @@ class SearchFlowCoordinator: BaseCoordinator {
     }
 
     private func showSearchViewController() {
-        let searchViewController =  moduleFactory.createSearchModule()
+        let searchViewController = moduleFactory.createSearchModule()
         router.setRootController(searchViewController)
     }
 }

@@ -20,7 +20,7 @@ class CalendarFlowCoordinator: BaseCoordinator {
     }
 
     private func showCalendarViewController() {
-        let calendarViewController =  moduleFactory.createCalendarModule()
+        let calendarViewController = moduleFactory.createCalendarModule()
         router.setRootController(calendarViewController)
     }
 }
